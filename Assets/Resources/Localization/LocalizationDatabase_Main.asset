@@ -1,0 +1,745 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8761bd1239105c04ba7459d32fa8b614, type: 3}
+  m_Name: LocalizationDatabase_Main
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationDatabase
+  entries:
+  - key: PLAY
+    english: PLAY
+    deutsch: SPIELEN
+    francais: JOUER
+    italiano: GIOCA
+  - key: INSTRUCTIONS
+    english: INSTRUCTIONS
+    deutsch: ANLEITUNG
+    francais: INSTRUCTIONS
+    italiano: ISTRUZIONI
+  - key: SETTINGS
+    english: SETTINGS
+    deutsch: EINSTELLUNGEN
+    francais: "PARAM\xC8TRES"
+    italiano: IMPOSTAZIONI
+  - key: QUIT
+    english: QUIT
+    deutsch: BEENDEN
+    francais: QUITTER
+    italiano: ESCI
+  - key: NEXT
+    english: NEXT
+    deutsch: WEITER
+    francais: SUIVANT
+    italiano: AVANTI
+  - key: READY
+    english: READY
+    deutsch: BEREIT
+    francais: "PR\xCAT"
+    italiano: PRONTO
+  - key: START
+    english: START
+    deutsch: START
+    francais: COMMENCER
+    italiano: INIZIA
+  - key: CONTINUE
+    english: CONTINUE
+    deutsch: WEITER
+    francais: CONTINUER
+    italiano: CONTINUA
+  - key: CLOSE
+    english: CLOSE
+    deutsch: SCHLIESSEN
+    francais: FERMER
+    italiano: CHIUDI
+  - key: DIALOGUE_INTRO_001
+    english: 'Darwin: Welcome to my laboratory!'
+    deutsch: 'Darwin: Willkommen in meinem Labor!'
+    francais: 'Darwin: Bienvenue dans mon laboratoire !'
+    italiano: 'Darwin: Benvenuto nel mio laboratorio!'
+  - key: DIALOGUE_INTRO_002
+    english: 'Player: What are all these bones?'
+    deutsch: 'Spieler: Was sind all diese Knochen?'
+    francais: 'Joueur : Que sont tous ces os ?'
+    italiano: 'Giocatore: Cosa sono tutte queste ossa?'
+  - key: DIALOGUE_INTRO_003
+    english: 'Darwin: Each one tells a story.'
+    deutsch: "Darwin: Jeder einzelne erz\xE4hlt eine Geschichte."
+    francais: 'Darwin : Chacun raconte une histoire.'
+    italiano: 'Darwin: Ognuna racconta una storia.'
+  - key: DIALOGUE_INTRO_004
+    english: 'Musowl: Hoo! I love bone stories!'
+    deutsch: 'Musowl: Huhuu! Ich liebe Knochen-Geschichten!'
+    francais: "Musowl : Hou ! J\u2019adore les histoires d\u2019os !"
+    italiano: 'Musowl: Hoo! Adoro le storie di ossa!'
+  - key: DIALOGUE_INTRO_005
+    english: 'Darwin: This is the Chrono-Engine. It lets us travel through time.'
+    deutsch: "Darwin: Das ist die Chrono-Maschine. Sie erm\xF6glicht uns, durch die
+      Zeit zu reisen."
+    francais: 'Darwin : Voici le Chrono-Moteur. Il nous permet de voyager dans le
+      temps.'
+    italiano: "Darwin: Questo \xE8 il Crono-Motore. Ci permette di viaggiare nel
+      tempo."
+  - key: DIALOGUE_INTRO_006
+    english: 'Player: To the past or future?'
+    deutsch: 'Spieler: In die Vergangenheit oder in die Zukunft?'
+    francais: "Joueur : Vers le pass\xE9 ou le futur ?"
+    italiano: 'Giocatore: Nel passato o nel futuro?'
+  - key: DIALOGUE_INTRO_007
+    english: 'Darwin: To the past only. It is how I have made most of my discoveries.'
+    deutsch: 'Darwin: Nur in die Vergangenheit. So habe ich die meisten meiner Entdeckungen
+      gemacht.'
+    francais: "Darwin : Seulement vers le pass\xE9. C\u2019est ainsi que j\u2019ai
+      fait la plupart de mes d\xE9couvertes."
+    italiano: "Darwin: Solo nel passato. \xC8 cos\xEC che ho fatto la maggior parte
+      delle mie scoperte."
+  - key: DIALOGUE_INTRO_008
+    english: 'Musowl: Hoo! Let''s begin when you are ready!'
+    deutsch: Huhuu! Lass uns beginnen, wenn du bereit bist!
+    francais: "Hou ! Commen\xE7ons quand tu es pr\xEAt !"
+    italiano: Hoo! Iniziamo quando sei pronto!
+  - key: STAGE1_INTRO_001
+    english: Drag the skull clue into the matching slot.
+    deutsch: "Ziehe den Sch\xE4del-Hinweis in den passenden Platz."
+    francais: "Fais glisser l\u2019indice du cr\xE2ne dans l\u2019emplacement correspondant."
+    italiano: "Trascina l\u2019indizio del teschio nello spazio corrispondente."
+  - key: STAGE1_INTRO_002
+    english: Excellent! Now we can begin the mission.
+    deutsch: "Ausgezeichnet! Jetzt k\xF6nnen wir mit der Mission beginnen."
+    francais: Excellent ! Nous pouvons maintenant commencer la mission.
+    italiano: Eccellente! Ora possiamo iniziare la missione.
+  - key: STAGE1_ASSEMBLY_001
+    english: Assemble the Brasilodon skeleton.
+    deutsch: Setze das Brasilodon-Skelett zusammen.
+    francais: Assemble le squelette du Brasilodon.
+    italiano: Assembla lo scheletro del Brasilodon.
+  - key: STAGE1_ASSEMBLY_002
+    english: 'Correct pieces placed: {current}/{total}'
+    deutsch: 'Richtige Teile platziert: {current}/{total}'
+    francais: "Pi\xE8ces correctes plac\xE9es : {current}/{total}"
+    italiano: 'Pezzi corretti posizionati: {current}/{total}'
+  - key: STAGE1_ASSEMBLY_003
+    english: Skeleton complete!
+    deutsch: "Skelett vollst\xE4ndig!"
+    francais: "Squelette termin\xE9 !"
+    italiano: Scheletro completato!
+  - key: BONEINFO_DEFAULT_NAME
+    english: Select a bone
+    deutsch: "W\xE4hle einen Knochen"
+    francais: "S\xE9lectionne un os"
+    italiano: Seleziona un osso
+  - key: BONEINFO_DEFAULT_DESC
+    english: Tap or click a bone to learn more about it.
+    deutsch: "Klicke auf einen Knochen, um mehr dar\xFCber zu erfahren."
+    francais: Clique sur un os pour en apprendre davantage.
+    italiano: "Clicca su un osso per saperne di pi\xF9."
+  - key: STAGE1_MISSION_TITLE
+    english: "Late Triassic \u2014 First Mammals"
+    deutsch: "Sp\xE4te Trias \u2014 Erste S\xE4ugetiere"
+    francais: "Trias sup\xE9rieur \u2014 Premiers mammif\xE8res"
+    italiano: "Triassico superiore \u2014 Primi mammiferi"
+  - key: STAGE1_MISSION_DESC
+    english: Find the clues that reveal an early mammal.
+    deutsch: "Finde die Hinweise, die ein fr\xFChes S\xE4ugetier enth\xFCllen."
+    francais: "Trouve les indices qui r\xE9v\xE8lent un mammif\xE8re primitif."
+    italiano: Trova gli indizi che rivelano un mammifero primitivo.
+  - key: STAGE1_COMPLETION_TITLE
+    english: LEVEL 1 COMPLETED
+    deutsch: LEVEL 1 ABGESCHLOSSEN
+    francais: "NIVEAU 1 TERMIN\xC9"
+    italiano: LIVELLO 1 COMPLETATO
+  - key: STAGE1_COMPLETION_DESC
+    english: "Woohoo! You assembled me! I am Brasilodon Quadrangularis \u2014 the
+      earliest mammal ever!"
+    deutsch: "Juhu! Du hast mich zusammengesetzt! Ich bin Brasilodon Quadrangularis
+      \u2014 das fr\xFCheste S\xE4ugetier \xFCberhaupt!"
+    francais: "Youhou ! Tu m\u2019as reconstitu\xE9 ! Je suis Brasilodon Quadrangularis
+      \u2014 le tout premier mammif\xE8re !"
+    italiano: "Woohoo! Mi hai assemblato! Sono il Brasilodon Quadrangularis \u2014
+      il primo mammifero mai esistito!"
+  - key: BONE_CRANIUM_NAME
+    english: Cranium
+    deutsch: Cranium
+    francais: "Cr\xE2ne"
+    italiano: Cranio
+  - key: BONE_CRANIUM_DESC
+    english: The skull is the hard bone that protects the brain. It helps keep the
+      head safe and holds the eyes, nose, and mouth in place.
+    deutsch: "Der Sch\xE4del ist der harte Knochen, der das Gehirn sch\xFCtzt. Er
+      hilft, den Kopf sicher zu halten und tr\xE4gt die Augen, die Nase und den Mund."
+    francais: "Le cr\xE2ne est l\u2019os dur qui prot\xE8ge le cerveau. Il aide \xE0
+      garder la t\xEAte en s\xE9curit\xE9 et maintient les yeux, le nez et la bouche
+      en place."
+    italiano: "Il cranio \xE8 l\u2019osso duro che protegge il cervello. Aiuta a
+      tenere al sicuro la testa e sostiene gli occhi, il naso e la bocca."
+  - key: BONE_DENTES_NAME
+    english: Teeth (Dentes)
+    deutsch: "Z\xE4hne (Dentes)"
+    francais: Dents (Dentes)
+    italiano: Denti (Dentes)
+  - key: BONE_DENTES_DESC
+    english: Teeth are used for biting and chewing food. They help animals eat and
+      survive by breaking food into smaller pieces.
+    deutsch: "Z\xE4hne werden zum Bei\xDFen und Kauen von Nahrung benutzt. Sie helfen
+      Tieren beim Fressen und \xDCberleben, indem sie Nahrung in kleinere St\xFCcke
+      zerlegen."
+    francais: "Les dents servent \xE0 mordre et \xE0 m\xE2cher la nourriture. Elles
+      aident les animaux \xE0 manger et \xE0 survivre en coupant la nourriture en
+      petits morceaux."
+    italiano: "I denti servono per mordere e masticare il cibo. Aiutano gli animali
+      a mangiare e a sopravvivere spezzando il cibo in pezzi pi\xF9 piccoli."
+  - key: BONE_FEMUR_NAME
+    english: Femur
+    deutsch: Femur
+    francais: "F\xE9mur"
+    italiano: Femore
+  - key: BONE_FEMUR_DESC
+    english: The femur is the large bone in the upper leg. It helps the body stand,
+      walk, and move.
+    deutsch: "Der Femur ist der gro\xDFe Knochen im oberen Bein. Er hilft dem K\xF6rper
+      beim Stehen, Gehen und Bewegen."
+    francais: "Le f\xE9mur est le grand os de la partie sup\xE9rieure de la jambe.
+      Il aide le corps \xE0 se tenir debout, \xE0 marcher et \xE0 bouger."
+    italiano: "Il femore \xE8 il grande osso della parte superiore della gamba. Aiuta
+      il corpo a stare in piedi, camminare e muoversi."
+  - key: BONE_HUMERUS_NAME
+    english: Humerus
+    deutsch: Humerus
+    francais: "Hum\xE9rus"
+    italiano: Omero
+  - key: BONE_HUMERUS_DESC
+    english: The humerus is a long bone in the front leg. It helps animals move,
+      push, and support their body while walking. Humans have this bone in their
+      arms.
+    deutsch: "Der Humerus ist ein langer Knochen im vorderen Bein. Er hilft Tieren,
+      sich zu bewegen, zu dr\xFCcken und ihren K\xF6rper beim Gehen zu st\xFCtzen.
+      Beim Menschen befindet sich dieser Knochen im Arm."
+    francais: "L\u2019hum\xE9rus est un os long de la patte avant. Il aide les animaux
+      \xE0 bouger, pousser et soutenir leur corps en marchant. Chez l\u2019humain,
+      cet os se trouve dans le bras."
+    italiano: "L\u2019omero \xE8 un osso lungo della zampa anteriore. Aiuta gli animali
+      a muoversi, spingere e sostenere il corpo mentre camminano. Negli esseri umani
+      questo osso si trova nel braccio."
+  - key: BONE_ASTRAGALOS_NAME
+    english: Astragalos
+    deutsch: Astragalos
+    francais: Astragale
+    italiano: Astragalo
+  - key: BONE_ASTRAGALOS_DESC
+    english: The astragalos is an important ankle bone. It helps connect the leg
+      to the foot and allows smooth movement while walking.
+    deutsch: "Der Astragalos ist ein wichtiger Knochen im Kn\xF6chel. Er verbindet
+      das Bein mit dem Fu\xDF und sorgt f\xFCr fl\xFCssige Bewegungen beim Gehen."
+    francais: "L\u2019astragale est un os important de la cheville. Il relie la jambe
+      au pied et permet un mouvement fluide pendant la marche."
+    italiano: "L\u2019astragalo \xE8 un importante osso della caviglia. Aiuta a collegare
+      la gamba al piede e permette un movimento fluido mentre si cammina."
+  - key: BONE_SCAPULA_NAME
+    english: Scapula
+    deutsch: Scapula
+    francais: Scapula
+    italiano: Scapola
+  - key: BONE_SCAPULA_DESC
+    english: The scapula is also called the shoulder blade. It helps the arms move
+      and connects the arm to the body.
+    deutsch: "Die Scapula wird auch Schulterblatt genannt. Sie hilft den Armen bei
+      der Bewegung und verbindet den Arm mit dem K\xF6rper."
+    francais: "La scapula est aussi appel\xE9e omoplate. Elle aide les bras \xE0
+      bouger et relie le bras au corps.\t"
+    italiano: "La scapola \xE8 chiamata anche spalla ossea o scapola. Aiuta le braccia
+      a muoversi e collega il braccio al corpo."
+  - key: TITLE_SUBTITLE
+    english: Bones of Meaning
+    deutsch: Knochen der Bedeutung
+    francais: Les os du sens
+    italiano: Ossa di significato
+  - key: AUDIO
+    english: AUDIO
+    deutsch: AUDIO
+    francais: AUDIO
+    italiano: AUDIO
+  - key: SETTINGS_SFX
+    english: SFX
+    deutsch: SFX
+    francais: EFFETS
+    italiano: EFFETTI
+  - key: SETTINGS_MUSIC
+    english: MUSIC
+    deutsch: MUSIK
+    francais: MUSIQUE
+    italiano: MUSICA
+  - key: LANGUAGE
+    english: LANGUAGE
+    deutsch: SPRACHE
+    francais: LANGUE
+    italiano: LINGUA
+  - key: SETTINGS_CURRENT_SELECTION
+    english: 'CURRENT:'
+    deutsch: 'AKTUELL:'
+    francais: 'ACTUEL :'
+    italiano: 'ATTUALE:'
+  - key: CHARACTER
+    english: CHARACTER
+    deutsch: CHARAKTER
+    francais: PERSONNAGE
+    italiano: PERSONAGGIO
+  - key: SETTINGS_MALE
+    english: MALE
+    deutsch: "M\xC4NNLICH"
+    francais: MASCULIN
+    italiano: MASCHILE
+  - key: SETTINGS_FEMALE
+    english: FEMALE
+    deutsch: WEIBLICH
+    francais: "F\xC9MININ"
+    italiano: FEMMINILE
+  - key: LANGUAGE_SWITCH
+    english: ENGLISH
+    deutsch: DEUTSCH
+    francais: "FRAN\xC7AIS"
+    italiano: ITALIANO
+  - key: LEVEL
+    english: LEVEL
+    deutsch: LEVEL
+    francais: NIVEAU
+    italiano: LIVELLO
+  - key: CHAPTER
+    english: CHAPTER
+    deutsch: KAPITEL
+    francais: CHAPITRE
+    italiano: CAPITOLO
+  - key: INSTRUCTIONS_STAGE1_MECHANIC
+    english: 'Drag each bone to its correct place in the skeleton.
+
+
+
+      Tap on
+      a bone to learn its name and what it does.'
+    deutsch: 'Ziehe jeden Knochen an die richtige Stelle im Skelett.
+
+
+
+      Tippe
+      auf einen Knochen, um seinen Namen und seine Funktion zu lernen.'
+    francais: "Fais glisser chaque os \xE0 la bonne place dans le squelette.\r\n\r\nAppuie
+      sur un os pour apprendre son nom et sa fonction."
+    italiano: 'Trascina ogni osso nella posizione corretta nello scheletro.
+
+
+
+      Tocca
+      un osso per scoprire il suo nome e la sua funzione.'
+  - key: INSTRUCTIONS_STAGE2_MECHANIC
+    english: "Drag each bone to the correct function. \n\nMatch bones with what they
+      do in the body and complete all matches to finish the level."
+    deutsch: "Ziehe jeden Knochen zur passenden Funktion. \n\nOrdne die Knochen ihrer
+      Aufgabe im K\xF6rper zu und vervollst\xE4ndige alle Zuordnungen, um das Level
+      abzuschlie\xDFen."
+    francais: "Fais glisser chaque os vers la bonne fonction. \n\nAssocie les os
+      \xE0 leur r\xF4le dans le corps et compl\xE8te toutes les associations pour
+      terminer le niveau."
+    italiano: 'Trascina ogni osso nella funzione corretta.
+
+
+      Abbina le ossa
+      al loro ruolo nel corpo e completa tutti gli abbinamenti per finire il livello.'
+  - key: STORYLINE
+    english: STORYLINE
+    deutsch: GESCHICHTE
+    francais: HISTOIRE
+    italiano: STORIA
+  - key: SKELETON_LENGTH_ESTIMATE
+    english: 'Estimated body length: 25 cm'
+    deutsch: "Gesch\xE4tzte K\xF6rperl\xE4nge: 25 cm"
+    francais: "Longueur corporelle estim\xE9e : 25 cm"
+    italiano: 'Lunghezza corporea stimata: 25 cm'
+  - key: STAGE2_ASSEMBLY_TEXT
+    english: Help Yeti match each bone to its function!
+    deutsch: Hilf dem Yeti, jeden Knochen seiner Funktion zuzuordnen!
+    francais: "Aide le Y\xE9ti \xE0 associer chaque os \xE0 sa fonction !"
+    italiano: Aiuta lo Yeti ad abbinare ogni osso alla sua funzione!
+  - key: COMING_SOON
+    english: COMING SOON
+    deutsch: KOMMT BALD
+    francais: "BIENT\xD4T"
+    italiano: PROSSIMAMENTE
+  - key: REWARDS
+    english: REWARDS
+    deutsch: BELOHNUNGEN
+    francais: "R\xC9COMPENSES"
+    italiano: RICOMPENSE
+  - key: DETAILS
+    english: DETAILS
+    deutsch: INFOS
+    francais: "D\xC9TAILS"
+    italiano: DETTAGLI
+  - key: SKIP_DIALOGUE
+    english: SKIP DIALOGUE
+    deutsch: "DIALOG \xDCBERSPRINGEN"
+    francais: PASSER LE DIALOGUE
+    italiano: SALTA DIALOGO
+  - key: TIME_RAN_OUT
+    english: TIME RAN OUT!
+    deutsch: ZEIT ABGELAUFEN!
+    francais: "TEMPS \xC9COUL\xC9 !"
+    italiano: TEMPO SCADUTO!
+  - key: RETRY
+    english: RETRY
+    deutsch: ERNEUT VERSUCHEN
+    francais: "R\xC9ESSAYER"
+    italiano: RIPROVA
+  - key: MAIN_MENU
+    english: MAIN MENU
+    deutsch: "HAUPTMEN\xDC"
+    francais: MENU PRINCIPAL
+    italiano: MENU PRINCIPALE
+  - key: FAIL_DESC_NIBBLES
+    english: Oh no! Time ran out before you could help Nibbles complete the discovery.
+      Try again and help Darwin finish the bone puzzle!
+    deutsch: "Oh nein! Die Zeit ist abgelaufen, bevor du Nibbles bei der Entdeckung
+      helfen konntest. Versuch es noch einmal und hilf Darwin, das Knochenr\xE4tsel
+      zu l\xF6sen!"
+    francais: "Oh non ! Le temps est \xE9coul\xE9 avant que tu puisses aider Nibbles
+      \xE0 terminer la d\xE9couverte. R\xE9essaie et aide Darwin \xE0 r\xE9soudre
+      le puzzle des os !"
+    italiano: "Oh no! Il tempo \xE8 scaduto prima che tu potessi aiutare Nibbles
+      a completare la scoperta. Riprova e aiuta Darwin a risolvere il puzzle delle
+      ossa!"
+  - key: FAIL_DESC_YETI
+    english: Oh no! Time ran out before you could help Yeti solve the movement clues.
+      Try again and match the bones before the timer ends!
+    deutsch: Oh nein! Die Zeit ist abgelaufen, bevor du Yeti bei den Bewegungshinweisen
+      helfen konntest. Versuch es noch einmal und ordne die Knochen zu, bevor die
+      Zeit endet!
+    francais: "Oh non ! Le temps est \xE9coul\xE9 avant que tu puisses aider Yeti
+      \xE0 r\xE9soudre les indices de mouvement. R\xE9essaie et associe les os avant
+      la fin du temps !"
+    italiano: "Oh no! Il tempo \xE8 scaduto prima che tu potessi aiutare Yeti a risolvere
+      gli indizi sul movimento. Riprova e abbina le ossa prima che il timer finisca!"
+  - key: FAIL_DESC_ACHILLES
+    english: Oh no! Time ran out before you could help Achilles uncover the ancient
+      bone clue. Try again and complete the challenge!
+    deutsch: Oh nein! Die Zeit ist abgelaufen, bevor du Achilles helfen konntest,
+      den alten Knochenhinweis zu entdecken. Versuch es noch einmal und meistere
+      die Herausforderung!
+    francais: "Oh non ! Le temps est \xE9coul\xE9 avant que tu puisses aider Achille
+      \xE0 d\xE9couvrir l\u2019ancien indice osseux. R\xE9essaie et termine le d\xE9fi
+      !"
+    italiano: "Oh no! Il tempo \xE8 scaduto prima che tu potessi aiutare Achille
+      a scoprire l\u2019antico indizio osseo. Riprova e completa la sfida!"
+  - key: DIALOGUE_STAGE1_PRE_001
+    english: 'Darwin: Our first journey begins in the Late Triassic, more than 200
+      million years ago.'
+    deutsch: "Darwin: Unsere erste Reise beginnt in der sp\xE4ten Trias, vor mehr
+      als 200 Millionen Jahren."
+    francais: "Darwin : Notre premier voyage commence au Trias sup\xE9rieur, il y
+      a plus de 200 millions d\u2019ann\xE9es."
+    italiano: "Darwin: Il nostro primo viaggio inizia nel Triassico superiore, pi\xF9
+      di 200 milioni di anni fa."
+  - key: DIALOGUE_STAGE1_PRE_002
+    english: 'Player: That is really far back! What are we looking for?'
+    deutsch: 'Spieler: Das ist wirklich sehr lange her! Wonach suchen wir?'
+    francais: "Joueur : C\u2019est vraiment tr\xE8s loin dans le pass\xE9 ! Que cherchons-nous
+      ?"
+    italiano: "Giocatore: \xC8 davvero molto indietro nel tempo! Che cosa stiamo
+      cercando?"
+  - key: DIALOGUE_STAGE1_PRE_003
+    english: 'Darwin: A tiny mammal-like creature called Nibbles. Its bones can teach
+      us how early mammals were built.'
+    deutsch: "Darwin: Ein winziges s\xE4ugetier\xE4hnliches Wesen namens Nibbles.
+      Seine Knochen k\xF6nnen uns zeigen, wie fr\xFChe S\xE4ugetiere aufgebaut waren."
+    francais: "Darwin : Une petite cr\xE9ature semblable \xE0 un mammif\xE8re, appel\xE9e
+      Nibbles. Ses os peuvent nous apprendre comment les premiers mammif\xE8res \xE9taient
+      construits."
+    italiano: "Darwin: Una piccola creatura simile a un mammifero chiamata Nibbles.
+      Le sue ossa possono insegnarci com\u2019erano fatti i primi mammiferi."
+  - key: DIALOGUE_STAGE1_PRE_004
+    english: 'Musowl: Hoo! Small bones can hide big discoveries!'
+    deutsch: "Musowl: Huhu! Kleine Knochen k\xF6nnen gro\xDFe Entdeckungen verbergen!"
+    francais: "Musowl : Hou hou ! De petits os peuvent cacher de grandes d\xE9couvertes
+      !"
+    italiano: 'Musowl: Uh uh! Piccole ossa possono nascondere grandi scoperte!'
+  - key: DIALOGUE_STAGE1_PRE_005
+    english: 'Darwin: Your task is to rebuild the skeleton by placing each bone in
+      the correct slot.'
+    deutsch: 'Darwin: Deine Aufgabe ist es, das Skelett wieder aufzubauen, indem
+      du jeden Knochen an die richtige Stelle setzt.'
+    francais: "Darwin : Ta mission est de reconstruire le squelette en pla\xE7ant
+      chaque os au bon endroit."
+    italiano: "Darwin: Il tuo compito \xE8 ricostruire lo scheletro mettendo ogni
+      osso nello spazio corretto."
+  - key: DIALOGUE_STAGE1_PRE_006
+    english: 'Player: So I need to look carefully at the shapes?'
+    deutsch: 'Spieler: Also muss ich genau auf die Formen achten?'
+    francais: 'Joueur : Donc je dois bien observer les formes ?'
+    italiano: 'Giocatore: Quindi devo osservare attentamente le forme?'
+  - key: DIALOGUE_STAGE1_PRE_007
+    english: 'Darwin: Exactly. Bones are clues. Their size, shape, and position tell
+      us how an animal lived and moved.'
+    deutsch: "Darwin: Genau. Knochen sind Hinweise. Ihre Gr\xF6\xDFe, Form und Position
+      erz\xE4hlen uns, wie ein Tier lebte und sich bewegte."
+    francais: "Darwin : Exactement. Les os sont des indices. Leur taille, leur forme
+      et leur position nous racontent comment un animal vivait et se d\xE9pla\xE7ait."
+    italiano: 'Darwin: Esatto. Le ossa sono indizi. La loro dimensione, forma e posizione
+      ci raccontano come viveva e si muoveva un animale.'
+  - key: DIALOGUE_STAGE1_PRE_008
+    english: 'Musowl: Hoo! Help Nibbles come back together!'
+    deutsch: 'Musowl: Huhu! Hilf Nibbles, wieder ganz zu werden!'
+    francais: "Musowl : Hou hou ! Aide Nibbles \xE0 se reconstituer !"
+    italiano: 'Musowl: Uh uh! Aiuta Nibbles a tornare intero!'
+  - key: DIALOGUE_STAGE1_POST_001
+    english: 'Darwin: Excellent work! Nibbles is whole again.'
+    deutsch: "Darwin: Hervorragende Arbeit! Nibbles ist wieder vollst\xE4ndig."
+    francais: 'Darwin : Excellent travail ! Nibbles est de nouveau complet.'
+    italiano: "Darwin: Ottimo lavoro! Nibbles \xE8 di nuovo completo."
+  - key: DIALOGUE_STAGE1_POST_002
+    english: 'Player: The bones were like puzzle pieces, but they also had meaning.'
+    deutsch: 'Spieler: Die Knochen waren wie Puzzleteile, aber sie hatten auch eine
+      Bedeutung.'
+    francais: "Joueur : Les os \xE9taient comme des pi\xE8ces de puzzle, mais ils
+      avaient aussi une signification."
+    italiano: 'Giocatore: Le ossa erano come pezzi di un puzzle, ma avevano anche
+      un significato.'
+  - key: DIALOGUE_STAGE1_POST_003
+    english: 'Darwin: Precisely. When scientists rebuild a skeleton, they learn about
+      body size, posture, and movement.'
+    deutsch: "Darwin: Ganz genau. Wenn Wissenschaftler ein Skelett rekonstruieren,
+      lernen sie etwas \xFCber K\xF6rpergr\xF6\xDFe, Haltung und Bewegung."
+    francais: "Darwin : Pr\xE9cis\xE9ment. Quand les scientifiques reconstruisent
+      un squelette, ils apprennent des choses sur la taille du corps, la posture
+      et le mouvement."
+    italiano: 'Darwin: Precisamente. Quando gli scienziati ricostruiscono uno scheletro,
+      imparano informazioni sulla dimensione del corpo, la postura e il movimento.'
+  - key: DIALOGUE_STAGE1_POST_004
+    english: 'Musowl: Hoo! A fossil is not just old. It is evidence!'
+    deutsch: 'Musowl: Huhu! Ein Fossil ist nicht nur alt. Es ist ein Beweis!'
+    francais: "Musowl : Hou hou ! Un fossile n\u2019est pas seulement vieux. C\u2019est
+      une preuve !"
+    italiano: "Musowl: Uh uh! Un fossile non \xE8 solo antico. \xC8 una prova!"
+  - key: DIALOGUE_STAGE1_POST_005
+    english: "Darwin: You have earned Nibbles\u2019 discovery card. Our next mission
+      will ask a different question: what are bones made to do?"
+    deutsch: "Darwin: Du hast Nibbles\u2019 Entdeckungskarte verdient. Unsere n\xE4chste
+      Mission stellt eine andere Frage: Wozu sind Knochen da?"
+    francais: "Darwin : Tu as gagn\xE9 la carte de d\xE9couverte de Nibbles. Notre
+      prochaine mission posera une autre question : \xE0 quoi servent les os ?"
+    italiano: "Darwin: Hai guadagnato la carta scoperta di Nibbles. La nostra prossima
+      missione far\xE0 una domanda diversa: a cosa servono le ossa?"
+  - key: DIALOGUE_STAGE1_POST_006
+    english: 'Musowl: Hoo! The Chrono-Engine is ready for the next journey!'
+    deutsch: "Musowl: Huhu! Die Chrono-Maschine ist bereit f\xFCr die n\xE4chste
+      Reise!"
+    francais: "Musowl : Hou hou ! Le Chrono-Moteur est pr\xEAt pour le prochain voyage
+      !"
+    italiano: "Musowl: Uh uh! Il Chrono-Motore \xE8 pronto per il prossimo viaggio!"
+  - key: DIALOGUE_STAGE2_PRE_001
+    english: 'Darwin: Our next signal comes from a cold ancient landscape.'
+    deutsch: "Darwin: Unser n\xE4chstes Signal kommt aus einer kalten, uralten Landschaft."
+    francais: "Darwin : Notre prochain signal vient d\u2019un paysage ancien et froid."
+    italiano: 'Darwin: Il nostro prossimo segnale arriva da un antico paesaggio freddo.'
+  - key: DIALOGUE_STAGE2_PRE_002
+    english: 'Player: Is that where Yeti lives?'
+    deutsch: 'Spieler: Lebt dort Yeti?'
+    francais: "Joueur : C\u2019est l\xE0 que vit Yeti ?"
+    italiano: "Giocatore: \xC8 l\xEC che vive Yeti?"
+  - key: DIALOGUE_STAGE2_PRE_003
+    english: 'Darwin: Yes. Yeti needs help understanding how different bones support
+      movement.'
+    deutsch: "Darwin: Ja. Yeti braucht Hilfe, um zu verstehen, wie verschiedene Knochen
+      Bewegung unterst\xFCtzen."
+    francais: "Darwin : Oui. Yeti a besoin d\u2019aide pour comprendre comment diff\xE9rents
+      os soutiennent le mouvement."
+    italiano: "Darwin: S\xEC. Yeti ha bisogno di aiuto per capire come diverse ossa
+      sostengono il movimento."
+  - key: DIALOGUE_STAGE2_PRE_004
+    english: 'Musowl: Hoo! Not every bone has the same job!'
+    deutsch: 'Musowl: Huhu! Nicht jeder Knochen hat dieselbe Aufgabe!'
+    francais: "Musowl : Hou hou ! Tous les os n\u2019ont pas le m\xEAme r\xF4le !"
+    italiano: 'Musowl: Uh uh! Non tutte le ossa hanno lo stesso compito!'
+  - key: DIALOGUE_STAGE2_PRE_005
+    english: 'Darwin: This time, do not only think about shape. Think about function.'
+    deutsch: 'Darwin: Denk diesmal nicht nur an die Form. Denk auch an die Funktion.'
+    francais: "Darwin : Cette fois, ne pense pas seulement \xE0 la forme. Pense aussi
+      \xE0 la fonction."
+    italiano: 'Darwin: Questa volta non pensare solo alla forma. Pensa anche alla
+      funzione.'
+  - key: DIALOGUE_STAGE2_PRE_006
+    english: 'Player: Function means what the bone does?'
+    deutsch: 'Spieler: Funktion bedeutet, was der Knochen macht?'
+    francais: "Joueur : La fonction, c\u2019est ce que fait l\u2019os ?"
+    italiano: "Giocatore: Funzione significa ci\xF2 che fa l\u2019osso?"
+  - key: DIALOGUE_STAGE2_PRE_007
+    english: 'Darwin: Exactly. Some bones support weight, some help with balance,
+      and some guide motion.'
+    deutsch: 'Darwin: Genau. Manche Knochen tragen Gewicht, manche helfen beim Gleichgewicht,
+      und manche lenken Bewegungen.'
+    francais: "Darwin : Exactement. Certains os portent le poids, d\u2019autres aident
+      \xE0 garder l\u2019\xE9quilibre, et d\u2019autres guident le mouvement."
+    italiano: "Darwin: Esatto. Alcune ossa sostengono il peso, altre aiutano l\u2019equilibrio
+      e altre guidano il movimento."
+  - key: DIALOGUE_STAGE2_PRE_008
+    english: 'Musowl: Hoo! Match the clues and help Yeti move with confidence!'
+    deutsch: 'Musowl: Huhu! Ordne die Hinweise zu und hilf Yeti, sich sicher zu bewegen!'
+    francais: "Musowl : Hou hou ! Associe les indices et aide Yeti \xE0 bouger avec
+      confiance !"
+    italiano: 'Musowl: Uh uh! Abbina gli indizi e aiuta Yeti a muoversi con sicurezza!'
+  - key: DIALOGUE_STAGE2_POST_001
+    english: 'Darwin: Well done! You helped Yeti understand the movement clues.'
+    deutsch: 'Darwin: Gut gemacht! Du hast Yeti geholfen, die Bewegungshinweise zu
+      verstehen.'
+    francais: "Darwin : Bien jou\xE9 ! Tu as aid\xE9 Yeti \xE0 comprendre les indices
+      du mouvement."
+    italiano: 'Darwin: Ben fatto! Hai aiutato Yeti a capire gli indizi del movimento.'
+  - key: DIALOGUE_STAGE2_POST_002
+    english: 'Player: I noticed that bones are not only shapes. They have jobs.'
+    deutsch: 'Spieler: Ich habe gemerkt, dass Knochen nicht nur Formen sind. Sie
+      haben Aufgaben.'
+    francais: "Joueur : J\u2019ai remarqu\xE9 que les os ne sont pas seulement des
+      formes. Ils ont des r\xF4les."
+    italiano: 'Giocatore: Ho notato che le ossa non sono solo forme. Hanno dei compiti.'
+  - key: DIALOGUE_STAGE2_POST_003
+    english: 'Darwin: That is one of the most important ideas in anatomy: form and
+      function belong together.'
+    deutsch: "Darwin: Das ist eine der wichtigsten Ideen in der Anatomie: Form und
+      Funktion geh\xF6ren zusammen."
+    francais: "Darwin : C\u2019est l\u2019une des id\xE9es les plus importantes en
+      anatomie : la forme et la fonction vont ensemble."
+    italiano: "Darwin: Questa \xE8 una delle idee pi\xF9 importanti dell\u2019anatomia:
+      forma e funzione vanno insieme."
+  - key: DIALOGUE_STAGE2_POST_004
+    english: 'Musowl: Hoo! A strong shape can tell us how a body moves!'
+    deutsch: "Musowl: Huhu! Eine starke Form kann uns zeigen, wie sich ein K\xF6rper
+      bewegt!"
+    francais: 'Musowl : Hou hou ! Une forme solide peut nous montrer comment un corps
+      bouge !'
+    italiano: "Musowl: Uh uh! Una forma robusta pu\xF2 mostrarci come si muove un
+      corpo!"
+  - key: DIALOGUE_STAGE2_POST_005
+    english: "Darwin: You have earned Yeti\u2019s discovery card. Now we travel from
+      anatomy into history."
+    deutsch: 'Darwin: Du hast Yetis Entdeckungskarte verdient. Jetzt reisen wir von
+      der Anatomie in die Geschichte.'
+    francais: "Darwin : Tu as gagn\xE9 la carte de d\xE9couverte de Yeti. Maintenant,
+      nous passons de l\u2019anatomie \xE0 l\u2019histoire."
+    italiano: "Darwin: Hai guadagnato la carta scoperta di Yeti. Ora viaggiamo dall\u2019anatomia
+      alla storia."
+  - key: DIALOGUE_STAGE2_POST_006
+    english: 'Musowl: Hoo! The next clue comes from the ancient world!'
+    deutsch: "Musowl: Huhu! Der n\xE4chste Hinweis kommt aus der antiken Welt!"
+    francais: 'Musowl : Hou hou ! Le prochain indice vient du monde antique !'
+    italiano: 'Musowl: Uh uh! Il prossimo indizio arriva dal mondo antico!'
+  - key: DIALOGUE_STAGE3_PRE_001
+    english: 'Darwin: Our final journey leads us to the ancient world.'
+    deutsch: "Darwin: Unsere letzte Reise f\xFChrt uns in die antike Welt."
+    francais: "Darwin : Notre dernier voyage nous m\xE8ne dans le monde antique."
+    italiano: 'Darwin: Il nostro ultimo viaggio ci porta nel mondo antico.'
+  - key: DIALOGUE_STAGE3_PRE_002
+    english: 'Player: This place feels different. Are we still studying bones?'
+    deutsch: "Spieler: Dieser Ort f\xFChlt sich anders an. Untersuchen wir immer
+      noch Knochen?"
+    francais: "Joueur : Cet endroit semble diff\xE9rent. \xC9tudions-nous encore
+      les os ?"
+    italiano: 'Giocatore: Questo luogo sembra diverso. Stiamo ancora studiando le
+      ossa?'
+  - key: DIALOGUE_STAGE3_PRE_003
+    english: 'Darwin: Yes, but now bones also help us understand people, culture,
+      and history.'
+    deutsch: 'Darwin: Ja, aber jetzt helfen uns Knochen auch, Menschen, Kultur und
+      Geschichte zu verstehen.'
+    francais: "Darwin : Oui, mais maintenant les os nous aident aussi \xE0 comprendre
+      les personnes, la culture et l\u2019histoire."
+    italiano: "Darwin: S\xEC, ma ora le ossa ci aiutano anche a capire le persone,
+      la cultura e la storia."
+  - key: DIALOGUE_STAGE3_PRE_004
+    english: 'Musowl: Hoo! Archaeology listens to objects from the past!'
+    deutsch: "Musowl: Huhu! Arch\xE4ologie h\xF6rt den Dingen aus der Vergangenheit
+      zu!"
+    francais: "Musowl : Hou hou ! L\u2019arch\xE9ologie \xE9coute les objets du pass\xE9
+      !"
+    italiano: "Musowl: Uh uh! L\u2019archeologia ascolta gli oggetti del passato!"
+  - key: DIALOGUE_STAGE3_PRE_005
+    english: 'Darwin: You will examine larger bone structures, such as the skull
+      and pelvis, as important clues.'
+    deutsch: "Darwin: Du wirst gr\xF6\xDFere Knochenstrukturen untersuchen, zum Beispiel
+      den Sch\xE4del und das Becken, als wichtige Hinweise."
+    francais: "Darwin : Tu vas examiner de grandes structures osseuses, comme le
+      cr\xE2ne et le bassin, qui sont des indices importants."
+    italiano: "Darwin: Esaminerai strutture ossee pi\xF9 grandi, come il cranio e
+      il bacino, come indizi importanti."
+  - key: DIALOGUE_STAGE3_PRE_006
+    english: 'Player: So they are not just single bones. They are structured objects
+      with meaning?'
+    deutsch: 'Spieler: Also sind sie nicht nur einzelne Knochen. Sie sind strukturierte
+      Objekte mit Bedeutung?'
+    francais: "Joueur : Donc ce ne sont pas seulement des os isol\xE9s. Ce sont des
+      objets structur\xE9s qui ont du sens ?"
+    italiano: 'Giocatore: Quindi non sono solo singole ossa. Sono oggetti strutturati
+      con un significato?'
+  - key: DIALOGUE_STAGE3_PRE_007
+    english: 'Darwin: Correct. In archaeology, every structure and object must be
+      studied carefully and respectfully.'
+    deutsch: "Darwin: Richtig. In der Arch\xE4ologie m\xFCssen jede Struktur und
+      jedes Objekt sorgf\xE4ltig und respektvoll untersucht werden."
+    francais: "Darwin : Exactement. En arch\xE9ologie, chaque structure et chaque
+      objet doivent \xEAtre \xE9tudi\xE9s avec soin et respect."
+    italiano: 'Darwin: Esatto. In archeologia, ogni struttura e ogni oggetto devono
+      essere studiati con attenzione e rispetto.'
+  - key: DIALOGUE_STAGE3_PRE_008
+    english: 'Musowl: Hoo! Help Achilles uncover the ancient clue!'
+    deutsch: 'Musowl: Huhu! Hilf Achilles, den antiken Hinweis zu entdecken!'
+    francais: "Musowl : Hou hou ! Aide Achille \xE0 d\xE9couvrir l\u2019indice antique
+      !"
+    italiano: "Musowl: Uh uh! Aiuta Achille a scoprire l\u2019indizio antico!"
+  - key: DIALOGUE_STAGE3_POST_001
+    english: "Darwin: Wonderful work. Achilles\u2019 ancient clue has been uncovered."
+    deutsch: "Darwin: Wunderbare Arbeit. Achilles\u2019 antiker Hinweis wurde entdeckt."
+    francais: "Darwin : Merveilleux travail. L\u2019indice antique d\u2019Achille
+      a \xE9t\xE9 d\xE9couvert."
+    italiano: "Darwin: Ottimo lavoro. L\u2019antico indizio di Achille \xE8 stato
+      scoperto."
+  - key: DIALOGUE_STAGE3_POST_002
+    english: 'Player: This mission felt different. The bones told a human story.'
+    deutsch: "Spieler: Diese Mission f\xFChlte sich anders an. Die Knochen erz\xE4hlten
+      eine menschliche Geschichte."
+    francais: "Joueur : Cette mission semblait diff\xE9rente. Les os racontaient
+      une histoire humaine."
+    italiano: 'Giocatore: Questa missione sembrava diversa. Le ossa raccontavano
+      una storia umana.'
+  - key: DIALOGUE_STAGE3_POST_003
+    english: 'Darwin: Exactly. Anatomy helps us understand the body, while archaeology
+      helps us understand life, culture, and the past.'
+    deutsch: "Darwin: Genau. Anatomie hilft uns, den K\xF6rper zu verstehen, w\xE4hrend
+      Arch\xE4ologie uns hilft, Leben, Kultur und die Vergangenheit zu verstehen."
+    francais: "Darwin : Exactement. L\u2019anatomie nous aide \xE0 comprendre le
+      corps, tandis que l\u2019arch\xE9ologie nous aide \xE0 comprendre la vie, la
+      culture et le pass\xE9."
+    italiano: "Darwin: Esatto. L\u2019anatomia ci aiuta a capire il corpo, mentre
+      l\u2019archeologia ci aiuta a capire la vita, la cultura e il passato."
+  - key: DIALOGUE_STAGE3_POST_004
+    english: 'Musowl: Hoo! Bones can teach science and history together!'
+    deutsch: "Musowl: Huhu! Knochen k\xF6nnen Wissenschaft und Geschichte zusammen
+      lehren!"
+    francais: "Musowl : Hou hou ! Les os peuvent enseigner la science et l\u2019histoire
+      ensemble !"
+    italiano: 'Musowl: Uh uh! Le ossa possono insegnare scienza e storia insieme!'
+  - key: DIALOGUE_STAGE3_POST_005
+    english: "Darwin: You have completed the Chrono-Scientist prototype and earned
+      Achilles\u2019 discovery card."
+    deutsch: "Darwin: Du hast den Chrono-Scientist-Prototyp abgeschlossen und Achilles\u2019
+      Entdeckungskarte verdient."
+    francais: "Darwin : Tu as termin\xE9 le prototype Chrono-Scientist et gagn\xE9
+      la carte de d\xE9couverte d\u2019Achille."
+    italiano: 'Darwin: Hai completato il prototipo di Chrono-Scientist e guadagnato
+      la carta scoperta di Achille.'
+  - key: DIALOGUE_STAGE3_POST_006
+    english: 'Musowl: Hoo! A true bone detective returns to the lab!'
+    deutsch: "Musowl: Huhu! Ein echter Knochendetektiv kehrt ins Labor zur\xFCck!"
+    francais: "Musowl : Hou hou ! Un vrai d\xE9tective des os retourne au laboratoire
+      !"
+    italiano: 'Musowl: Uh uh! Un vero detective delle ossa ritorna in laboratorio!'
