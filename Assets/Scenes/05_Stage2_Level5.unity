@@ -156,10 +156,10 @@ RectTransform:
   - {fileID: 1322341372}
   m_Father: {fileID: 1196151372}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1500, y: 900}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &51467326
 MonoBehaviour:
@@ -1216,7 +1216,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -359.29}
+  m_AnchoredPosition: {x: 0.0023193, y: -283}
   m_SizeDelta: {x: 1135.7354, y: 89.44922}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &418201073
@@ -1287,7 +1287,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: -2
   m_characterHorizontalScale: 1
@@ -1321,7 +1321,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &418201075
@@ -1376,6 +1376,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dc9ebfaa62e0084989d181326961d81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  defaultBackgroundMusicClip: {fileID: 0}
+  buttonClickClip: {fileID: 0}
+  musicSource: {fileID: 0}
+  sfxSource: {fileID: 0}
+  playDefaultMusicOnStart: 1
+  loopMusic: 1
 --- !u!1 &456758141
 GameObject:
   m_ObjectHideFlags: 0
@@ -1612,6 +1618,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1589525498}
   - {fileID: 716801052}
   - {fileID: 1853685069}
   m_Father: {fileID: 1827966550}
@@ -2050,7 +2057,7 @@ GameObject:
   - component: {fileID: 549388257}
   - component: {fileID: 549388258}
   m_Layer: 5
-  m_Name: Piece_BiteChew
+  m_Name: Piece_Pelvis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2095,7 +2102,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5a792fcfd9f168043afb2f75d2b7b718, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 557d78a7287c06244ac954225599a3b8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2125,7 +2132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1b12d22d6fb02746bb0618d6bf08799, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIBoneDrag
-  boneID: teeth
+  boneID: pelvis
   placedSizeMultiplier: 1
   placedRotationZ: 0
   placedPositionOffset: {x: 0, y: 0}
@@ -2145,9 +2152,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoneInfoClickable
   infoPanel: {fileID: 538623011}
-  bonePreviewSprite: {fileID: 21300000, guid: 138e055e5f36e0b4ca5207a7337a2dea, type: 3}
-  boneNameKey: BONE_DENTES_NAME
-  boneDescriptionKey: BONE_DENTES_DESC
+  bonePreviewSprite: {fileID: 21300000, guid: 557d78a7287c06244ac954225599a3b8, type: 3}
+  boneNameKey: BONE_PELVIS_NAME
+  boneDescriptionKey: BONE_PELVIS_DESC
 --- !u!1 &582034884
 GameObject:
   m_ObjectHideFlags: 0
@@ -2295,7 +2302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoneInfoClickable
   infoPanel: {fileID: 538623011}
-  bonePreviewSprite: {fileID: 21300000, guid: 31f8045211b77d24a9bb2ab8fb24882c, type: 3}
+  bonePreviewSprite: {fileID: 21300000, guid: 768f3d9f9bed36c4196d709cdddcaf02, type: 3}
   boneNameKey: BONE_CRANIUM_NAME
   boneDescriptionKey: BONE_CRANIUM_DESC
 --- !u!1 &586110753
@@ -2407,7 +2414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoneInfoClickable
   infoPanel: {fileID: 538623011}
-  bonePreviewSprite: {fileID: 21300000, guid: b44375de91245bf4dba92d20c8f898f8, type: 3}
+  bonePreviewSprite: {fileID: 21300000, guid: efaab72008592fb4cbc88b50b468dcef, type: 3}
   boneNameKey: BONE_SCAPULA_NAME
   boneDescriptionKey: BONE_SCAPULA_DESC
 --- !u!1 &644581563
@@ -2645,7 +2652,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -625, y: 0}
-  m_SizeDelta: {x: 250, y: 140}
+  m_SizeDelta: {x: 220, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &716801053
 MonoBehaviour:
@@ -3322,6 +3329,7 @@ GameObject:
   - component: {fileID: 826384196}
   - component: {fileID: 826384198}
   - component: {fileID: 826384197}
+  - component: {fileID: 826384199}
   m_Layer: 5
   m_Name: DarwinHintScroll
   m_TagString: Untagged
@@ -3345,7 +3353,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 350}
+  m_AnchoredPosition: {x: 0, y: 405}
   m_SizeDelta: {x: 1800, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &826384197
@@ -3386,6 +3394,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826384195}
   m_CullTransparentMesh: 1
+--- !u!225 &826384199
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826384195}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &847466619
 GameObject:
   m_ObjectHideFlags: 0
@@ -3459,6 +3479,7 @@ GameObject:
   - component: {fileID: 851449148}
   - component: {fileID: 851449147}
   - component: {fileID: 851449150}
+  - component: {fileID: 851449151}
   m_Layer: 5
   m_Name: DarwinHintText
   m_TagString: Untagged
@@ -3582,7 +3603,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 345}
+  m_AnchoredPosition: {x: 0, y: 400}
   m_SizeDelta: {x: 1450, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &851449150
@@ -3600,6 +3621,18 @@ MonoBehaviour:
   targetText: {fileID: 851449147}
   charactersPerSecond: 35
   useUnscaledTime: 1
+--- !u!225 &851449151
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851449146}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &858995327
 GameObject:
   m_ObjectHideFlags: 0
@@ -3773,7 +3806,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -182.8}
+  m_AnchoredPosition: {x: 0, y: -300}
   m_SizeDelta: {x: 350, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &860356780
@@ -4055,7 +4088,7 @@ MonoBehaviour:
   missionPanel: {fileID: 51467324}
   assemblyPanel: {fileID: 1827966548}
   completionPanel: {fileID: 1848999634}
-  failPanel: {fileID: 0}
+  failPanel: {fileID: 847466619}
   assemblyController: {fileID: 1827966549}
 --- !u!4 &928869250
 Transform:
@@ -4206,7 +4239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoneInfoClickable
   infoPanel: {fileID: 538623011}
-  bonePreviewSprite: {fileID: 21300000, guid: 2b1245f47fece1340982027fb75bce87, type: 3}
+  bonePreviewSprite: {fileID: 21300000, guid: 39f3814cc9048ee419fddea3c8569921, type: 3}
   boneNameKey: BONE_FEMUR_NAME
   boneDescriptionKey: BONE_FEMUR_DESC
 --- !u!1 &1019436992
@@ -4313,6 +4346,7 @@ GameObject:
   - component: {fileID: 1021103581}
   - component: {fileID: 1021103583}
   - component: {fileID: 1021103582}
+  - component: {fileID: 1021103584}
   m_Layer: 0
   m_Name: SkullSlot
   m_TagString: Untagged
@@ -4329,8 +4363,8 @@ Transform:
   m_GameObject: {fileID: 1021103580}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.8, y: -15, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalPosition: {x: -28.94, y: -11.777, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.31385446, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1450002466}
@@ -4373,7 +4407,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.73, y: 1.82}
+    oldSize: {x: 12.8, y: 7.08}
     newSize: {x: 2.73, y: 1.82}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -4430,7 +4464,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 369d4d4402475724a962da732d20c2fd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6f11b462d31cb8640b2ad5b8edd18a70, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4440,6 +4474,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!225 &1021103584
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021103580}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1055257206
 GameObject:
   m_ObjectHideFlags: 0
@@ -5236,6 +5282,24 @@ MonoBehaviour:
   hintText: {fileID: 851449147}
   gameManager: {fileID: 928869249}
   hintTypewriter: {fileID: 851449150}
+  fadeOutCanvasGroups:
+  - {fileID: 826384199}
+  - {fileID: 851449151}
+  - {fileID: 1368940405}
+  fadeOutSpriteRenderers:
+  - {fileID: 1607209875}
+  - {fileID: 1809109033}
+  - {fileID: 1021103583}
+  disableAfterFade:
+  - {fileID: 826384195}
+  - {fileID: 851449146}
+  - {fileID: 1368940400}
+  - {fileID: 1607209872}
+  - {fileID: 1809109027}
+  - {fileID: 1021103580}
+  fadeOutDuration: 0.65
+  delayBeforeMissionPanel: 0.9
+  useUnscaledTime: 1
 --- !u!4 &1236549400
 Transform:
   m_ObjectHideFlags: 0
@@ -5453,7 +5517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoneInfoClickable
   infoPanel: {fileID: 538623011}
-  bonePreviewSprite: {fileID: 21300000, guid: b0580412f2ed6b14cbeb5c92df97196e, type: 3}
+  bonePreviewSprite: {fileID: 21300000, guid: e918f68da289b96469db16b9bca481bd, type: 3}
   boneNameKey: BONE_ASTRAGALOS_NAME
   boneDescriptionKey: BONE_ASTRAGALOS_DESC
 --- !u!1 &1283084359
@@ -5885,7 +5949,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 350, y: -70}
+  m_AnchoredPosition: {x: 492.87, y: -155}
   m_SizeDelta: {x: 150, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1322341373
@@ -6256,6 +6320,7 @@ GameObject:
   - component: {fileID: 1368940404}
   - component: {fileID: 1368940403}
   - component: {fileID: 1368940402}
+  - component: {fileID: 1368940405}
   m_Layer: 5
   m_Name: Btn_Continue
   m_TagString: Untagged
@@ -6377,6 +6442,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1368940400}
   m_CullTransparentMesh: 1
+--- !u!225 &1368940405
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368940400}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1392115718
 GameObject:
   m_ObjectHideFlags: 0
@@ -7087,7 +7164,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -206.1}
+  m_AnchoredPosition: {x: 0.0023193, y: -158}
   m_SizeDelta: {x: 1135.7354, y: 89.44922}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1558702980
@@ -7123,7 +7200,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Late Triassic \u2014 First Mammals"
+  m_text: PLEIOSCENE ERA
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 49d28a1c054818e4fb744abfd0be221a, type: 2}
   m_sharedMaterial: {fileID: -858447697376248123, guid: 49d28a1c054818e4fb744abfd0be221a, type: 2}
@@ -7192,7 +7269,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1558702982
@@ -7312,9 +7389,84 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoneInfoClickable
   infoPanel: {fileID: 538623011}
-  bonePreviewSprite: {fileID: 21300000, guid: 5d9ced098e44bd242becb6ba710dcab7, type: 3}
+  bonePreviewSprite: {fileID: 21300000, guid: 49a4a0cbfa86d304ba7f82f5cc5e3586, type: 3}
   boneNameKey: BONE_HUMERUS_NAME
   boneDescriptionKey: BONE_HUMERUS_DESC
+--- !u!1 &1589525497
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1589525498}
+  - component: {fileID: 1589525500}
+  - component: {fileID: 1589525499}
+  m_Layer: 5
+  m_Name: HolderImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1589525498
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589525497}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 538623010}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -625, y: 0}
+  m_SizeDelta: {x: 270, y: 150}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1589525499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589525497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 6f11b462d31cb8640b2ad5b8edd18a70, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1589525500
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589525497}
+  m_CullTransparentMesh: 1
 --- !u!1 &1607209872
 GameObject:
   m_ObjectHideFlags: 0
@@ -7324,6 +7476,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1607209873}
+  - component: {fileID: 1607209874}
+  - component: {fileID: 1607209875}
   m_Layer: 0
   m_Name: Characters
   m_TagString: Untagged
@@ -7348,6 +7502,77 @@ Transform:
   - {fileID: 92007723}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!225 &1607209874
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607209872}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!212 &1607209875
+SpriteRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607209872}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1607747143
 GameObject:
   m_ObjectHideFlags: 0
@@ -7752,7 +7977,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1649262115
@@ -7900,6 +8125,52 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &1743589691
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1743589693}
+  - component: {fileID: 1743589692}
+  m_Layer: 0
+  m_Name: ButtonAnimationAutoInstaller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1743589692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743589691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e84b96f1278b01345bdc51f932dd58af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButtonAnimationAutoInstaller
+  includeInactiveButtons: 1
+  installOnStart: 1
+--- !u!4 &1743589693
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743589691}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1010.04333, y: 457.20963, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1771054658
 GameObject:
   m_ObjectHideFlags: 0
@@ -8046,6 +8317,7 @@ GameObject:
   - component: {fileID: 1809109031}
   - component: {fileID: 1809109030}
   - component: {fileID: 1809109029}
+  - component: {fileID: 1809109034}
   m_Layer: 0
   m_Name: SkullClue
   m_TagString: Untagged
@@ -8062,8 +8334,8 @@ Transform:
   m_GameObject: {fileID: 1809109027}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21, y: -15.2, z: 0}
-  m_LocalScale: {x: 0.28, y: 0.28, z: 0.28}
+  m_LocalPosition: {x: -29, y: -14.04, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1450002466}
@@ -8101,6 +8373,7 @@ MonoBehaviour:
   introController: {fileID: 1236549399}
   highlightPulse: {fileID: 1809109029}
   snapDistance: 1
+  keepOriginalScaleOnPlace: 1
   placedScale: {x: 0.22, y: 0.22, z: 0.22}
 --- !u!50 &1809109031
 Rigidbody2D:
@@ -8163,17 +8436,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.08148193, y: 0.040744305}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 9.18, y: 6.81}
+    oldSize: {x: 8.09, y: 8.29}
     newSize: {x: 2.74, y: 1.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 9.5, y: 7}
+  m_Size: {x: 8.522282, y: 9.036918}
   m_EdgeRadius: 0
 --- !u!212 &1809109033
 SpriteRenderer:
@@ -8224,7 +8497,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 6bd39c7e8ef2c9c44ab8c2c79bc0b982, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 768f3d9f9bed36c4196d709cdddcaf02, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8234,6 +8507,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!225 &1809109034
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809109027}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1827829854
 GameObject:
   m_ObjectHideFlags: 0
@@ -8619,6 +8904,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1894004250}
   m_CullTransparentMesh: 1
+--- !u!1 &1895232240
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1895232242}
+  - component: {fileID: 1895232241}
+  m_Layer: 0
+  m_Name: SceneMusicController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1895232241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895232240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47614ade0e27f6f47b0e1b851c93ff36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneMusicController
+  sceneMusicClip: {fileID: 8300000, guid: 6b55853f6d9804542900b8685c4b9664, type: 3}
+  playOnStart: 1
+  stopMusicIfNoClip: 0
+--- !u!4 &1895232242
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895232240}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1010.04333, y: 457.20963, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1920895135
 GameObject:
   m_ObjectHideFlags: 0
@@ -8708,7 +9040,7 @@ GameObject:
   - component: {fileID: 1947262355}
   - component: {fileID: 1947262357}
   m_Layer: 5
-  m_Name: Slot_Dentes
+  m_Name: Slot_Pelvis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8784,7 +9116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a0214faeabe5684d9e306a9c7052c00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoneSlotUI
-  requiredBoneID: teeth
+  requiredBoneID: pelvis
   assemblyController: {fileID: 1827966549}
   placedSlotAlpha: 0.25
   fadeOnCorrect: 0
@@ -9464,7 +9796,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BITES AND CHEWS FOOD
+  m_text: HIP BONE STRUCTURE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e44775c20021f30429bbb192e83fa5f1, type: 2}
   m_sharedMaterial: {fileID: 655518705855749923, guid: e44775c20021f30429bbb192e83fa5f1, type: 2}
@@ -9647,3 +9979,5 @@ SceneRoots:
   - {fileID: 1102237090}
   - {fileID: 1095832744}
   - {fileID: 159147255}
+  - {fileID: 1743589693}
+  - {fileID: 1895232242}

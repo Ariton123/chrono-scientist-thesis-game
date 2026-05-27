@@ -1264,6 +1264,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 997726174}
   m_CullTransparentMesh: 1
+--- !u!1 &1013741993
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1013741995}
+  - component: {fileID: 1013741994}
+  m_Layer: 0
+  m_Name: SceneMusicController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1013741994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013741993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47614ade0e27f6f47b0e1b851c93ff36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneMusicController
+  sceneMusicClip: {fileID: 8300000, guid: cb3378a234c41e242a9e094a833b8bee, type: 3}
+  playOnStart: 1
+  stopMusicIfNoClip: 0
+--- !u!4 &1013741995
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013741993}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1010.04333, y: 457.20963, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1093014820
 GameObject:
   m_ObjectHideFlags: 0
@@ -1692,6 +1739,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dc9ebfaa62e0084989d181326961d81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  defaultBackgroundMusicClip: {fileID: 0}
+  buttonClickClip: {fileID: 0}
+  musicSource: {fileID: 0}
+  sfxSource: {fileID: 0}
+  playDefaultMusicOnStart: 1
+  loopMusic: 1
 --- !u!114 &1914359361 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1601021396280618351, guid: 1c199626d0adff942b83174bb01aa5d2, type: 3}
@@ -1846,6 +1899,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2063423855}
   m_CullTransparentMesh: 1
+--- !u!1 &2112402113
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2112402115}
+  - component: {fileID: 2112402114}
+  m_Layer: 0
+  m_Name: ButtonAnimationAutoInstaller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2112402114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112402113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e84b96f1278b01345bdc51f932dd58af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButtonAnimationAutoInstaller
+  includeInactiveButtons: 1
+  installOnStart: 1
+--- !u!4 &2112402115
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112402113}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1010.04333, y: 457.20963, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &7729760594835232248
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1972,3 +2071,5 @@ SceneRoots:
   - {fileID: 61106364}
   - {fileID: 49057524}
   - {fileID: 548256740}
+  - {fileID: 2112402115}
+  - {fileID: 1013741995}

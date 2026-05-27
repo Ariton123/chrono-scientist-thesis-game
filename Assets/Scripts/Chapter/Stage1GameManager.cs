@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Stage1GameManager : MonoBehaviour
 {
@@ -40,13 +41,14 @@ public class Stage1GameManager : MonoBehaviour
 
     public void StartAssemblyPhase()
     {
-        HidePanelInstant(missionPanel);
-        HidePanelInstant(completionPanel);
+        missionPanel.SetActive(false);
+        assemblyPanel.SetActive(true);
+
+        if (completionPanel != null)
+            completionPanel.SetActive(false);
 
         if (failPanel != null)
             failPanel.SetActive(false);
-
-        ShowPanelAnimated(assemblyPanel);
 
         if (assemblyController != null)
             assemblyController.BeginAssembly();

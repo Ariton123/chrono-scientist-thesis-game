@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8dcebb5102bf03a42a42e127d0ee566f
+guid: 828cb9fca7fb6fe45ab36f31aaefde61
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4849266862358880195
-    second: brasilodon_teeth_edges_0
+      213: 2154987560644097583
+    second: discovery card - back page template_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: brasilodon_teeth_edges_0
+      name: discovery card - back page template_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1
-        width: 164
-        height: 87
+        x: 2
+        y: 0
+        width: 545
+        height: 814
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d30a6003b71f3bcb0800000000000000
-      internalID: -4849266862358880195
+      spriteID: f26b39fc4cd08ed10800000000000000
+      internalID: 2154987560644097583
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      brasilodon_teeth_edges_0: -4849266862358880195
+      discovery card - back page template_0: 2154987560644097583
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

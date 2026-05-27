@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 138e055e5f36e0b4ca5207a7337a2dea
+guid: 30b6843e31df29c43819fa9cc09e5a70
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5240855170695494280
-    second: brasilodon_teeth_0
+      213: -2643320655012708715
+    second: Achilles_pelvis_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: brasilodon_teeth_0
+      name: Achilles_pelvis_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 162
-        height: 87
+        width: 664
+        height: 829
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 88af290b2024bb840800000000000000
-      internalID: 5240855170695494280
+      spriteID: 59eb3828ed9015bd0800000000000000
+      internalID: -2643320655012708715
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      brasilodon_teeth_0: 5240855170695494280
+      Achilles_pelvis_0: -2643320655012708715
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

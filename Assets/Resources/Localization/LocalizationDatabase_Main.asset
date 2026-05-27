@@ -178,22 +178,20 @@ MonoBehaviour:
       en place."
     italiano: "Il cranio \xE8 l\u2019osso duro che protegge il cervello. Aiuta a
       tenere al sicuro la testa e sostiene gli occhi, il naso e la bocca."
-  - key: BONE_DENTES_NAME
-    english: Teeth (Dentes)
-    deutsch: "Z\xE4hne (Dentes)"
-    francais: Dents (Dentes)
-    italiano: Denti (Dentes)
-  - key: BONE_DENTES_DESC
-    english: Teeth are used for biting and chewing food. They help animals eat and
-      survive by breaking food into smaller pieces.
-    deutsch: "Z\xE4hne werden zum Bei\xDFen und Kauen von Nahrung benutzt. Sie helfen
-      Tieren beim Fressen und \xDCberleben, indem sie Nahrung in kleinere St\xFCcke
-      zerlegen."
-    francais: "Les dents servent \xE0 mordre et \xE0 m\xE2cher la nourriture. Elles
-      aident les animaux \xE0 manger et \xE0 survivre en coupant la nourriture en
-      petits morceaux."
-    italiano: "I denti servono per mordere e masticare il cibo. Aiutano gli animali
-      a mangiare e a sopravvivere spezzando il cibo in pezzi pi\xF9 piccoli."
+  - key: BONE_PELVIS_NAME
+    english: Pelvis
+    deutsch: Becken
+    francais: Bassin
+    italiano: Bacino
+  - key: BONE_PELVIS_DESC
+    english: The pelvis is a bone structure that connects the body to the legs and
+      helps support balance, posture, and movement.
+    deutsch: "Das Becken ist eine Knochenstruktur, die den K\xF6rper mit den Beinen
+      verbindet und Gleichgewicht, Haltung und Bewegung unterst\xFCtzt."
+    francais: "Le bassin est une structure osseuse qui relie le corps aux jambes
+      et aide \xE0 soutenir l\u2019\xE9quilibre, la posture et le mouvement."
+    italiano: "Il bacino \xE8 una struttura ossea che collega il corpo alle gambe
+      e aiuta a sostenere equilibrio, postura e movimento."
   - key: BONE_FEMUR_NAME
     english: Femur
     deutsch: Femur
@@ -743,3 +741,316 @@ MonoBehaviour:
     francais: "Musowl : Hou hou ! Un vrai d\xE9tective des os retourne au laboratoire
       !"
     italiano: 'Musowl: Uh uh! Un vero detective delle ossa ritorna in laboratorio!'
+  - key: FRONT_PAGE
+    english: FRONT PAGE
+    deutsch: VORDERSEITE
+    francais: PAGE AVANT
+    italiano: PAGINA FRONTALE
+  - key: BACK_PAGE
+    english: BACK PAGE
+    deutsch: "R\xDCCKSEITE"
+    francais: "PAGE ARRI\xC8RE"
+    italiano: PAGINA POSTERIORE
+  - key: FLIP
+    english: FLIP
+    deutsch: UMDREHEN
+    francais: RETOURNER
+    italiano: GIRA
+  - key: CARD_RANK
+    english: CARD RANK
+    deutsch: KARTENRANG
+    francais: RANG DE CARTE
+    italiano: GRADO CARTA
+  - key: GOLD
+    english: GOLD
+    deutsch: GOLD
+    francais: OR
+    italiano: ORO
+  - key: SILVER
+    english: SILVER
+    deutsch: SILBER
+    francais: ARGENT
+    italiano: ARGENTO
+  - key: BRONZE
+    english: BRONZE
+    deutsch: BRONZE
+    francais: BRONZE
+    italiano: BRONZO
+  - key: ASTRAGALOS_BADGE
+    english: 'Astragalos Badge:'
+    deutsch: 'Astragalos-Abzeichen:'
+    francais: 'Badge Astragale :'
+    italiano: 'Distintivo Astragalo:'
+  - key: REWARD_NIBBLES_FRONT
+    english: '<b>Character:</b> Nibbles
+
+      <b>Represents:</b> Brasilodon quadrangularis
+
+      <b>Era:</b>
+      Late Triassic
+
+      <b>Time:</b> about 225 million years ago
+
+      <b>Status:</b>
+      Extinct
+
+      <b>Size:</b> roughly 20 cm long
+
+
+      <b>Focus:</b>
+
+      Fossil
+      reconstruction, skeleton assembly, and early mammal anatomy.'
+    deutsch: "<b>Figur:</b> Nibbles\n<b>Repr\xE4sentiert:</b> Brasilodon quadrangularis\n<b>Zeitalter:</b>
+      Sp\xE4te Trias\n<b>Zeit:</b> vor etwa 225 Millionen Jahren\n<b>Status:</b>
+      Ausgestorben\n<b>Gr\xF6\xDFe:</b> ungef\xE4hr 20 cm lang\n\n<b>Fokus:</b>\nFossilrekonstruktion,
+      Skelettaufbau und fr\xFChe S\xE4ugetieranatomie."
+    francais: "<b>Personnage :</b> Nibbles\n<b>Repr\xE9sente :</b> Brasilodon quadrangularis\n<b>\xC9poque
+      :</b> Trias sup\xE9rieur\n<b>Temps :</b> il y a environ 225 millions d\u2019ann\xE9es\n<b>Statut
+      :</b> \xC9teint\n<b>Taille :</b> environ 20 cm de long\n\n<b>Focus :</b>\nReconstruction
+      fossile, assemblage du squelette et anatomie des premiers mammif\xE8res."
+    italiano: '<b>Personaggio:</b> Nibbles
+
+      <b>Rappresenta:</b> Brasilodon
+      quadrangularis
+
+      <b>Epoca:</b> Triassico superiore
+
+      <b>Tempo:</b>
+      circa 225 milioni di anni fa
+
+      <b>Stato:</b> Estinto
+
+      <b>Dimensione:</b>
+      circa 20 cm di lunghezza
+
+
+      <b>Focus:</b>
+
+      Ricostruzione fossile,
+      assemblaggio dello scheletro e anatomia dei primi mammiferi.'
+  - key: REWARD_NIBBLES_BACK
+    english: "In this mission, you learned the names of important bones and bone
+      structures by rebuilding parts of Nibbles\u2019 skeleton.\n\n<b>Cranium / Skull</b>
+      \u2014 protects the brain and shapes the head.\n<b>Scapula / Shoulder blade</b>
+      \u2014 connects the front limb to the body.\n<b>Humerus / Upper arm bone</b>
+      \u2014 helps the front limb move and support weight.\n<b>Pelvis / Hip bone
+      structure</b> \u2014 connects the body to the hind limbs.\n<b>Femur / Thigh
+      bone</b> \u2014 supports the body and helps with movement.\n<b>Astragalos /
+      Ankle bone</b> \u2014 helps transfer weight through the foot."
+    deutsch: "In dieser Mission hast du die Namen wichtiger Knochen und Knochenstrukturen
+      gelernt, indem du Teile von Nibbles\u2019 Skelett wieder aufgebaut hast.\n\n<b>Cranium
+      / Sch\xE4del</b> \u2014 sch\xFCtzt das Gehirn und formt den Kopf.\n<b>Scapula
+      / Schulterblatt</b> \u2014 verbindet die Vordergliedma\xDFe mit dem K\xF6rper.\n<b>Humerus
+      / Oberarmknochen</b> \u2014 hilft der Vordergliedma\xDFe, sich zu bewegen und
+      Gewicht zu tragen.\n<b>Pelvis / Beckenknochenstruktur</b> \u2014 verbindet
+      den K\xF6rper mit den Hintergliedma\xDFen.\n<b>Femur / Oberschenkelknochen</b>
+      \u2014 st\xFCtzt den K\xF6rper und hilft bei der Bewegung.\n<b>Astragalos /
+      Sprungbein</b> \u2014 hilft, Gewicht durch den Fu\xDF zu \xFCbertragen."
+    francais: "Dans cette mission, tu as appris les noms d\u2019os importants et
+      de structures osseuses en reconstruisant des parties du squelette de Nibbles.\n\n<b>Cranium
+      / Cr\xE2ne</b> \u2014 prot\xE8ge le cerveau et forme la t\xEAte.\n<b>Scapula
+      / Omoplate</b> \u2014 relie le membre ant\xE9rieur au corps.\n<b>Humerus /
+      Hum\xE9rus</b> \u2014 aide le membre ant\xE9rieur \xE0 bouger et \xE0 supporter
+      du poids.\n<b>Pelvis / Structure osseuse du bassin</b> \u2014 relie le corps
+      aux membres post\xE9rieurs.\n<b>Femur / F\xE9mur</b> \u2014 soutient le corps
+      et aide au mouvement.\n<b>Astragalos / Os de la cheville</b> \u2014 aide \xE0
+      transf\xE9rer le poids \xE0 travers le pied."
+    italiano: "In questa missione hai imparato i nomi di ossa importanti e strutture
+      ossee ricostruendo parti dello scheletro di Nibbles.\n\n<b>Cranium / Cranio</b>
+      \u2014 protegge il cervello e d\xE0 forma alla testa.\n<b>Scapula / Scapola</b>
+      \u2014 collega l\u2019arto anteriore al corpo.\n<b>Humerus / Omero</b> \u2014
+      aiuta l\u2019arto anteriore a muoversi e a sostenere il peso.\n<b>Pelvis /
+      Struttura ossea del bacino</b> \u2014 collega il corpo agli arti posteriori.\n<b>Femur
+      / Femore</b> \u2014 sostiene il corpo e aiuta nel movimento.\n<b>Astragalos
+      / Osso della caviglia</b> \u2014 aiuta a trasferire il peso attraverso il piede."
+  - key: REWARD_YETI_FRONT
+    english: '<b>Character:</b> Yeti
+
+      <b>Represents:</b> Australopithecus
+
+      <b>Era:</b>
+      Pliocene to early Pleistocene
+
+      <b>Time:</b> about 4.4 to 1.4 million
+      years ago
+
+      <b>Status:</b> Extinct
+
+      <b>Size:</b> 1 to 1.5 meters
+      tall
+
+
+      <b>Focus:</b>
+
+      Bone function, balance, and movement.'
+    deutsch: "<b>Figur:</b> Yeti\n<b>Repr\xE4sentiert:</b> Australopithecus\n<b>Zeitalter:</b>
+      Plioz\xE4n bis fr\xFChes Pleistoz\xE4n\n<b>Zeit:</b> vor etwa 4,4 bis 1,4 Millionen
+      Jahren\n<b>Status:</b> Ausgestorben\n<b>Gr\xF6\xDFe:</b> 1 bis 1,5 Meter gro\xDF\n\n<b>Fokus:</b>\nKnochenfunktion,
+      Gleichgewicht und Bewegung."
+    francais: "<b>Personnage :</b> Yeti\n<b>Repr\xE9sente :</b> Australopithecus\n<b>\xC9poque
+      :</b> Plioc\xE8ne au d\xE9but du Pl\xE9istoc\xE8ne\n<b>Temps :</b> il y a environ
+      4,4 \xE0 1,4 million d\u2019ann\xE9es\n<b>Statut :</b> \xC9teint\n<b>Taille
+      :</b> 1 \xE0 1,5 m\xE8tre de haut\n\n<b>Focus :</b>\nFonction des os, \xE9quilibre
+      et mouvement."
+    italiano: '<b>Personaggio:</b> Yeti
+
+      <b>Rappresenta:</b> Australopithecus
+
+      <b>Epoca:</b>
+      dal Pliocene al primo Pleistocene
+
+      <b>Tempo:</b> circa 4,4-1,4 milioni
+      di anni fa
+
+      <b>Stato:</b> Estinto
+
+      <b>Dimensione:</b> alto da 1
+      a 1,5 metri
+
+
+      <b>Focus:</b>
+
+      Funzione delle ossa, equilibrio e
+      movimento.'
+  - key: REWARD_YETI_BACK
+    english: "In this mission, you matched each bone or structure by its function.
+      Bones are not only shapes \u2014 they help bodies move, balance, and stand.\n\n<b>Cranium</b>
+      \u2014 protects the brain and supports the senses.\n<b>Scapula</b> \u2014 helps
+      position the shoulder and guide arm movement.\n<b>Humerus</b> \u2014 supports
+      reaching, lifting, and front-limb movement.\n<b>Pelvis</b> \u2014 supports
+      upright posture and connects the trunk to the legs.\n<b>Femur</b> \u2014 carries
+      body weight during standing and walking.\n<b>Astragalos</b> \u2014 helps balance
+      the body and guide smooth ankle motion."
+    deutsch: "In dieser Mission hast du jeden Knochen oder jede Struktur nach ihrer
+      Funktion zugeordnet. Knochen sind nicht nur Formen \u2014 sie helfen K\xF6rpern,
+      sich zu bewegen, das Gleichgewicht zu halten und zu stehen.\n\n<b>Cranium</b>
+      \u2014 sch\xFCtzt das Gehirn und unterst\xFCtzt die Sinne.\n<b>Scapula</b>
+      \u2014 hilft, die Schulter zu positionieren und die Armbewegung zu f\xFChren.\n<b>Humerus</b>
+      \u2014 unterst\xFCtzt Greifen, Heben und Bewegung der Vordergliedma\xDFe.\n<b>Pelvis</b>
+      \u2014 unterst\xFCtzt die aufrechte Haltung und verbindet den Rumpf mit den
+      Beinen.\n<b>Femur</b> \u2014 tr\xE4gt das K\xF6rpergewicht beim Stehen und
+      Gehen.\n<b>Astragalos</b> \u2014 hilft, den K\xF6rper im Gleichgewicht zu halten
+      und die Bewegung des Sprunggelenks zu f\xFChren."
+    francais: "Dans cette mission, tu as associ\xE9 chaque os ou structure \xE0 sa
+      fonction. Les os ne sont pas seulement des formes \u2014 ils aident les corps
+      \xE0 bouger, \xE0 garder l\u2019\xE9quilibre et \xE0 se tenir debout.\n\n<b>Cranium</b>
+      \u2014 prot\xE8ge le cerveau et soutient les sens.\n<b>Scapula</b> \u2014 aide
+      \xE0 positionner l\u2019\xE9paule et \xE0 guider le mouvement du bras.\n<b>Humerus</b>
+      \u2014 soutient l\u2019action d\u2019atteindre, de soulever et de bouger le
+      membre ant\xE9rieur.\n<b>Pelvis</b> \u2014 soutient la posture droite et relie
+      le tronc aux jambes.\n<b>Femur</b> \u2014 porte le poids du corps pendant la
+      station debout et la marche.\n<b>Astragalos</b> \u2014 aide \xE0 \xE9quilibrer
+      le corps et \xE0 guider le mouvement fluide de la cheville."
+    italiano: "In questa missione hai abbinato ogni osso o struttura alla sua funzione.
+      Le ossa non sono solo forme \u2014 aiutano i corpi a muoversi, a mantenere
+      l\u2019equilibrio e a stare in piedi.\n\n<b>Cranium</b> \u2014 protegge il
+      cervello e sostiene i sensi.\n<b>Scapula</b> \u2014 aiuta a posizionare la
+      spalla e a guidare il movimento del braccio.\n<b>Humerus</b> \u2014 sostiene
+      il raggiungere, il sollevare e il movimento dell\u2019arto anteriore.\n<b>Pelvis</b>
+      \u2014 sostiene la postura eretta e collega il tronco alle gambe.\n<b>Femur</b>
+      \u2014 porta il peso del corpo durante la posizione eretta e la camminata.\n<b>Astragalos</b>
+      \u2014 aiuta a bilanciare il corpo e a guidare il movimento fluido della caviglia."
+  - key: REWARD_ACHILLES_FRONT
+    english: '<b>Character:</b> Achilles
+
+      <b>Represents:</b> Homo sapiens
+
+      <b>Era:</b>
+      Ancient Greece / Spartan era
+
+      <b>Time:</b> about 2500 years ago
+
+      <b>Status:</b>
+      Living species
+
+      <b>Size:</b> around 1.7 meters tall
+
+
+      <b>Focus:</b>
+
+      Human
+      bone structures, archaeology, and cultural meaning.'
+    deutsch: "<b>Figur:</b> Achilles\n<b>Repr\xE4sentiert:</b> Homo sapiens\n<b>Zeitalter:</b>
+      Antikes Griechenland / spartanische \xC4ra\n<b>Zeit:</b> vor etwa 2500 Jahren\n<b>Status:</b>
+      Lebende Art\n<b>Gr\xF6\xDFe:</b> ungef\xE4hr 1,7 Meter gro\xDF\n\n<b>Fokus:</b>\nMenschliche
+      Knochenstrukturen, Arch\xE4ologie und kulturelle Bedeutung."
+    francais: "<b>Personnage :</b> Achille\n<b>Repr\xE9sente :</b> Homo sapiens\n<b>\xC9poque
+      :</b> Gr\xE8ce antique / \xE9poque spartiate\n<b>Temps :</b> il y a environ
+      2500 ans\n<b>Statut :</b> Esp\xE8ce vivante\n<b>Taille :</b> environ 1,7 m\xE8tre
+      de haut\n\n<b>Focus :</b>\nStructures osseuses humaines, arch\xE9ologie et
+      signification culturelle."
+    italiano: '<b>Personaggio:</b> Achille
+
+      <b>Rappresenta:</b> Homo sapiens
+
+      <b>Epoca:</b>
+      Antica Grecia / era spartana
+
+      <b>Tempo:</b> circa 2500 anni fa
+
+      <b>Stato:</b>
+      Specie vivente
+
+      <b>Dimensione:</b> circa 1,7 metri di altezza
+
+
+      <b>Focus:</b>
+
+      Strutture
+      ossee umane, archeologia e significato culturale.'
+  - key: REWARD_ACHILLES_BACK
+    english: "In this mission, you decoded bone amulets by observing their shape
+      and meaning. In archaeology, bones can become objects of memory, identity,
+      belief, and culture.\n\n<b>Cranium amulet</b> \u2014 can symbolize identity,
+      thought, memory, or ancestry.\n<b>Scapula amulet</b> \u2014 can suggest protection,
+      strength, or movement.\n<b>Humerus amulet</b> \u2014 can represent action,
+      work, or human ability.\n<b>Pelvis amulet</b> \u2014 can symbolize support,
+      life, posture, or origin.\n<b>Femur amulet</b> \u2014 can represent strength,
+      travel, or endurance.\n<b>Astragalos amulet</b> \u2014 can symbolize balance,
+      movement, luck, or play."
+    deutsch: "In dieser Mission hast du Knochenamulette entschl\xFCsselt, indem du
+      ihre Form und Bedeutung beobachtet hast. In der Arch\xE4ologie k\xF6nnen Knochen
+      zu Objekten von Erinnerung, Identit\xE4t, Glauben und Kultur werden.\n\n<b>Cranium-Amulett</b>
+      \u2014 kann Identit\xE4t, Denken, Erinnerung oder Abstammung symbolisieren.\n<b>Scapula-Amulett</b>
+      \u2014 kann Schutz, St\xE4rke oder Bewegung andeuten.\n<b>Humerus-Amulett</b>
+      \u2014 kann Handlung, Arbeit oder menschliche F\xE4higkeit darstellen.\n<b>Pelvis-Amulett</b>
+      \u2014 kann Unterst\xFCtzung, Leben, Haltung oder Ursprung symbolisieren.\n<b>Femur-Amulett</b>
+      \u2014 kann St\xE4rke, Reisen oder Ausdauer darstellen.\n<b>Astragalos-Amulett</b>
+      \u2014 kann Gleichgewicht, Bewegung, Gl\xFCck oder Spiel symbolisieren."
+    francais: "Dans cette mission, tu as d\xE9cod\xE9 des amulettes en os en observant
+      leur forme et leur signification. En arch\xE9ologie, les os peuvent devenir
+      des objets de m\xE9moire, d\u2019identit\xE9, de croyance et de culture.\n\n<b>Amulette
+      cranium</b> \u2014 peut symboliser l\u2019identit\xE9, la pens\xE9e, la m\xE9moire
+      ou l\u2019ascendance.\n<b>Amulette scapula</b> \u2014 peut sugg\xE9rer la protection,
+      la force ou le mouvement.\n<b>Amulette humerus</b> \u2014 peut repr\xE9senter
+      l\u2019action, le travail ou la capacit\xE9 humaine.\n<b>Amulette pelvis</b>
+      \u2014 peut symboliser le soutien, la vie, la posture ou l\u2019origine.\n<b>Amulette
+      femur</b> \u2014 peut repr\xE9senter la force, le voyage ou l\u2019endurance.\n<b>Amulette
+      astragalos</b> \u2014 peut symboliser l\u2019\xE9quilibre, le mouvement, la
+      chance ou le jeu."
+    italiano: "In questa missione hai decodificato amuleti ossei osservando la loro
+      forma e il loro significato. In archeologia, le ossa possono diventare oggetti
+      di memoria, identit\xE0, credenza e cultura.\n\n<b>Amuleto cranium</b> \u2014
+      pu\xF2 simboleggiare identit\xE0, pensiero, memoria o antenati.\n<b>Amuleto
+      scapula</b> \u2014 pu\xF2 suggerire protezione, forza o movimento.\n<b>Amuleto
+      humerus</b> \u2014 pu\xF2 rappresentare azione, lavoro o capacit\xE0 umana.\n<b>Amuleto
+      pelvis</b> \u2014 pu\xF2 simboleggiare sostegno, vita, postura o origine.\n<b>Amuleto
+      femur</b> \u2014 pu\xF2 rappresentare forza, viaggio o resistenza.\n<b>Amuleto
+      astragalos</b> \u2014 pu\xF2 simboleggiare equilibrio, movimento, fortuna o
+      gioco."
+  - key: NIBBLES
+    english: NIBBLES
+    deutsch: NIBBLES
+    francais: NIBBLES
+    italiano: NIBBLES
+  - key: YETI
+    english: YETI
+    deutsch: YETI
+    francais: YETI
+    italiano: YETI
+  - key: ACHILLES
+    english: ACHILLES
+    deutsch: ACHILLES
+    francais: ACHILLE
+    italiano: ACHILLE

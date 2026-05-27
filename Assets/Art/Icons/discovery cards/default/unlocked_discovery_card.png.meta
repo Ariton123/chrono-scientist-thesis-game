@@ -129,9 +129,9 @@ TextureImporter:
       name: unlocked_discovery_card_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 0
-        width: 519
+        width: 522
         height: 829
       alignment: 0
       pivot: {x: 0, y: 0}

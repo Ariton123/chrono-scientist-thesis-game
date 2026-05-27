@@ -1,8 +1,10 @@
+using System.Collections;
 using UnityEngine;
 using TMPro;
 
 public class Stage1WorldIntroController : MonoBehaviour
 {
+    [Header("Core References")]
     public GameObject continueButton;
     public TMP_Text hintText;
     public Stage1GameManager gameManager;
@@ -10,7 +12,28 @@ public class Stage1WorldIntroController : MonoBehaviour
     [Header("Typewriter")]
     [SerializeField] private TypewriterTextUI hintTypewriter;
 
+    [Header("UI Fade Before Mission Panel")]
+    [Tooltip("Use this for UI objects only: hint scroll, hint text, continue button. Do NOT add the background.")]
+    [SerializeField] private CanvasGroup[] fadeOutCanvasGroups;
+
+    [Header("Character Fade Before Mission Panel")]
+    [Tooltip("Use this for SpriteRenderer characters, for example DarwinGroup and Apprentice sprite renderers.")]
+    [SerializeField] private SpriteRenderer[] fadeOutSpriteRenderers;
+
+    [Header("Disable After Fade")]
+    [Tooltip("Objects disabled after fade finishes. Add hint scroll, hint text, button, and character parent objects if needed.")]
+    [SerializeField] private GameObject[] disableAfterFade;
+
+    [Header("Timing")]
+    [SerializeField] private float fadeOutDuration = 0.65f;
+
+    [Tooltip("Pause after everything fades out, before the mission panel opens.")]
+    [SerializeField] private float delayBeforeMissionPanel = 0.9f;
+
+    [SerializeField] private bool useUnscaledTime = true;
+
     private bool cluePlacedCorrectly = false;
+    private bool isTransitioning = false;
 
     private void Awake()
     {
@@ -33,7 +56,7 @@ public class Stage1WorldIntroController : MonoBehaviour
             hintTypewriter.StopTyping();
     }
 
-    void Start()
+    private void Start()
     {
         if (continueButton != null)
             continueButton.SetActive(false);
@@ -42,11 +65,17 @@ public class Stage1WorldIntroController : MonoBehaviour
             hintText.gameObject.SetActive(true);
 
         cluePlacedCorrectly = false;
+        isTransitioning = false;
+
+        ResetFadeObjects();
         RefreshHintText();
     }
 
     public void OnCluePlacedCorrectly()
     {
+        if (isTransitioning)
+            return;
+
         cluePlacedCorrectly = true;
         RefreshHintText();
 
@@ -56,22 +85,155 @@ public class Stage1WorldIntroController : MonoBehaviour
 
     public void OnContinueClicked()
     {
+        if (isTransitioning)
+            return;
+
+        StartCoroutine(FadeOutThenOpenMissionPanel());
+    }
+
+    private IEnumerator FadeOutThenOpenMissionPanel()
+    {
+        isTransitioning = true;
+
         if (hintTypewriter != null)
             hintTypewriter.StopTyping();
 
-        if (continueButton != null)
-            continueButton.SetActive(false);
+        float elapsed = 0f;
 
-        if (hintText != null)
-            hintText.gameObject.SetActive(false);
+        while (elapsed < fadeOutDuration)
+        {
+            elapsed += DeltaTime();
+
+            float t = Mathf.Clamp01(elapsed / fadeOutDuration);
+            float smoothT = Mathf.SmoothStep(0f, 1f, t);
+            float alpha = Mathf.Lerp(1f, 0f, smoothT);
+
+            SetCanvasGroupsAlpha(alpha);
+            SetSpriteRenderersAlpha(alpha);
+
+            yield return null;
+        }
+
+        SetCanvasGroupsAlpha(0f);
+        SetSpriteRenderersAlpha(0f);
+
+        DisableFadeObjects();
+
+        if (delayBeforeMissionPanel > 0f)
+        {
+            if (useUnscaledTime)
+                yield return new WaitForSecondsRealtime(delayBeforeMissionPanel);
+            else
+                yield return new WaitForSeconds(delayBeforeMissionPanel);
+        }
 
         if (gameManager != null)
             gameManager.OpenMissionPanel();
+
+        isTransitioning = false;
+    }
+
+    private void ResetFadeObjects()
+    {
+        if (disableAfterFade != null)
+        {
+            foreach (GameObject obj in disableAfterFade)
+            {
+                if (obj != null)
+                    obj.SetActive(true);
+            }
+        }
+
+        if (fadeOutCanvasGroups != null)
+        {
+            foreach (CanvasGroup group in fadeOutCanvasGroups)
+            {
+                if (group == null)
+                    continue;
+
+                group.alpha = 1f;
+                group.interactable = true;
+                group.blocksRaycasts = true;
+            }
+        }
+
+        if (fadeOutSpriteRenderers != null)
+        {
+            foreach (SpriteRenderer spriteRenderer in fadeOutSpriteRenderers)
+            {
+                if (spriteRenderer == null)
+                    continue;
+
+                Color color = spriteRenderer.color;
+                color.a = 1f;
+                spriteRenderer.color = color;
+            }
+        }
+    }
+
+    private void SetCanvasGroupsAlpha(float alpha)
+    {
+        if (fadeOutCanvasGroups == null)
+            return;
+
+        foreach (CanvasGroup group in fadeOutCanvasGroups)
+        {
+            if (group == null)
+                continue;
+
+            group.alpha = alpha;
+        }
+    }
+
+    private void SetSpriteRenderersAlpha(float alpha)
+    {
+        if (fadeOutSpriteRenderers == null)
+            return;
+
+        foreach (SpriteRenderer spriteRenderer in fadeOutSpriteRenderers)
+        {
+            if (spriteRenderer == null)
+                continue;
+
+            Color color = spriteRenderer.color;
+            color.a = alpha;
+            spriteRenderer.color = color;
+        }
+    }
+
+    private void DisableFadeObjects()
+    {
+        if (fadeOutCanvasGroups != null)
+        {
+            foreach (CanvasGroup group in fadeOutCanvasGroups)
+            {
+                if (group == null)
+                    continue;
+
+                group.interactable = false;
+                group.blocksRaycasts = false;
+            }
+        }
+
+        if (disableAfterFade != null)
+        {
+            foreach (GameObject obj in disableAfterFade)
+            {
+                if (obj != null)
+                    obj.SetActive(false);
+            }
+        }
+    }
+
+    private float DeltaTime()
+    {
+        return useUnscaledTime ? Time.unscaledDeltaTime : Time.deltaTime;
     }
 
     private void HandleLanguageChanged(GameLanguage language)
     {
-        RefreshHintText();
+        if (!isTransitioning)
+            RefreshHintText();
     }
 
     private void RefreshHintText()

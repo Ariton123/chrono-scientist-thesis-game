@@ -129,10 +129,10 @@ TextureImporter:
       name: stage 3 mission assembly template_0
       rect:
         serializedVersion: 2
-        x: 2
+        x: 0
         y: 0
-        width: 1029
-        height: 829
+        width: 1025
+        height: 821
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

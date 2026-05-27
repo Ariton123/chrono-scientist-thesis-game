@@ -129,10 +129,10 @@ TextureImporter:
       name: brasilodon_skull_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 4
         y: 0
-        width: 272
-        height: 180
+        width: 1276
+        height: 799
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

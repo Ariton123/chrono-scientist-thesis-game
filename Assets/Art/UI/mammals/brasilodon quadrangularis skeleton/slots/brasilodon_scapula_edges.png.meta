@@ -129,10 +129,10 @@ TextureImporter:
       name: brasilodon_scapula_edges_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 1
-        width: 164
-        height: 102
+        x: 0
+        y: 8
+        width: 1280
+        height: 794
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

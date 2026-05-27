@@ -40,14 +40,35 @@ public class RewardsPanelController : MonoBehaviour
 
         [Header("Opened Card UI")]
         public Sprite openedCardSprite;
+        public Sprite openedCardBackSprite;
+
+        [Tooltip("Fallback title if no localization key is assigned.")]
         public string openedCardTitle;
 
-        [TextArea(3, 8)]
-        public string openedCardDescription;
+        [Tooltip("Optional localization key for opened card title.")]
+        public string openedCardTitleKey;
+
+        [Header("Opened Card Front / Back Text")]
+        [Tooltip("Fallback front text if no localization key is assigned.")]
+        [TextArea(3, 10)]
+        public string openedCardFrontDescription;
+
+        [Tooltip("Optional localization key for front text.")]
+        public string openedCardFrontDescriptionKey;
+
+        [Tooltip("Fallback back text if no localization key is assigned.")]
+        [TextArea(5, 14)]
+        public string openedCardBackDescription;
+
+        [Tooltip("Optional localization key for back text.")]
+        public string openedCardBackDescriptionKey;
 
         [Header("Opened Card Astragalos Badge")]
         public Sprite blankAstragalosBadgeSprite;
         public Sprite earnedAstragalosBadgeSprite;
+
+        [Header("Opened Card Back Page Icons")]
+        public GameObject backBoneIconsGroup;
 
         [Header("Fallback Card Rank")]
         [Tooltip("Used only if no saved rank exists yet.")]
@@ -88,17 +109,34 @@ public class RewardsPanelController : MonoBehaviour
 
     [SerializeField] private Image openedCardImage;
     [SerializeField] private TMP_Text openedCardTitleText;
-    [SerializeField] private TMP_Text openedCardDescriptionText;
+
+    [Header("Opened Card Text Areas")]
+    [SerializeField] private TMP_Text openedFrontDescriptionText;
+    [SerializeField] private TMP_Text openedBackDescriptionText;
+
+    [Header("Opened Card Front / Back Controls")]
+    [SerializeField] private Button flipCardButton;
+    [SerializeField] private TMP_Text flipCardButtonText;
+    [SerializeField] private TMP_Text openedPageSideText;
+
+    [Header("Opened Card Page Visual Groups")]
+    [SerializeField] private GameObject backBoneIconsGroup;
+    [SerializeField] private GameObject astragalosBadgeGroup;
 
     [Header("Opened Card Performance")]
+    [Tooltip("This is the RankTintOverlay image. It swaps Gold/Silver/Bronze sprites.")]
     [SerializeField] private Image rankTintOverlay;
+
     [SerializeField] private TMP_Text openedRankText;
     [SerializeField] private Image openedAstragalosBadgeImage;
 
-    [Header("Rank Tint Colors")]
-    [SerializeField] private Color goldTintColor = new Color(1f, 0.78f, 0.15f, 0.18f);
-    [SerializeField] private Color silverTintColor = new Color(0.85f, 0.9f, 1f, 0.16f);
-    [SerializeField] private Color bronzeTintColor = new Color(0.75f, 0.38f, 0.12f, 0.18f);
+    [Header("Rank Overlay Sprites")]
+    [SerializeField] private Sprite goldRankOverlaySprite;
+    [SerializeField] private Sprite silverRankOverlaySprite;
+    [SerializeField] private Sprite bronzeRankOverlaySprite;
+
+    [Header("Opened Card Animation")]
+    [SerializeField] private UIPopupCardAnimator openedCardAnimator;
 
     [Header("Details Texts")]
     [SerializeField] private TMP_Text totalDiscoveryCardsText;
@@ -112,7 +150,13 @@ public class RewardsPanelController : MonoBehaviour
     [Header("Extra Details Texts")]
     [SerializeField] private TMP_Text astragalosBadgesText;
 
+    [Header("Opened Card Flip Animation")]
+    [SerializeField] private UICardFlipAnimator cardFlipAnimator;
+
     private RewardsTab currentTab = RewardsTab.Rewards;
+
+    private DiscoveryCard currentOpenedCard;
+    private bool showingBackSide = false;
 
     private const int TotalPossibleDiscoveryCards = 12;
     private const int TotalPossibleSideCharacters = 3;
@@ -126,12 +170,32 @@ public class RewardsPanelController : MonoBehaviour
         if (openedCardPopup != null)
             openedCardPopup.SetActive(false);
 
+        if (openedCardAnimator == null && openedCardPopup != null)
+            openedCardAnimator = openedCardPopup.GetComponentInChildren<UIPopupCardAnimator>(true);
+
         WireButtons();
     }
 
     private void OnEnable()
     {
+        if (LanguageManager.Instance != null)
+            LanguageManager.Instance.OnLanguageChanged += HandleLanguageChanged;
+
         RefreshAll();
+    }
+
+    private void OnDisable()
+    {
+        if (LanguageManager.Instance != null)
+            LanguageManager.Instance.OnLanguageChanged -= HandleLanguageChanged;
+    }
+
+    private void HandleLanguageChanged(GameLanguage language)
+    {
+        RefreshAll();
+
+        if (currentOpenedCard != null)
+            RefreshOpenedCardSideUI();
     }
 
     private void WireButtons()
@@ -146,6 +210,12 @@ public class RewardsPanelController : MonoBehaviour
         {
             detailsTitleButton.onClick.RemoveListener(ShowDetailsTab);
             detailsTitleButton.onClick.AddListener(ShowDetailsTab);
+        }
+
+        if (flipCardButton != null)
+        {
+            flipCardButton.onClick.RemoveListener(ToggleOpenedCardSide);
+            flipCardButton.onClick.AddListener(ToggleOpenedCardSide);
         }
 
         if (discoveryCards == null)
@@ -203,6 +273,23 @@ public class RewardsPanelController : MonoBehaviour
 
     public void CloseOpenedCard()
     {
+        currentOpenedCard = null;
+        showingBackSide = false;
+
+        SetAllBackBoneIconGroupsInactive();
+
+        if (openedCardTitleText != null)
+            openedCardTitleText.gameObject.SetActive(true);
+
+        if (astragalosBadgeGroup != null)
+            astragalosBadgeGroup.SetActive(true);
+
+        if (openedFrontDescriptionText != null)
+            openedFrontDescriptionText.gameObject.SetActive(true);
+
+        if (openedBackDescriptionText != null)
+            openedBackDescriptionText.gameObject.SetActive(false);
+
         if (openedCardPopup != null)
             openedCardPopup.SetActive(false);
     }
@@ -233,11 +320,7 @@ public class RewardsPanelController : MonoBehaviour
     private void RefreshTitleSwitch()
     {
         if (rewardsTitleText != null)
-        {
-            rewardsTitleText.text = LanguageManager.Instance != null
-                ? LanguageManager.Instance.GetText("REWARDS")
-                : "REWARDS";
-        }
+            rewardsTitleText.text = GetLocalizedText("REWARDS", "REWARDS");
 
         if (slashTitleText != null)
         {
@@ -246,11 +329,7 @@ public class RewardsPanelController : MonoBehaviour
         }
 
         if (detailsTitleText != null)
-        {
-            detailsTitleText.text = LanguageManager.Instance != null
-                ? LanguageManager.Instance.GetText("DETAILS")
-                : "DETAILS";
-        }
+            detailsTitleText.text = GetLocalizedText("DETAILS", "DETAILS");
     }
 
     private void RefreshTabs()
@@ -340,7 +419,7 @@ public class RewardsPanelController : MonoBehaviour
             if (card.cardTitleText != null)
             {
                 card.cardTitleText.gameObject.SetActive(unlocked);
-                card.cardTitleText.text = card.openedCardTitle;
+                card.cardTitleText.text = GetCardTitle(card);
             }
         }
     }
@@ -352,6 +431,9 @@ public class RewardsPanelController : MonoBehaviour
 
         if (!IsCardUnlocked(card))
             return;
+
+        currentOpenedCard = card;
+        showingBackSide = false;
 
         if (openedCardPopup != null)
         {
@@ -368,15 +450,122 @@ public class RewardsPanelController : MonoBehaviour
         }
 
         if (openedCardTitleText != null)
-            openedCardTitleText.text = card.openedCardTitle;
+        {
+            openedCardTitleText.gameObject.SetActive(true);
+            openedCardTitleText.text = GetCardTitle(card);
+        }
 
-        if (openedCardDescriptionText != null)
-            openedCardDescriptionText.text = card.openedCardDescription;
+        SetAllBackBoneIconGroupsInactive();
 
         CardRank earnedRank = GetSavedRank(card);
         bool earnedAstragalos = HasEarnedAstragalosBadge(card);
 
         ApplyOpenedCardPerformance(card, earnedRank, earnedAstragalos);
+        ShowOpenedCardFront();
+
+        if (openedCardAnimator == null && openedCardPopup != null)
+            openedCardAnimator = openedCardPopup.GetComponentInChildren<UIPopupCardAnimator>(true);
+
+        if (openedCardAnimator != null)
+            openedCardAnimator.PlayReveal();
+    }
+
+    public void ToggleOpenedCardSide()
+    {
+        if (currentOpenedCard == null)
+            return;
+
+        if (cardFlipAnimator != null)
+        {
+            cardFlipAnimator.PlayFlip(() =>
+            {
+                showingBackSide = !showingBackSide;
+
+                if (showingBackSide)
+                    ShowOpenedCardBack();
+                else
+                    ShowOpenedCardFront();
+            });
+
+            return;
+        }
+
+        showingBackSide = !showingBackSide;
+
+        if (showingBackSide)
+            ShowOpenedCardBack();
+        else
+            ShowOpenedCardFront();
+    }
+
+    private void ShowOpenedCardFront()
+    {
+        showingBackSide = false;
+        RefreshOpenedCardSideUI();
+    }
+
+    private void ShowOpenedCardBack()
+    {
+        showingBackSide = true;
+        RefreshOpenedCardSideUI();
+    }
+
+    private void RefreshOpenedCardSideUI()
+    {
+        if (currentOpenedCard == null)
+        {
+            SetAllBackBoneIconGroupsInactive();
+            return;
+        }
+
+        if (openedCardImage != null)
+        {
+            Sprite sideSprite = showingBackSide && currentOpenedCard.openedCardBackSprite != null
+                ? currentOpenedCard.openedCardBackSprite
+                : currentOpenedCard.openedCardSprite;
+
+            openedCardImage.sprite = sideSprite;
+            openedCardImage.enabled = sideSprite != null;
+            openedCardImage.preserveAspect = true;
+            openedCardImage.color = Color.white;
+        }
+
+        if (openedFrontDescriptionText != null)
+        {
+            openedFrontDescriptionText.gameObject.SetActive(!showingBackSide);
+            openedFrontDescriptionText.text = GetCardFrontDescription(currentOpenedCard);
+        }
+
+        if (openedBackDescriptionText != null)
+        {
+            openedBackDescriptionText.gameObject.SetActive(showingBackSide);
+            openedBackDescriptionText.text = GetCardBackDescription(currentOpenedCard);
+        }
+
+        SetAllBackBoneIconGroupsInactive();
+
+        if (showingBackSide && currentOpenedCard.backBoneIconsGroup != null)
+            currentOpenedCard.backBoneIconsGroup.SetActive(true);
+
+        if (astragalosBadgeGroup != null)
+            astragalosBadgeGroup.SetActive(!showingBackSide);
+
+        if (openedCardTitleText != null)
+            openedCardTitleText.gameObject.SetActive(!showingBackSide);
+
+        if (openedPageSideText != null)
+        {
+            openedPageSideText.text = showingBackSide
+                ? GetLocalizedText("BACK_PAGE", "BACK PAGE")
+                : GetLocalizedText("FRONT_PAGE", "FRONT PAGE");
+        }
+
+        if (flipCardButtonText != null)
+        {
+            flipCardButtonText.text = GetLocalizedText("FLIP", "FLIP");
+        }
+
+        RefreshOpenedRankText();
     }
 
     private bool IsCardUnlocked(DiscoveryCard card)
@@ -409,33 +598,47 @@ public class RewardsPanelController : MonoBehaviour
         return PlayerPrefs.GetInt(badgeKey, 0) == 1;
     }
 
+    private void RefreshOpenedRankText()
+    {
+        if (openedRankText == null || currentOpenedCard == null)
+            return;
+
+        CardRank rank = GetSavedRank(currentOpenedCard);
+
+        string rankKey = GetRankLocalizationKey(rank);
+        string localizedRank = GetLocalizedText(rankKey, rank.ToString().ToUpper());
+        string rankLabel = GetLocalizedText("CARD_RANK", "CARD RANK");
+
+        openedRankText.text = $"{rankLabel}: {localizedRank}";
+    }
+
     private void ApplyOpenedCardPerformance(DiscoveryCard card, CardRank rank, bool earnedAstragalos)
     {
         if (rankTintOverlay != null)
         {
-            rankTintOverlay.enabled = true;
             rankTintOverlay.raycastTarget = false;
+            rankTintOverlay.preserveAspect = false;
+            rankTintOverlay.color = Color.white;
 
             switch (rank)
             {
                 case CardRank.Gold:
-                    rankTintOverlay.color = goldTintColor;
+                    rankTintOverlay.sprite = goldRankOverlaySprite;
                     break;
 
                 case CardRank.Silver:
-                    rankTintOverlay.color = silverTintColor;
+                    rankTintOverlay.sprite = silverRankOverlaySprite;
                     break;
 
                 case CardRank.Bronze:
-                    rankTintOverlay.color = bronzeTintColor;
+                    rankTintOverlay.sprite = bronzeRankOverlaySprite;
                     break;
             }
+
+            rankTintOverlay.enabled = rankTintOverlay.sprite != null;
         }
 
-        if (openedRankText != null)
-        {
-            openedRankText.text = $"CARD RANK: {rank.ToString().ToUpper()}";
-        }
+        RefreshOpenedRankText();
 
         if (openedAstragalosBadgeImage != null)
         {
@@ -447,6 +650,38 @@ public class RewardsPanelController : MonoBehaviour
             openedAstragalosBadgeImage.enabled = badgeSprite != null;
             openedAstragalosBadgeImage.preserveAspect = true;
             openedAstragalosBadgeImage.color = Color.white;
+        }
+    }
+
+    private string GetRankLocalizationKey(CardRank rank)
+    {
+        switch (rank)
+        {
+            case CardRank.Gold:
+                return "GOLD";
+
+            case CardRank.Silver:
+                return "SILVER";
+
+            case CardRank.Bronze:
+                return "BRONZE";
+
+            default:
+                return "BRONZE";
+        }
+    }
+
+    private void SetAllBackBoneIconGroupsInactive()
+    {
+        if (discoveryCards == null)
+            return;
+
+        foreach (DiscoveryCard card in discoveryCards)
+        {
+            if (card == null || card.backBoneIconsGroup == null)
+                continue;
+
+            card.backBoneIconsGroup.SetActive(false);
         }
     }
 
@@ -494,28 +729,28 @@ public class RewardsPanelController : MonoBehaviour
         }
 
         if (totalDiscoveryCardsText != null)
-            totalDiscoveryCardsText.text = $"Total Discovery Cards: {unlockedCards}/{TotalPossibleDiscoveryCards}";
+            totalDiscoveryCardsText.text = $"{GetLocalizedText("TOTAL_DISCOVERY_CARDS", "Total Discovery Cards")}: {unlockedCards}/{TotalPossibleDiscoveryCards}";
 
         if (goldCardsText != null)
-            goldCardsText.text = $"Gold: {gold}";
+            goldCardsText.text = $"{GetLocalizedText("GOLD", "Gold")}: {gold}";
 
         if (silverCardsText != null)
-            silverCardsText.text = $"Silver: {silver}";
+            silverCardsText.text = $"{GetLocalizedText("SILVER", "Silver")}: {silver}";
 
         if (bronzeCardsText != null)
-            bronzeCardsText.text = $"Bronze: {bronze}";
+            bronzeCardsText.text = $"{GetLocalizedText("BRONZE", "Bronze")}: {bronze}";
 
         if (averageMistakesText != null)
-            averageMistakesText.text = $"Average number of mistakes per level: {GetAverageMistakesText()}";
+            averageMistakesText.text = $"{GetLocalizedText("AVERAGE_MISTAKES_PER_LEVEL", "Average number of mistakes per level")}: {GetAverageMistakesText()}";
 
         if (averageCompletionTimeText != null)
-            averageCompletionTimeText.text = $"Average Level Completion Time: {GetAverageCompletionTimeText()}";
+            averageCompletionTimeText.text = $"{GetLocalizedText("AVERAGE_COMPLETION_TIME", "Average Level Completion Time")}: {GetAverageCompletionTimeText()}";
 
         if (sideCharactersUnlockedText != null)
-            sideCharactersUnlockedText.text = $"Side Characters unlocked: {sideCharacters}/{TotalPossibleSideCharacters}";
+            sideCharactersUnlockedText.text = $"{GetLocalizedText("SIDE_CHARACTERS_UNLOCKED", "Side Characters unlocked")}: {sideCharacters}/{TotalPossibleSideCharacters}";
 
         if (astragalosBadgesText != null)
-            astragalosBadgesText.text = $"Golden Astragalos Badges: {astragalosBadges}/{TotalPossibleAstragalosBadges}";
+            astragalosBadgesText.text = $"{GetLocalizedText("ASTRAGALOS_BADGE", "Astragalos Badge")}: {astragalosBadges}/{TotalPossibleAstragalosBadges}";
     }
 
     private string GetAverageMistakesText()
@@ -550,6 +785,38 @@ public class RewardsPanelController : MonoBehaviour
         int remainingSeconds = Mathf.FloorToInt(seconds % 60f);
 
         return $"{minutes:00}:{remainingSeconds:00}";
+    }
+
+    private string GetCardTitle(DiscoveryCard card)
+    {
+        if (card == null)
+            return "";
+
+        return GetLocalizedText(card.openedCardTitleKey, card.openedCardTitle);
+    }
+
+    private string GetCardFrontDescription(DiscoveryCard card)
+    {
+        if (card == null)
+            return "";
+
+        return GetLocalizedText(card.openedCardFrontDescriptionKey, card.openedCardFrontDescription);
+    }
+
+    private string GetCardBackDescription(DiscoveryCard card)
+    {
+        if (card == null)
+            return "";
+
+        return GetLocalizedText(card.openedCardBackDescriptionKey, card.openedCardBackDescription);
+    }
+
+    private string GetLocalizedText(string key, string fallback)
+    {
+        if (!string.IsNullOrEmpty(key) && LanguageManager.Instance != null)
+            return LanguageManager.Instance.GetText(key);
+
+        return fallback;
     }
 
     public static void UnlockCard(string unlockKey)

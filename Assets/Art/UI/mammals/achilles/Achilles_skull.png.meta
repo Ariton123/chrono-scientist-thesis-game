@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5a792fcfd9f168043afb2f75d2b7b718
+guid: 805ec827e815c3a44a23d1993c6875fa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -930860604830242493
-    second: Yeti_teeth_0
+      213: -2155785665131948235
+    second: Achilles_skull_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,12 +126,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Yeti_teeth_0
+      name: Achilles_skull_0
       rect:
         serializedVersion: 2
-        x: 4
+        x: 0
         y: 0
-        width: 842
+        width: 691
         height: 829
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 34920b9363be413f0800000000000000
-      internalID: -930860604830242493
+      spriteID: 5375ee10c5c1512e0800000000000000
+      internalID: -2155785665131948235
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Yeti_teeth_0: -930860604830242493
+      Achilles_skull_0: -2155785665131948235
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
