@@ -9,6 +9,10 @@ public class BoneInfoClickable : MonoBehaviour, IPointerClickHandler
     [Header("Bone Info")]
     public Sprite bonePreviewSprite;
 
+    [Header("Preview Settings")]
+    [Tooltip("Use this to rotate the bone inside the BoneInfoPanel preview. Example: 90 or -90 for long bones.")]
+    public float previewRotationZ = 0f;
+
     [Header("Localization Keys")]
     public string boneNameKey;
     public string boneDescriptionKey;
@@ -31,6 +35,6 @@ public class BoneInfoClickable : MonoBehaviour, IPointerClickHandler
                 Debug.LogWarning($"{name}: Missing bonePreviewSprite.");
         }
 
-        infoPanel.ShowBoneInfo(bonePreviewSprite, boneNameKey, boneDescriptionKey);
+        infoPanel.ShowBoneInfo(bonePreviewSprite, boneNameKey, boneDescriptionKey, previewRotationZ);
     }
 }

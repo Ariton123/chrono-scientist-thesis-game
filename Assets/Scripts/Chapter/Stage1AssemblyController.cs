@@ -25,7 +25,11 @@ public class Stage1AssemblyController : MonoBehaviour
 
     [Header("Assembly Panel")]
     public GameObject completeButton;
-    public TMP_Text assemblyStatusText;
+
+    [SerializeField] private TMP_Text assemblyTitleText;
+    [SerializeField] private TMP_Text assemblyProgressText;
+    [SerializeField] private TMP_Text assemblyCompleteText;
+    [SerializeField] private TMP_Text bodyLengthText;
 
     private enum AssemblyState
     {
@@ -63,6 +67,7 @@ public class Stage1AssemblyController : MonoBehaviour
         if (performanceController != null)
             performanceController.BeginLevel();
 
+        RefreshStaticLocalizedText();
         RefreshAssemblyText();
     }
 
@@ -199,44 +204,61 @@ public class Stage1AssemblyController : MonoBehaviour
 
     private void HandleLanguageChanged(GameLanguage language)
     {
+        RefreshStaticLocalizedText();
         RefreshAssemblyText();
+    }
+
+    private void RefreshStaticLocalizedText()
+    {
+        if (LanguageManager.Instance == null)
+            return;
+
+        if (assemblyTitleText != null)
+            assemblyTitleText.text = LanguageManager.Instance.GetText("STAGE1_ASSEMBLY_TITLE");
+
+        if (bodyLengthText != null)
+            bodyLengthText.text = LanguageManager.Instance.GetText("STAGE1_BODY_LENGTH");
     }
 
     private void RefreshAssemblyText()
     {
-        if (assemblyStatusText == null || LanguageManager.Instance == null)
+        if (LanguageManager.Instance == null)
             return;
 
-        switch (currentState)
+        bool showTitle = currentState == AssemblyState.InProgress && placedPieces == 0;
+        bool showProgress = currentState == AssemblyState.InProgress && placedPieces > 0 && placedPieces < totalPieces;
+        bool showComplete = currentState == AssemblyState.Complete;
+
+        if (assemblyTitleText != null)
         {
-            case AssemblyState.InProgress:
-                if (placedPieces == 0)
-                {
-                    assemblyStatusText.text = LanguageManager.Instance.GetText("STAGE1_ASSEMBLY_001");
-                }
-                else if (placedPieces < totalPieces)
-                {
-                    assemblyStatusText.text = LanguageManager.Instance.GetText("STAGE1_ASSEMBLY_002")
-                        .Replace("{current}", placedPieces.ToString())
-                        .Replace("{total}", totalPieces.ToString());
-                }
-                else
-                {
-                    assemblyStatusText.text = LanguageManager.Instance.GetText("STAGE1_ASSEMBLY_003");
-                }
-                break;
+            assemblyTitleText.gameObject.SetActive(showTitle);
+            assemblyTitleText.text = LanguageManager.Instance.GetText("STAGE1_ASSEMBLY_001");
+        }
 
-            case AssemblyState.Complete:
-                assemblyStatusText.text = LanguageManager.Instance.GetText("STAGE1_ASSEMBLY_003");
-                break;
+        if (assemblyProgressText != null)
+        {
+            assemblyProgressText.gameObject.SetActive(showProgress);
+            assemblyProgressText.text = LanguageManager.Instance.GetText("STAGE1_ASSEMBLY_002")
+                .Replace("{current}", placedPieces.ToString())
+                .Replace("{total}", totalPieces.ToString());
+        }
 
-            case AssemblyState.Failed:
-                assemblyStatusText.text = "";
-                break;
+        if (assemblyCompleteText != null)
+        {
+            assemblyCompleteText.gameObject.SetActive(showComplete);
+            assemblyCompleteText.text = LanguageManager.Instance.GetText("STAGE1_ASSEMBLY_003");
+        }
 
-            default:
-                assemblyStatusText.text = "";
-                break;
+        if (currentState == AssemblyState.Failed || currentState == AssemblyState.NotStarted)
+        {
+            if (assemblyTitleText != null)
+                assemblyTitleText.gameObject.SetActive(false);
+
+            if (assemblyProgressText != null)
+                assemblyProgressText.gameObject.SetActive(false);
+
+            if (assemblyCompleteText != null)
+                assemblyCompleteText.gameObject.SetActive(false);
         }
     }
 }

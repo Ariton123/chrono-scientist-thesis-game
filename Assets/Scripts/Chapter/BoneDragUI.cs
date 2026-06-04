@@ -11,11 +11,21 @@ public class UIBoneDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     [Tooltip("1 = exact slot size. Smaller/larger values can fine-tune specific bones if needed.")]
     public float placedSizeMultiplier = 1f;
 
-    [Tooltip("Extra rotation after snapping into the slot.")]
+    [Tooltip("If true, the bone keeps its original Z rotation when placed.")]
+    public bool preserveStartRotationOnSnap = false;
+
+    [Tooltip("Extra rotation after snapping into the slot. Used only if Preserve Start Rotation On Snap is false.")]
     public float placedRotationZ = 0f;
 
     [Tooltip("Small manual offset after snapping, normally keep this at (0,0).")]
     public Vector2 placedPositionOffset = Vector2.zero;
+
+    [Header("Aspect Ratio")]
+    [Tooltip("Recommended ON for long bones so they do not look smashed in slots.")]
+    [SerializeField] private bool preserveAspectWhileDragging = true;
+
+    [Tooltip("Recommended ON for long bones so they do not look smashed after correct placement.")]
+    [SerializeField] private bool preserveAspectWhenPlaced = true;
 
     [Header("Correct Placement Highlight")]
     [SerializeField] private Color placedColor = new Color(1f, 0.2f, 0.2f, 1f);
@@ -38,6 +48,7 @@ public class UIBoneDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     private Quaternion startRotation;
     private Transform startParent;
     private Color startColor;
+    private bool startPreserveAspect;
 
     private bool placedCorrectly = false;
     private bool wasDroppedOnSlot = false;
@@ -74,8 +85,9 @@ public class UIBoneDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
         if (image != null)
         {
-            image.preserveAspect = false;
             startColor = image.color;
+            startPreserveAspect = image.preserveAspect;
+            image.preserveAspect = preserveAspectWhileDragging;
         }
     }
 
@@ -85,6 +97,9 @@ public class UIBoneDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
         wasDroppedOnSlot = false;
         canvasGroup.blocksRaycasts = false;
+
+        if (image != null)
+            image.preserveAspect = preserveAspectWhileDragging;
 
         transform.SetAsLastSibling();
     }
@@ -124,12 +139,16 @@ public class UIBoneDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         rectTransform.anchoredPosition = placedPositionOffset;
         rectTransform.sizeDelta = Vector2.zero;
 
-        rectTransform.localRotation = Quaternion.Euler(0f, 0f, placedRotationZ);
+        if (preserveStartRotationOnSnap)
+            rectTransform.localRotation = startRotation;
+        else
+            rectTransform.localRotation = Quaternion.Euler(0f, 0f, placedRotationZ);
+
         rectTransform.localScale = Vector3.one * placedSizeMultiplier;
 
         if (image != null)
         {
-            image.preserveAspect = false;
+            image.preserveAspect = preserveAspectWhenPlaced;
             image.color = placedColor;
         }
 
@@ -199,7 +218,7 @@ public class UIBoneDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
         if (image != null)
         {
-            image.preserveAspect = false;
+            image.preserveAspect = preserveAspectWhileDragging;
             image.color = startColor;
         }
 

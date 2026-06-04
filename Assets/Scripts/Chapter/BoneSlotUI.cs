@@ -7,6 +7,10 @@ public class BoneSlotUI : MonoBehaviour, IDropHandler
     public string requiredBoneID;
     public Stage1AssemblyController assemblyController;
 
+    [Header("Snap Target")]
+    [Tooltip("Optional. If assigned, the dragged bone snaps to this RectTransform instead of the slot root.")]
+    [SerializeField] private RectTransform snapTarget;
+
     [Header("Correct Slot Visual")]
     [SerializeField] private float placedSlotAlpha = 0.25f;
     [SerializeField] private bool fadeOnCorrect = false;
@@ -37,8 +41,11 @@ public class BoneSlotUI : MonoBehaviour, IDropHandler
         {
             alreadyFilled = true;
 
-            RectTransform slotRect = GetComponent<RectTransform>();
-            draggedBone.SnapToSlot(slotRect);
+            RectTransform targetRect = snapTarget != null
+                ? snapTarget
+                : GetComponent<RectTransform>();
+
+            draggedBone.SnapToSlot(targetRect);
 
             FadeSlotVisual();
 

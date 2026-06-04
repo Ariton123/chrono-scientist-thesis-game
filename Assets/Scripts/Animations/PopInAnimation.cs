@@ -7,6 +7,10 @@ public class PopInAnimation : MonoBehaviour
     public float startMultiplier = 0.75f;
     public float overshootMultiplier = 1.2f;
 
+    [Header("Options")]
+    [SerializeField] private bool captureScaleOnEnable = true;
+    [SerializeField] private float startDelay = 0.02f;
+
     private Vector3 originalScale;
 
     void Awake()
@@ -22,6 +26,12 @@ public class PopInAnimation : MonoBehaviour
 
     IEnumerator PlayPopAnimation()
     {
+        if (startDelay > 0f)
+            yield return new WaitForSeconds(startDelay);
+
+        if (captureScaleOnEnable)
+            originalScale = transform.localScale;
+
         float time = 0f;
 
         Vector3 start = originalScale * startMultiplier;

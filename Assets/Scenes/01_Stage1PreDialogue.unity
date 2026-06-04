@@ -1670,6 +1670,9 @@ MonoBehaviour:
     musowlSprite: {fileID: 21300000, guid: b2c599d518578dd42a928f5ea686cca1, type: 3}
     showChronoEngine: 1
   sceneToLoadAfterDialogue: 2
+  nextButtonKey: NEXT
+  finalButtonKey: READY
+  skipButtonKey: SKIP_DIALOGUE
   unlockRewardAfterDialogue: 0
   rewardUnlockKey: 
   openPlayPanelAfterDialogue: 0
@@ -2046,7 +2049,8 @@ PrefabInstance:
       value: DialogueTemplate
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6669775816338454009, guid: 1c199626d0adff942b83174bb01aa5d2, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c199626d0adff942b83174bb01aa5d2, type: 3}

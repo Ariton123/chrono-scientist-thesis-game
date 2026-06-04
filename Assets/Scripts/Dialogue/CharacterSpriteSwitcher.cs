@@ -20,6 +20,11 @@ public class CharacterSpriteSwitcher : MonoBehaviour
     [Header("Default Expression")]
     [SerializeField] private PlayerSpriteExpression defaultExpression = PlayerSpriteExpression.Normal;
 
+    [Header("Optional Gender Scale")]
+    [SerializeField] private bool applyGenderScale = false;
+    [SerializeField] private Vector3 maleScale = new Vector3(0.72f, 0.72f, 1f);
+    [SerializeField] private Vector3 femaleScale = new Vector3(0.85f, 0.85f, 1f);
+
     private Image uiImage;
     private SpriteRenderer spriteRenderer;
 
@@ -83,6 +88,16 @@ public class CharacterSpriteSwitcher : MonoBehaviour
 
         if (spriteRenderer != null)
             spriteRenderer.sprite = selectedSprite;
+
+        ApplyGenderScale(selectedGender);
+    }
+
+    private void ApplyGenderScale(PlayerGender gender)
+    {
+        if (!applyGenderScale)
+            return;
+
+        transform.localScale = gender == PlayerGender.Male ? maleScale : femaleScale;
     }
 
     private Sprite GetSprite(PlayerGender gender, PlayerSpriteExpression expression)

@@ -12,12 +12,18 @@ public class BoneInfoPanelUI : MonoBehaviour
     [Header("Default State")]
     public Sprite defaultSprite;
 
+    [Header("Preview Settings")]
+    [SerializeField] private bool preservePreviewAspect = true;
+
     private const string DefaultNameKey = "BONEINFO_DEFAULT_NAME";
     private const string DefaultDescriptionKey = "BONEINFO_DEFAULT_DESC";
 
     private string currentNameKey = DefaultNameKey;
     private string currentDescriptionKey = DefaultDescriptionKey;
     private Sprite currentSprite;
+    private float currentPreviewRotationZ = 0f;
+
+    private bool isShowingDefault = true;
 
     private void OnEnable()
     {
@@ -38,19 +44,30 @@ public class BoneInfoPanelUI : MonoBehaviour
 
     public void ShowBoneInfo(Sprite boneSprite, string nameKey, string descriptionKey)
     {
+        ShowBoneInfo(boneSprite, nameKey, descriptionKey, 0f);
+    }
+
+    public void ShowBoneInfo(Sprite boneSprite, string nameKey, string descriptionKey, float previewRotationZ)
+    {
+        isShowingDefault = false;
+
         currentSprite = boneSprite != null ? boneSprite : defaultSprite;
 
         currentNameKey = string.IsNullOrEmpty(nameKey) ? DefaultNameKey : nameKey;
         currentDescriptionKey = string.IsNullOrEmpty(descriptionKey) ? DefaultDescriptionKey : descriptionKey;
+        currentPreviewRotationZ = previewRotationZ;
 
         RefreshUI();
     }
 
     public void ClearInfo()
     {
-        currentSprite = null; // IMPORTANT
+        isShowingDefault = true;
+
+        currentSprite = null;
         currentNameKey = DefaultNameKey;
         currentDescriptionKey = DefaultDescriptionKey;
+        currentPreviewRotationZ = 0f;
 
         RefreshUI();
     }
@@ -65,12 +82,10 @@ public class BoneInfoPanelUI : MonoBehaviour
         if (bonePreviewImage != null)
         {
             bonePreviewImage.sprite = currentSprite;
-
-            // Hide image if nothing selected
             bonePreviewImage.enabled = currentSprite != null;
-
-            bonePreviewImage.preserveAspect = false;
+            bonePreviewImage.preserveAspect = preservePreviewAspect;
             bonePreviewImage.color = Color.white;
+            bonePreviewImage.rectTransform.localRotation = Quaternion.Euler(0f, 0f, currentPreviewRotationZ);
         }
 
         if (LanguageManager.Instance == null)
@@ -80,6 +95,13 @@ public class BoneInfoPanelUI : MonoBehaviour
             boneNameText.text = LanguageManager.Instance.GetText(currentNameKey);
 
         if (boneDescriptionText != null)
+        {
             boneDescriptionText.text = LanguageManager.Instance.GetText(currentDescriptionKey);
+
+            if (isShowingDefault)
+                boneDescriptionText.alignment = TextAlignmentOptions.Center;
+            else
+                boneDescriptionText.alignment = TextAlignmentOptions.Left;
+        }
     }
 }

@@ -41,14 +41,13 @@ public class Stage1GameManager : MonoBehaviour
 
     public void StartAssemblyPhase()
     {
-        missionPanel.SetActive(false);
-        assemblyPanel.SetActive(true);
-
-        if (completionPanel != null)
-            completionPanel.SetActive(false);
+        HidePanelInstant(missionPanel);
+        HidePanelInstant(completionPanel);
 
         if (failPanel != null)
             failPanel.SetActive(false);
+
+        ShowPanelAnimated(assemblyPanel);
 
         if (assemblyController != null)
             assemblyController.BeginAssembly();

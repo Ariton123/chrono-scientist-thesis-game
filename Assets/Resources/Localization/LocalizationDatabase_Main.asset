@@ -135,20 +135,21 @@ MonoBehaviour:
     francais: "S\xE9lectionne un os"
     italiano: Seleziona un osso
   - key: BONEINFO_DEFAULT_DESC
-    english: Tap or click a bone to learn more about it.
-    deutsch: "Klicke auf einen Knochen, um mehr dar\xFCber zu erfahren."
-    francais: Clique sur un os pour en apprendre davantage.
-    italiano: "Clicca su un osso per saperne di pi\xF9."
+    english: Click a bone card to learn more about it.
+    deutsch: "Klicke auf eine Knochenkarte, um mehr dar\xFCber zu erfahren."
+    francais: "Clique sur une carte d\u2019os pour en apprendre davantage."
+    italiano: "Clicca su una carta osso per saperne di pi\xF9."
   - key: STAGE1_MISSION_TITLE
-    english: "Late Triassic \u2014 First Mammals"
-    deutsch: "Sp\xE4te Trias \u2014 Erste S\xE4ugetiere"
-    francais: "Trias sup\xE9rieur \u2014 Premiers mammif\xE8res"
-    italiano: "Triassico superiore \u2014 Primi mammiferi"
+    english: LATE TRIASSIC ERA
+    deutsch: "SP\xC4TE TRIAS"
+    francais: "TRIAS SUP\xC9RIEUR"
+    italiano: TARDO TRIASSICO
   - key: STAGE1_MISSION_DESC
-    english: Find the clues that reveal an early mammal.
-    deutsch: "Finde die Hinweise, die ein fr\xFChes S\xE4ugetier enth\xFCllen."
-    francais: "Trouve les indices qui r\xE9v\xE8lent un mammif\xE8re primitif."
-    italiano: Trova gli indizi che rivelano un mammifero primitivo.
+    english: Find the clues that reveal the earliest mammal evidence.
+    deutsch: "Finde die Hinweise, die den fr\xFChesten S\xE4ugetiernachweis zeigen."
+    francais: "Trouve les indices qui r\xE9v\xE8lent les plus anciennes traces de
+      mammif\xE8res."
+    italiano: Trova gli indizi che rivelano le prime prove dei mammiferi.
   - key: STAGE1_COMPLETION_TITLE
     english: LEVEL 1 COMPLETED
     deutsch: LEVEL 1 ABGESCHLOSSEN
@@ -312,41 +313,6 @@ MonoBehaviour:
     deutsch: KAPITEL
     francais: CHAPITRE
     italiano: CAPITOLO
-  - key: INSTRUCTIONS_STAGE1_MECHANIC
-    english: 'Drag each bone to its correct place in the skeleton.
-
-
-
-      Tap on
-      a bone to learn its name and what it does.'
-    deutsch: 'Ziehe jeden Knochen an die richtige Stelle im Skelett.
-
-
-
-      Tippe
-      auf einen Knochen, um seinen Namen und seine Funktion zu lernen.'
-    francais: "Fais glisser chaque os \xE0 la bonne place dans le squelette.\r\n\r\nAppuie
-      sur un os pour apprendre son nom et sa fonction."
-    italiano: 'Trascina ogni osso nella posizione corretta nello scheletro.
-
-
-
-      Tocca
-      un osso per scoprire il suo nome e la sua funzione.'
-  - key: INSTRUCTIONS_STAGE2_MECHANIC
-    english: "Drag each bone to the correct function. \n\nMatch bones with what they
-      do in the body and complete all matches to finish the level."
-    deutsch: "Ziehe jeden Knochen zur passenden Funktion. \n\nOrdne die Knochen ihrer
-      Aufgabe im K\xF6rper zu und vervollst\xE4ndige alle Zuordnungen, um das Level
-      abzuschlie\xDFen."
-    francais: "Fais glisser chaque os vers la bonne fonction. \n\nAssocie les os
-      \xE0 leur r\xF4le dans le corps et compl\xE8te toutes les associations pour
-      terminer le niveau."
-    italiano: 'Trascina ogni osso nella funzione corretta.
-
-
-      Abbina le ossa
-      al loro ruolo nel corpo e completa tutti gli abbinamenti per finire il livello.'
   - key: STORYLINE
     english: STORYLINE
     deutsch: GESCHICHTE
@@ -357,11 +323,6 @@ MonoBehaviour:
     deutsch: "Gesch\xE4tzte K\xF6rperl\xE4nge: 25 cm"
     francais: "Longueur corporelle estim\xE9e : 25 cm"
     italiano: 'Lunghezza corporea stimata: 25 cm'
-  - key: STAGE2_ASSEMBLY_TEXT
-    english: Help Yeti match each bone to its function!
-    deutsch: Hilf dem Yeti, jeden Knochen seiner Funktion zuzuordnen!
-    francais: "Aide le Y\xE9ti \xE0 associer chaque os \xE0 sa fonction !"
-    italiano: Aiuta lo Yeti ad abbinare ogni osso alla sua funzione!
   - key: COMING_SOON
     english: COMING SOON
     deutsch: KOMMT BALD
@@ -398,39 +359,48 @@ MonoBehaviour:
     francais: MENU PRINCIPAL
     italiano: MENU PRINCIPALE
   - key: FAIL_DESC_NIBBLES
-    english: Oh no! Time ran out before you could help Nibbles complete the discovery.
-      Try again and help Darwin finish the bone puzzle!
+    english: "Oh no! Time ran out before you could help Nibbles complete the discovery.
+      \n\nTry again and help Darwin finish the bone puzzle!"
     deutsch: "Oh nein! Die Zeit ist abgelaufen, bevor du Nibbles bei der Entdeckung
-      helfen konntest. Versuch es noch einmal und hilf Darwin, das Knochenr\xE4tsel
+      helfen konntest.\n\nVersuch es noch einmal und hilf Darwin, das Knochenr\xE4tsel
       zu l\xF6sen!"
     francais: "Oh non ! Le temps est \xE9coul\xE9 avant que tu puisses aider Nibbles
-      \xE0 terminer la d\xE9couverte. R\xE9essaie et aide Darwin \xE0 r\xE9soudre
+      \xE0 terminer la d\xE9couverte.\n\nR\xE9essaie et aide Darwin \xE0 r\xE9soudre
       le puzzle des os !"
     italiano: "Oh no! Il tempo \xE8 scaduto prima che tu potessi aiutare Nibbles
-      a completare la scoperta. Riprova e aiuta Darwin a risolvere il puzzle delle
+      a completare la scoperta.\n\nRiprova e aiuta Darwin a risolvere il puzzle delle
       ossa!"
   - key: FAIL_DESC_YETI
-    english: Oh no! Time ran out before you could help Yeti solve the movement clues.
-      Try again and match the bones before the timer ends!
-    deutsch: Oh nein! Die Zeit ist abgelaufen, bevor du Yeti bei den Bewegungshinweisen
-      helfen konntest. Versuch es noch einmal und ordne die Knochen zu, bevor die
-      Zeit endet!
+    english: 'Oh no! Time ran out before you could help Yeti solve the movement clues.
+
+
+      Try
+      again and match the bones before the timer ends!'
+    deutsch: 'Oh nein! Die Zeit ist abgelaufen, bevor du Yeti bei den Bewegungshinweisen
+      helfen konntest.
+
+
+      Versuch es noch einmal und ordne die Knochen zu, bevor
+      die Zeit endet!'
     francais: "Oh non ! Le temps est \xE9coul\xE9 avant que tu puisses aider Yeti
-      \xE0 r\xE9soudre les indices de mouvement. R\xE9essaie et associe les os avant
-      la fin du temps !"
+      \xE0 r\xE9soudre les indices de mouvement.\n\nR\xE9essaie et associe les os
+      avant la fin du temps !"
     italiano: "Oh no! Il tempo \xE8 scaduto prima che tu potessi aiutare Yeti a risolvere
-      gli indizi sul movimento. Riprova e abbina le ossa prima che il timer finisca!"
+      gli indizi sul movimento.\n\nRiprova e abbina le ossa prima che il timer finisca!"
   - key: FAIL_DESC_ACHILLES
-    english: Oh no! Time ran out before you could help Achilles uncover the ancient
-      bone clue. Try again and complete the challenge!
-    deutsch: Oh nein! Die Zeit ist abgelaufen, bevor du Achilles helfen konntest,
-      den alten Knochenhinweis zu entdecken. Versuch es noch einmal und meistere
-      die Herausforderung!
+    english: "Oh no! Time ran out before you could help Achilles uncover the ancient
+      bone clue. \n\nTry again and complete the challenge!"
+    deutsch: 'Oh nein! Die Zeit ist abgelaufen, bevor du Achilles helfen konntest,
+      den alten Knochenhinweis zu entdecken.
+
+
+      Versuch es noch einmal und meistere
+      die Herausforderung!'
     francais: "Oh non ! Le temps est \xE9coul\xE9 avant que tu puisses aider Achille
-      \xE0 d\xE9couvrir l\u2019ancien indice osseux. R\xE9essaie et termine le d\xE9fi
-      !"
+      \xE0 d\xE9couvrir l\u2019ancien indice osseux.\n\nR\xE9essaie et termine le
+      d\xE9fi !"
     italiano: "Oh no! Il tempo \xE8 scaduto prima che tu potessi aiutare Achille
-      a scoprire l\u2019antico indizio osseo. Riprova e completa la sfida!"
+      a scoprire l\u2019antico indizio osseo.\n\nRiprova e completa la sfida!"
   - key: DIALOGUE_STAGE1_PRE_001
     english: 'Darwin: Our first journey begins in the Late Triassic, more than 200
       million years ago.'
@@ -777,10 +747,10 @@ MonoBehaviour:
     francais: BRONZE
     italiano: BRONZO
   - key: ASTRAGALOS_BADGE
-    english: 'Astragalos Badge:'
-    deutsch: 'Astragalos-Abzeichen:'
-    francais: 'Badge Astragale :'
-    italiano: 'Distintivo Astragalo:'
+    english: Astragalos Badge
+    deutsch: Astragalos-Abzeichen
+    francais: 'Badge Astragale '
+    italiano: Distintivo Astragalo
   - key: REWARD_NIBBLES_FRONT
     english: '<b>Character:</b> Nibbles
 
@@ -794,21 +764,13 @@ MonoBehaviour:
       <b>Status:</b>
       Extinct
 
-      <b>Size:</b> roughly 20 cm long
-
-
-      <b>Focus:</b>
-
-      Fossil
-      reconstruction, skeleton assembly, and early mammal anatomy.'
+      <b>Size:</b> roughly 20 cm long'
     deutsch: "<b>Figur:</b> Nibbles\n<b>Repr\xE4sentiert:</b> Brasilodon quadrangularis\n<b>Zeitalter:</b>
       Sp\xE4te Trias\n<b>Zeit:</b> vor etwa 225 Millionen Jahren\n<b>Status:</b>
-      Ausgestorben\n<b>Gr\xF6\xDFe:</b> ungef\xE4hr 20 cm lang\n\n<b>Fokus:</b>\nFossilrekonstruktion,
-      Skelettaufbau und fr\xFChe S\xE4ugetieranatomie."
+      Ausgestorben\n<b>Gr\xF6\xDFe:</b> ungef\xE4hr 20 cm lang"
     francais: "<b>Personnage :</b> Nibbles\n<b>Repr\xE9sente :</b> Brasilodon quadrangularis\n<b>\xC9poque
       :</b> Trias sup\xE9rieur\n<b>Temps :</b> il y a environ 225 millions d\u2019ann\xE9es\n<b>Statut
-      :</b> \xC9teint\n<b>Taille :</b> environ 20 cm de long\n\n<b>Focus :</b>\nReconstruction
-      fossile, assemblage du squelette et anatomie des premiers mammif\xE8res."
+      :</b> \xC9teint\n<b>Taille :</b> environ 20 cm de long"
     italiano: '<b>Personaggio:</b> Nibbles
 
       <b>Rappresenta:</b> Brasilodon
@@ -822,48 +784,16 @@ MonoBehaviour:
       <b>Stato:</b> Estinto
 
       <b>Dimensione:</b>
-      circa 20 cm di lunghezza
-
-
-      <b>Focus:</b>
-
-      Ricostruzione fossile,
-      assemblaggio dello scheletro e anatomia dei primi mammiferi.'
+      circa 20 cm di lunghezza'
   - key: REWARD_NIBBLES_BACK
     english: "In this mission, you learned the names of important bones and bone
-      structures by rebuilding parts of Nibbles\u2019 skeleton.\n\n<b>Cranium / Skull</b>
-      \u2014 protects the brain and shapes the head.\n<b>Scapula / Shoulder blade</b>
-      \u2014 connects the front limb to the body.\n<b>Humerus / Upper arm bone</b>
-      \u2014 helps the front limb move and support weight.\n<b>Pelvis / Hip bone
-      structure</b> \u2014 connects the body to the hind limbs.\n<b>Femur / Thigh
-      bone</b> \u2014 supports the body and helps with movement.\n<b>Astragalos /
-      Ankle bone</b> \u2014 helps transfer weight through the foot."
+      structures by rebuilding parts of Nibbles\u2019 skeleton."
     deutsch: "In dieser Mission hast du die Namen wichtiger Knochen und Knochenstrukturen
-      gelernt, indem du Teile von Nibbles\u2019 Skelett wieder aufgebaut hast.\n\n<b>Cranium
-      / Sch\xE4del</b> \u2014 sch\xFCtzt das Gehirn und formt den Kopf.\n<b>Scapula
-      / Schulterblatt</b> \u2014 verbindet die Vordergliedma\xDFe mit dem K\xF6rper.\n<b>Humerus
-      / Oberarmknochen</b> \u2014 hilft der Vordergliedma\xDFe, sich zu bewegen und
-      Gewicht zu tragen.\n<b>Pelvis / Beckenknochenstruktur</b> \u2014 verbindet
-      den K\xF6rper mit den Hintergliedma\xDFen.\n<b>Femur / Oberschenkelknochen</b>
-      \u2014 st\xFCtzt den K\xF6rper und hilft bei der Bewegung.\n<b>Astragalos /
-      Sprungbein</b> \u2014 hilft, Gewicht durch den Fu\xDF zu \xFCbertragen."
-    francais: "Dans cette mission, tu as appris les noms d\u2019os importants et
-      de structures osseuses en reconstruisant des parties du squelette de Nibbles.\n\n<b>Cranium
-      / Cr\xE2ne</b> \u2014 prot\xE8ge le cerveau et forme la t\xEAte.\n<b>Scapula
-      / Omoplate</b> \u2014 relie le membre ant\xE9rieur au corps.\n<b>Humerus /
-      Hum\xE9rus</b> \u2014 aide le membre ant\xE9rieur \xE0 bouger et \xE0 supporter
-      du poids.\n<b>Pelvis / Structure osseuse du bassin</b> \u2014 relie le corps
-      aux membres post\xE9rieurs.\n<b>Femur / F\xE9mur</b> \u2014 soutient le corps
-      et aide au mouvement.\n<b>Astragalos / Os de la cheville</b> \u2014 aide \xE0
-      transf\xE9rer le poids \xE0 travers le pied."
-    italiano: "In questa missione hai imparato i nomi di ossa importanti e strutture
-      ossee ricostruendo parti dello scheletro di Nibbles.\n\n<b>Cranium / Cranio</b>
-      \u2014 protegge il cervello e d\xE0 forma alla testa.\n<b>Scapula / Scapola</b>
-      \u2014 collega l\u2019arto anteriore al corpo.\n<b>Humerus / Omero</b> \u2014
-      aiuta l\u2019arto anteriore a muoversi e a sostenere il peso.\n<b>Pelvis /
-      Struttura ossea del bacino</b> \u2014 collega il corpo agli arti posteriori.\n<b>Femur
-      / Femore</b> \u2014 sostiene il corpo e aiuta nel movimento.\n<b>Astragalos
-      / Osso della caviglia</b> \u2014 aiuta a trasferire il peso attraverso il piede."
+      gelernt, indem du Teile von Nibbles\u2019 Skelett wieder zusammengesetzt hast."
+    francais: "Dans cette mission, tu as appris les noms d\u2019os et de structures
+      osseuses importantes en reconstruisant des parties du squelette de Nibbles."
+    italiano: In questa missione hai imparato i nomi di ossa e strutture ossee importanti
+      ricostruendo parti dello scheletro di Nibbles.
   - key: REWARD_YETI_FRONT
     english: '<b>Character:</b> Yeti
 
@@ -878,21 +808,14 @@ MonoBehaviour:
       <b>Status:</b> Extinct
 
       <b>Size:</b> 1 to 1.5 meters
-      tall
-
-
-      <b>Focus:</b>
-
-      Bone function, balance, and movement.'
+      tall'
     deutsch: "<b>Figur:</b> Yeti\n<b>Repr\xE4sentiert:</b> Australopithecus\n<b>Zeitalter:</b>
       Plioz\xE4n bis fr\xFChes Pleistoz\xE4n\n<b>Zeit:</b> vor etwa 4,4 bis 1,4 Millionen
-      Jahren\n<b>Status:</b> Ausgestorben\n<b>Gr\xF6\xDFe:</b> 1 bis 1,5 Meter gro\xDF\n\n<b>Fokus:</b>\nKnochenfunktion,
-      Gleichgewicht und Bewegung."
+      Jahren\n<b>Status:</b> Ausgestorben\n<b>Gr\xF6\xDFe:</b> 1 bis 1,5 Meter gro\xDF"
     francais: "<b>Personnage :</b> Yeti\n<b>Repr\xE9sente :</b> Australopithecus\n<b>\xC9poque
       :</b> Plioc\xE8ne au d\xE9but du Pl\xE9istoc\xE8ne\n<b>Temps :</b> il y a environ
       4,4 \xE0 1,4 million d\u2019ann\xE9es\n<b>Statut :</b> \xC9teint\n<b>Taille
-      :</b> 1 \xE0 1,5 m\xE8tre de haut\n\n<b>Focus :</b>\nFonction des os, \xE9quilibre
-      et mouvement."
+      :</b> 1 \xE0 1,5 m\xE8tre de haut"
     italiano: '<b>Personaggio:</b> Yeti
 
       <b>Rappresenta:</b> Australopithecus
@@ -906,51 +829,19 @@ MonoBehaviour:
       <b>Stato:</b> Estinto
 
       <b>Dimensione:</b> alto da 1
-      a 1,5 metri
-
-
-      <b>Focus:</b>
-
-      Funzione delle ossa, equilibrio e
-      movimento.'
+      a 1,5 metri'
   - key: REWARD_YETI_BACK
     english: "In this mission, you matched each bone or structure by its function.
-      Bones are not only shapes \u2014 they help bodies move, balance, and stand.\n\n<b>Cranium</b>
-      \u2014 protects the brain and supports the senses.\n<b>Scapula</b> \u2014 helps
-      position the shoulder and guide arm movement.\n<b>Humerus</b> \u2014 supports
-      reaching, lifting, and front-limb movement.\n<b>Pelvis</b> \u2014 supports
-      upright posture and connects the trunk to the legs.\n<b>Femur</b> \u2014 carries
-      body weight during standing and walking.\n<b>Astragalos</b> \u2014 helps balance
-      the body and guide smooth ankle motion."
-    deutsch: "In dieser Mission hast du jeden Knochen oder jede Struktur nach ihrer
-      Funktion zugeordnet. Knochen sind nicht nur Formen \u2014 sie helfen K\xF6rpern,
-      sich zu bewegen, das Gleichgewicht zu halten und zu stehen.\n\n<b>Cranium</b>
-      \u2014 sch\xFCtzt das Gehirn und unterst\xFCtzt die Sinne.\n<b>Scapula</b>
-      \u2014 hilft, die Schulter zu positionieren und die Armbewegung zu f\xFChren.\n<b>Humerus</b>
-      \u2014 unterst\xFCtzt Greifen, Heben und Bewegung der Vordergliedma\xDFe.\n<b>Pelvis</b>
-      \u2014 unterst\xFCtzt die aufrechte Haltung und verbindet den Rumpf mit den
-      Beinen.\n<b>Femur</b> \u2014 tr\xE4gt das K\xF6rpergewicht beim Stehen und
-      Gehen.\n<b>Astragalos</b> \u2014 hilft, den K\xF6rper im Gleichgewicht zu halten
-      und die Bewegung des Sprunggelenks zu f\xFChren."
+      Bones are not only shapes \u2014 they help bodies move, balance, and stand."
+    deutsch: "In dieser Mission hast du jeden Knochen oder jede Struktur ihrer Funktion
+      zugeordnet. Knochen sind nicht nur Formen \u2014 sie helfen K\xF6rpern, sich
+      zu bewegen, das Gleichgewicht zu halten und zu stehen."
     francais: "Dans cette mission, tu as associ\xE9 chaque os ou structure \xE0 sa
       fonction. Les os ne sont pas seulement des formes \u2014 ils aident les corps
-      \xE0 bouger, \xE0 garder l\u2019\xE9quilibre et \xE0 se tenir debout.\n\n<b>Cranium</b>
-      \u2014 prot\xE8ge le cerveau et soutient les sens.\n<b>Scapula</b> \u2014 aide
-      \xE0 positionner l\u2019\xE9paule et \xE0 guider le mouvement du bras.\n<b>Humerus</b>
-      \u2014 soutient l\u2019action d\u2019atteindre, de soulever et de bouger le
-      membre ant\xE9rieur.\n<b>Pelvis</b> \u2014 soutient la posture droite et relie
-      le tronc aux jambes.\n<b>Femur</b> \u2014 porte le poids du corps pendant la
-      station debout et la marche.\n<b>Astragalos</b> \u2014 aide \xE0 \xE9quilibrer
-      le corps et \xE0 guider le mouvement fluide de la cheville."
+      \xE0 bouger, \xE0 garder l\u2019\xE9quilibre et \xE0 se tenir debout."
     italiano: "In questa missione hai abbinato ogni osso o struttura alla sua funzione.
       Le ossa non sono solo forme \u2014 aiutano i corpi a muoversi, a mantenere
-      l\u2019equilibrio e a stare in piedi.\n\n<b>Cranium</b> \u2014 protegge il
-      cervello e sostiene i sensi.\n<b>Scapula</b> \u2014 aiuta a posizionare la
-      spalla e a guidare il movimento del braccio.\n<b>Humerus</b> \u2014 sostiene
-      il raggiungere, il sollevare e il movimento dell\u2019arto anteriore.\n<b>Pelvis</b>
-      \u2014 sostiene la postura eretta e collega il tronco alle gambe.\n<b>Femur</b>
-      \u2014 porta il peso del corpo durante la posizione eretta e la camminata.\n<b>Astragalos</b>
-      \u2014 aiuta a bilanciare il corpo e a guidare il movimento fluido della caviglia."
+      l\u2019equilibrio e a stare in piedi."
   - key: REWARD_ACHILLES_FRONT
     english: '<b>Character:</b> Achilles
 
@@ -964,22 +855,14 @@ MonoBehaviour:
       <b>Status:</b>
       Living species
 
-      <b>Size:</b> around 1.7 meters tall
-
-
-      <b>Focus:</b>
-
-      Human
-      bone structures, archaeology, and cultural meaning.'
+      <b>Size:</b> around 1.7 meters tall'
     deutsch: "<b>Figur:</b> Achilles\n<b>Repr\xE4sentiert:</b> Homo sapiens\n<b>Zeitalter:</b>
       Antikes Griechenland / spartanische \xC4ra\n<b>Zeit:</b> vor etwa 2500 Jahren\n<b>Status:</b>
-      Lebende Art\n<b>Gr\xF6\xDFe:</b> ungef\xE4hr 1,7 Meter gro\xDF\n\n<b>Fokus:</b>\nMenschliche
-      Knochenstrukturen, Arch\xE4ologie und kulturelle Bedeutung."
+      Lebende Art\n<b>Gr\xF6\xDFe:</b> ungef\xE4hr 1,7 Meter gro\xDF"
     francais: "<b>Personnage :</b> Achille\n<b>Repr\xE9sente :</b> Homo sapiens\n<b>\xC9poque
       :</b> Gr\xE8ce antique / \xE9poque spartiate\n<b>Temps :</b> il y a environ
       2500 ans\n<b>Statut :</b> Esp\xE8ce vivante\n<b>Taille :</b> environ 1,7 m\xE8tre
-      de haut\n\n<b>Focus :</b>\nStructures osseuses humaines, arch\xE9ologie et
-      signification culturelle."
+      de haut"
     italiano: '<b>Personaggio:</b> Achille
 
       <b>Rappresenta:</b> Homo sapiens
@@ -992,53 +875,20 @@ MonoBehaviour:
       <b>Stato:</b>
       Specie vivente
 
-      <b>Dimensione:</b> circa 1,7 metri di altezza
-
-
-      <b>Focus:</b>
-
-      Strutture
-      ossee umane, archeologia e significato culturale.'
+      <b>Dimensione:</b> circa 1,7 metri di altezza'
   - key: REWARD_ACHILLES_BACK
-    english: "In this mission, you decoded bone amulets by observing their shape
-      and meaning. In archaeology, bones can become objects of memory, identity,
-      belief, and culture.\n\n<b>Cranium amulet</b> \u2014 can symbolize identity,
-      thought, memory, or ancestry.\n<b>Scapula amulet</b> \u2014 can suggest protection,
-      strength, or movement.\n<b>Humerus amulet</b> \u2014 can represent action,
-      work, or human ability.\n<b>Pelvis amulet</b> \u2014 can symbolize support,
-      life, posture, or origin.\n<b>Femur amulet</b> \u2014 can represent strength,
-      travel, or endurance.\n<b>Astragalos amulet</b> \u2014 can symbolize balance,
-      movement, luck, or play."
+    english: In this mission, you decoded bone amulets by observing their shape and
+      meaning. In archaeology, bones can become objects of memory, identity, belief,
+      and culture.
     deutsch: "In dieser Mission hast du Knochenamulette entschl\xFCsselt, indem du
       ihre Form und Bedeutung beobachtet hast. In der Arch\xE4ologie k\xF6nnen Knochen
-      zu Objekten von Erinnerung, Identit\xE4t, Glauben und Kultur werden.\n\n<b>Cranium-Amulett</b>
-      \u2014 kann Identit\xE4t, Denken, Erinnerung oder Abstammung symbolisieren.\n<b>Scapula-Amulett</b>
-      \u2014 kann Schutz, St\xE4rke oder Bewegung andeuten.\n<b>Humerus-Amulett</b>
-      \u2014 kann Handlung, Arbeit oder menschliche F\xE4higkeit darstellen.\n<b>Pelvis-Amulett</b>
-      \u2014 kann Unterst\xFCtzung, Leben, Haltung oder Ursprung symbolisieren.\n<b>Femur-Amulett</b>
-      \u2014 kann St\xE4rke, Reisen oder Ausdauer darstellen.\n<b>Astragalos-Amulett</b>
-      \u2014 kann Gleichgewicht, Bewegung, Gl\xFCck oder Spiel symbolisieren."
-    francais: "Dans cette mission, tu as d\xE9cod\xE9 des amulettes en os en observant
-      leur forme et leur signification. En arch\xE9ologie, les os peuvent devenir
-      des objets de m\xE9moire, d\u2019identit\xE9, de croyance et de culture.\n\n<b>Amulette
-      cranium</b> \u2014 peut symboliser l\u2019identit\xE9, la pens\xE9e, la m\xE9moire
-      ou l\u2019ascendance.\n<b>Amulette scapula</b> \u2014 peut sugg\xE9rer la protection,
-      la force ou le mouvement.\n<b>Amulette humerus</b> \u2014 peut repr\xE9senter
-      l\u2019action, le travail ou la capacit\xE9 humaine.\n<b>Amulette pelvis</b>
-      \u2014 peut symboliser le soutien, la vie, la posture ou l\u2019origine.\n<b>Amulette
-      femur</b> \u2014 peut repr\xE9senter la force, le voyage ou l\u2019endurance.\n<b>Amulette
-      astragalos</b> \u2014 peut symboliser l\u2019\xE9quilibre, le mouvement, la
-      chance ou le jeu."
-    italiano: "In questa missione hai decodificato amuleti ossei osservando la loro
-      forma e il loro significato. In archeologia, le ossa possono diventare oggetti
-      di memoria, identit\xE0, credenza e cultura.\n\n<b>Amuleto cranium</b> \u2014
-      pu\xF2 simboleggiare identit\xE0, pensiero, memoria o antenati.\n<b>Amuleto
-      scapula</b> \u2014 pu\xF2 suggerire protezione, forza o movimento.\n<b>Amuleto
-      humerus</b> \u2014 pu\xF2 rappresentare azione, lavoro o capacit\xE0 umana.\n<b>Amuleto
-      pelvis</b> \u2014 pu\xF2 simboleggiare sostegno, vita, postura o origine.\n<b>Amuleto
-      femur</b> \u2014 pu\xF2 rappresentare forza, viaggio o resistenza.\n<b>Amuleto
-      astragalos</b> \u2014 pu\xF2 simboleggiare equilibrio, movimento, fortuna o
-      gioco."
+      zu Objekten der Erinnerung, Identit\xE4t, des Glaubens und der Kultur werden."
+    francais: "Dans cette mission, tu as d\xE9cod\xE9 des amulettes d\u2019os en
+      observant leur forme et leur signification. En arch\xE9ologie, les os peuvent
+      devenir des objets de m\xE9moire, d\u2019identit\xE9, de croyance et de culture."
+    italiano: "In questa missione hai decifrato amuleti d\u2019osso osservandone
+      la forma e il significato. In archeologia, le ossa possono diventare oggetti
+      di memoria, identit\xE0, credenza e cultura."
   - key: NIBBLES
     english: NIBBLES
     deutsch: NIBBLES
@@ -1054,3 +904,509 @@ MonoBehaviour:
     deutsch: ACHILLES
     francais: ACHILLE
     italiano: ACHILLE
+  - key: STAGE2_MISSION_TITLE
+    english: PLEISTOCENE ERA
+    deutsch: "PLEISTOZ\xC4N"
+    francais: "PL\xC9ISTOC\xC8NE"
+    italiano: PLEISTOCENE
+  - key: STAGE2_MISSION_DESC
+    english: Help an ancient human relative learn how bones help the body move.
+    deutsch: "Hilf einem alten Verwandten des Menschen zu lernen, wie Knochen dem
+      K\xF6rper bei der Bewegung helfen."
+    francais: "Aide un ancien parent de l\u2019\xEAtre humain \xE0 comprendre comment
+      les os aident le corps \xE0 bouger."
+    italiano: "Aiuta un antico parente dell\u2019essere umano a capire come le ossa
+      aiutano il corpo a muoversi."
+  - key: STAGE2_ASSEMBLY_001
+    english: Help Yeti match each bone to its function.
+    deutsch: Hilf Yeti, jeden Knochen seiner Funktion zuzuordnen.
+    francais: "Aide Yeti \xE0 associer chaque os \xE0 sa fonction."
+    italiano: Aiuta Yeti ad abbinare ogni osso alla sua funzione.
+  - key: STAGE2_ASSEMBLY_002
+    english: 'Correct matches: {current}/{total}'
+    deutsch: 'Richtige Zuordnungen: {current}/{total}'
+    francais: 'Correspondances correctes : {current}/{total}'
+    italiano: 'Abbinamenti corretti: {current}/{total}'
+  - key: STAGE2_ASSEMBLY_003
+    english: All bone functions matched!
+    deutsch: Alle Knochenfunktionen zugeordnet!
+    francais: "Toutes les fonctions des os sont associ\xE9es !"
+    italiano: Tutte le funzioni delle ossa sono abbinate!
+  - key: FUNCTION_SCAPULA
+    english: Helps the front limb move
+    deutsch: "Hilft der vorderen Gliedma\xDFe, sich zu bewegen"
+    francais: "Aide le membre avant \xE0 bouger"
+    italiano: "Aiuta l\u2019arto anteriore a muoversi"
+  - key: FUNCTION_HUMERUS
+    english: Supports the upper front limb
+    deutsch: "St\xFCtzt den oberen Teil der vorderen Gliedma\xDFe"
+    francais: "Soutient la partie sup\xE9rieure du membre avant"
+    italiano: "Sostiene la parte superiore dell\u2019arto anteriore"
+  - key: FUNCTION_FEMUR
+    english: Supports the upper back limb
+    deutsch: "St\xFCtzt den oberen Teil der hinteren Gliedma\xDFe"
+    francais: "Soutient la partie sup\xE9rieure du membre arri\xE8re"
+    italiano: "Sostiene la parte superiore dell\u2019arto posteriore"
+  - key: FUNCTION_PELVIS
+    english: Connects the spine to the legs
+    deutsch: "Verbindet die Wirbels\xE4ule mit den Beinen"
+    francais: "Relie la colonne vert\xE9brale aux jambes"
+    italiano: Collega la colonna vertebrale alle gambe
+  - key: FUNCTION_ASTRAGALOS
+    english: Helps the ankle move smoothly
+    deutsch: Hilft dem Sprunggelenk, sich geschmeidig zu bewegen
+    francais: "Aide la cheville \xE0 bouger en douceur"
+    italiano: Aiuta la caviglia a muoversi in modo fluido
+  - key: FUNCTION_CRANIUM
+    english: Protects the brain
+    deutsch: "Sch\xFCtzt das Gehirn"
+    francais: "Prot\xE8ge le cerveau"
+    italiano: Protegge il cervello
+  - key: STAGE2_COMPLETION_TITLE
+    english: Level 5 Completed!
+    deutsch: Level 5 abgeschlossen!
+    francais: "Niveau 5 termin\xE9 !"
+    italiano: Livello 5 completato!
+  - key: STAGE2_COMPLETION_DESC
+    english: Thank you! Now I understand how each bone helps the body move.
+    deutsch: "Danke! Jetzt verstehe ich, wie jeder Knochen dem K\xF6rper bei der
+      Bewegung hilft."
+    francais: "Merci ! Maintenant, je comprends comment chaque os aide le corps \xE0
+      bouger."
+    italiano: Grazie! Ora capisco come ogni osso aiuta il corpo a muoversi.
+  - key: STAGE3_MISSION_TITLE
+    english: SPARTAN ERA
+    deutsch: SPARTANISCHE ZEIT
+    francais: "\xC9POQUE SPARTIATE"
+    italiano: EPOCA SPARTANA
+  - key: STAGE3_MISSION_DESC
+    english: Look at the bone amulets and find out what each one represents.
+    deutsch: "Betrachte die Knochenamulette und finde heraus, wof\xFCr jedes steht."
+    francais: "Observe les amulettes d\u2019os et d\xE9couvre ce que chacune repr\xE9sente."
+    italiano: "Osserva gli amuleti d\u2019osso e scopri che cosa rappresenta ciascuno."
+  - key: STAGE3_ASSEMBLY_001
+    english: Help Achilles decode the bone amulets.
+    deutsch: "Hilf Achilles, die Knochenamulette zu entschl\xFCsseln."
+    francais: "Aide Achilles \xE0 d\xE9coder les amulettes d\u2019os."
+    italiano: "Aiuta Achilles a decifrare gli amuleti d\u2019osso."
+  - key: STAGE3_ASSEMBLY_002
+    english: 'Amulets decoded: {current}/{total}'
+    deutsch: "Entschl\xFCsselte Amulette: {current}/{total}"
+    francais: "Amulettes d\xE9cod\xE9es : {current}/{total}"
+    italiano: 'Amuleti decifrati: {current}/{total}'
+  - key: STAGE3_ASSEMBLY_003
+    english: All amulets decoded!
+    deutsch: "Alle Amulette entschl\xFCsselt!"
+    francais: "Toutes les amulettes sont d\xE9cod\xE9es !"
+    italiano: Tutti gli amuleti sono stati decifrati!
+  - key: STAGE3_COMPLETION_TITLE
+    english: Level 9 Completed!
+    deutsch: Level 9 abgeschlossen!
+    francais: "Niveau 9 termin\xE9 !"
+    italiano: Livello 9 completato!
+  - key: STAGE3_COMPLETION_DESC
+    english: Well done! You uncovered the meaning hidden inside the bone amulets.
+    deutsch: Gut gemacht! Du hast die Bedeutung entdeckt, die in den Knochenamuletten
+      verborgen war.
+    francais: "Bien jou\xE9 ! Tu as d\xE9couvert le sens cach\xE9 dans les amulettes
+      d\u2019os."
+    italiano: "Ben fatto! Hai scoperto il significato nascosto negli amuleti d\u2019osso."
+  - key: STAGE3_CLUE_SCAPULA
+    english: Shield of the Shoulder
+    deutsch: Schild der Schulter
+    francais: "Bouclier de l\u2019\xE9paule"
+    italiano: Scudo della spalla
+  - key: STAGE3_CLUE_HUMERUS
+    english: Strength of the Arm
+    deutsch: Kraft des Arms
+    francais: Force du bras
+    italiano: Forza del braccio
+  - key: STAGE3_CLUE_FEMUR
+    english: Pillar of the Warrior
+    deutsch: "S\xE4ule des Kriegers"
+    francais: Pilier du guerrier
+    italiano: Pilastro del guerriero
+  - key: STAGE3_CLUE_PELVIS
+    english: Balance Core
+    deutsch: Zentrum des Gleichgewichts
+    francais: "Centre de l\u2019\xE9quilibre"
+    italiano: "Centro dell\u2019equilibrio"
+  - key: STAGE3_CLUE_ASTRAGALOS
+    english: Step of Fate
+    deutsch: Schritt des Schicksals
+    francais: Pas du destin
+    italiano: Passo del destino
+  - key: STAGE3_CLUE_CRANIUM
+    english: Guardian of Thought
+    deutsch: "W\xE4chter des Denkens"
+    francais: "Gardien de la pens\xE9e"
+    italiano: Guardiano del pensiero
+  - key: STAGE3_AMULET_SCAPULA_DESC
+    english: A hidden shield rests near the shoulder, guarding the path of the moving
+      limb...
+    deutsch: "Ein verborgener Schild ruht nahe der Schulter und bewacht den Weg der
+      bewegten Gliedma\xDFe..."
+    francais: "Un bouclier cach\xE9 repose pr\xE8s de l\u2019\xE9paule et garde le
+      chemin du membre en mouvement..."
+    italiano: "Uno scudo nascosto riposa vicino alla spalla e custodisce il cammino
+      dell\u2019arto in movimento..."
+  - key: STAGE3_AMULET_HUMERUS_DESC
+    english: "Strength travels through the arm, where a Spartan\u2019s power begins
+      to rise..."
+    deutsch: "Kraft flie\xDFt durch den Arm, dort, wo die St\xE4rke eines Spartaners
+      zu wachsen beginnt..."
+    francais: "La force traverse le bras, l\xE0 o\xF9 la puissance d\u2019un Spartiate
+      commence \xE0 s\u2019\xE9lever..."
+    italiano: La forza attraversa il braccio, dove il potere di uno Spartano comincia
+      a crescere...
+  - key: STAGE3_AMULET_FEMUR_DESC
+    english: A true Spartan stands on a mighty pillar, strong enough to carry the
+      body forward...
+    deutsch: "Ein wahrer Spartaner steht auf einer m\xE4chtigen S\xE4ule, stark genug,
+      den K\xF6rper voranzutragen..."
+    francais: "Un vrai Spartiate se tient sur un puissant pilier, assez fort pour
+      porter le corps vers l\u2019avant..."
+    italiano: Un vero Spartano si regge su un potente pilastro, abbastanza forte
+      da portare il corpo in avanti...
+  - key: STAGE3_AMULET_PELVIS_DESC
+    english: Balance begins at the center, where the body is joined and steadied...
+    deutsch: "Das Gleichgewicht beginnt in der Mitte, wo der K\xF6rper verbunden
+      und gest\xFCtzt wird..."
+    francais: "L\u2019\xE9quilibre commence au centre, l\xE0 o\xF9 le corps se relie
+      et se stabilise..."
+    italiano: "L\u2019equilibrio nasce al centro, dove il corpo si unisce e si stabilizza..."
+  - key: STAGE3_AMULET_ASTRAGALOS_DESC
+    english: "It seems Achilles\u2019 heel was not the only weak point; a small hidden
+      bone carried part of the fate..."
+    deutsch: "Es scheint, Achilles\u2019 Ferse war nicht die einzige Schwachstelle;
+      ein kleiner verborgener Knochen trug einen Teil des Schicksals..."
+    francais: "Il semble que le talon d\u2019Achilles n\u2019\xE9tait pas le seul
+      point faible ; un petit os cach\xE9 portait une part du destin..."
+    italiano: "Sembra che il tallone di Achilles non fosse l\u2019unico punto debole;
+      un piccolo osso nascosto portava parte del destino..."
+  - key: STAGE3_AMULET_CRANIUM_DESC
+    english: A silent guardian protects the place where thoughts and memories awaken...
+    deutsch: "Ein stiller W\xE4chter sch\xFCtzt den Ort, an dem Gedanken und Erinnerungen
+      erwachen..."
+    francais: "Un gardien silencieux prot\xE8ge le lieu o\xF9 les pens\xE9es et les
+      souvenirs s\u2019\xE9veillent..."
+    italiano: Un guardiano silenzioso protegge il luogo in cui pensieri e ricordi
+      si risvegliano...
+  - key: REWARD_NIBBLES_BACK_ROW_CRANIUM
+    english: "<b>Cranium / Skull</b> \u2014 protects the brain and shapes the head."
+    deutsch: "<b>Cranium / Sch\xE4del</b> \u2014 sch\xFCtzt das Gehirn und formt
+      den Kopf."
+    francais: "<b>Cr\xE2ne / Skull</b> \u2014 prot\xE8ge le cerveau et forme la t\xEAte."
+    italiano: "<b>Cranio / Skull</b> \u2014 protegge il cervello e d\xE0 forma alla
+      testa."
+  - key: REWARD_NIBBLES_BACK_ROW_SCAPULA
+    english: "<b>Scapula / Shoulder blade</b> \u2014 connects the front limb to the
+      body."
+    deutsch: "<b>Scapula / Schulterblatt</b> \u2014 verbindet die vordere Gliedma\xDFe
+      mit dem K\xF6rper."
+    francais: "<b>Scapula / Omoplate</b> \u2014 relie le membre avant au corps."
+    italiano: "<b>Scapola / Osso della spalla</b> \u2014 collega l\u2019arto anteriore
+      al corpo."
+  - key: REWARD_NIBBLES_BACK_ROW_HUMERUS
+    english: "<b>Humerus / Upper arm bone</b> \u2014 helps the front limb move and
+      support weight."
+    deutsch: "<b>Humerus / Oberarmknochen</b> \u2014 hilft der vorderen Gliedma\xDFe,
+      sich zu bewegen und Gewicht zu st\xFCtzen."
+    francais: "<b>Hum\xE9rus / Os du bras sup\xE9rieur</b> \u2014 aide le membre
+      avant \xE0 bouger et \xE0 soutenir le poids."
+    italiano: "<b>Omero / Osso del braccio superiore</b> \u2014 aiuta l\u2019arto
+      anteriore a muoversi e a sostenere il peso."
+  - key: REWARD_NIBBLES_BACK_ROW_PELVIS
+    english: "<b>Pelvis / Hip bone structure</b> \u2014 connects the body to the
+      hind limbs."
+    deutsch: "<b>Becken / H\xFCftstruktur</b> \u2014 verbindet den K\xF6rper mit
+      den hinteren Gliedma\xDFen."
+    francais: "<b>Bassin / Structure de la hanche</b> \u2014 relie le corps aux membres
+      arri\xE8re."
+    italiano: "<b>Bacino / Struttura dell\u2019anca</b> \u2014 collega il corpo agli
+      arti posteriori."
+  - key: REWARD_NIBBLES_BACK_ROW_FEMUR
+    english: "<b>Femur / Thigh bone</b> \u2014 supports the body and helps with movement."
+    deutsch: "<b>Femur / Oberschenkelknochen</b> \u2014 st\xFCtzt den K\xF6rper und
+      hilft bei der Bewegung."
+    francais: "<b>F\xE9mur / Os de la cuisse</b> \u2014 soutient le corps et aide
+      au mouvement."
+    italiano: "<b>Femore / Osso della coscia</b> \u2014 sostiene il corpo e aiuta
+      nel movimento."
+  - key: REWARD_NIBBLES_BACK_ROW_ASTRAGALOS
+    english: "<b>Astragalos / Ankle bone</b> \u2014 helps transfer weight through
+      the foot."
+    deutsch: "<b>Astragalos / Sprunggelenksknochen</b> \u2014 hilft, Gewicht durch
+      den Fu\xDF zu \xFCbertragen."
+    francais: "<b>Astragale / Os de la cheville</b> \u2014 aide \xE0 transf\xE9rer
+      le poids \xE0 travers le pied."
+    italiano: "<b>Astragalo / Osso della caviglia</b> \u2014 aiuta a trasferire il
+      peso attraverso il piede."
+  - key: REWARD_YETI_BACK_ROW_CRANIUM
+    english: "<b>Cranium</b> \u2014 protects the brain and supports the senses."
+    deutsch: "<b>Cranium</b> \u2014 sch\xFCtzt das Gehirn und unterst\xFCtzt die
+      Sinne."
+    francais: "<b>Cr\xE2ne</b> \u2014 prot\xE8ge le cerveau et soutient les sens."
+    italiano: "<b>Cranio</b> \u2014 protegge il cervello e sostiene i sensi."
+  - key: REWARD_YETI_BACK_ROW_SCAPULA
+    english: "<b>Scapula</b> \u2014 helps position the shoulder and guide arm movement."
+    deutsch: "<b>Scapula</b> \u2014 hilft, die Schulter zu positionieren und die
+      Armbewegung zu f\xFChren."
+    francais: "<b>Scapula</b> \u2014 aide \xE0 positionner l\u2019\xE9paule et \xE0
+      guider le mouvement du bras."
+    italiano: "<b>Scapola</b> \u2014 aiuta a posizionare la spalla e a guidare il
+      movimento del braccio."
+  - key: REWARD_YETI_BACK_ROW_HUMERUS
+    english: "<b>Humerus</b> \u2014 supports reaching, lifting, and front-limb movement."
+    deutsch: "<b>Humerus</b> \u2014 unterst\xFCtzt Greifen, Heben und die Bewegung
+      der vorderen Gliedma\xDFe."
+    francais: "<b>Hum\xE9rus</b> \u2014 soutient les gestes pour atteindre, soulever
+      et bouger le membre avant."
+    italiano: "<b>Omero</b> \u2014 sostiene il raggiungere, il sollevare e il movimento
+      dell\u2019arto anteriore."
+  - key: REWARD_YETI_BACK_ROW_PELVIS
+    english: "<b>Pelvis</b> \u2014 supports upright posture and connects the trunk
+      to the legs."
+    deutsch: "<b>Becken</b> \u2014 unterst\xFCtzt die aufrechte Haltung und verbindet
+      den Rumpf mit den Beinen."
+    francais: "<b>Bassin</b> \u2014 soutient la posture droite et relie le tronc
+      aux jambes."
+    italiano: "<b>Bacino</b> \u2014 sostiene la postura eretta e collega il tronco
+      alle gambe."
+  - key: REWARD_YETI_BACK_ROW_FEMUR
+    english: "<b>Femur</b> \u2014 carries body weight during standing and walking."
+    deutsch: "<b>Femur</b> \u2014 tr\xE4gt das K\xF6rpergewicht beim Stehen und Gehen."
+    francais: "<b>F\xE9mur</b> \u2014 porte le poids du corps pendant la station
+      debout et la marche."
+    italiano: "<b>Femore</b> \u2014 sostiene il peso del corpo quando si sta in piedi
+      e si cammina."
+  - key: REWARD_YETI_BACK_ROW_ASTRAGALOS
+    english: "<b>Astragalos</b> \u2014 helps balance the body and guide smooth ankle
+      motion."
+    deutsch: "<b>Astragalos</b> \u2014 hilft, den K\xF6rper auszubalancieren und
+      eine geschmeidige Bewegung des Sprunggelenks zu f\xFChren."
+    francais: "<b>Astragale</b> \u2014 aide \xE0 \xE9quilibrer le corps et \xE0 guider
+      le mouvement fluide de la cheville."
+    italiano: "<b>Astragalo</b> \u2014 aiuta a bilanciare il corpo e a guidare il
+      movimento fluido della caviglia."
+  - key: REWARD_ACHILLES_BACK_ROW_CRANIUM
+    english: "<b>Cranium amulet</b> \u2014 can symbolize identity, thought, memory,
+      or ancestry."
+    deutsch: "<b>Cranium-Amulett</b> \u2014 kann Identit\xE4t, Denken, Erinnerung
+      oder Abstammung symbolisieren."
+    francais: "<b>Amulette du cr\xE2ne</b> \u2014 peut symboliser l\u2019identit\xE9,
+      la pens\xE9e, la m\xE9moire ou l\u2019ascendance."
+    italiano: "<b>Amuleto del cranio</b> \u2014 pu\xF2 simboleggiare identit\xE0,
+      pensiero, memoria o origine."
+  - key: REWARD_ACHILLES_BACK_ROW_SCAPULA
+    english: "<b>Scapula amulet</b> \u2014 can suggest protection, strength, or movement."
+    deutsch: "<b>Scapula-Amulett</b> \u2014 kann Schutz, St\xE4rke oder Bewegung
+      andeuten."
+    francais: "<b>Amulette de la scapula</b> \u2014 peut sugg\xE9rer la protection,
+      la force ou le mouvement."
+    italiano: "<b>Amuleto della scapola</b> \u2014 pu\xF2 suggerire protezione, forza
+      o movimento."
+  - key: REWARD_ACHILLES_BACK_ROW_HUMERUS
+    english: "<b>Humerus amulet</b> \u2014 can represent action, work, or human ability."
+    deutsch: "<b>Humerus-Amulett</b> \u2014 kann Handlung, Arbeit oder menschliche
+      F\xE4higkeit darstellen."
+    francais: "<b>Amulette de l\u2019hum\xE9rus</b> \u2014 peut repr\xE9senter l\u2019action,
+      le travail ou la capacit\xE9 humaine."
+    italiano: "<b>Amuleto dell\u2019omero</b> \u2014 pu\xF2 rappresentare azione,
+      lavoro o capacit\xE0 umana."
+  - key: REWARD_ACHILLES_BACK_ROW_PELVIS
+    english: "<b>Pelvis amulet</b> \u2014 can symbolize support, life, posture, or
+      origin."
+    deutsch: "<b>Becken-Amulett</b> \u2014 kann Halt, Leben, Haltung oder Ursprung
+      symbolisieren."
+    francais: "<b>Amulette du bassin</b> \u2014 peut symboliser le soutien, la vie,
+      la posture ou l\u2019origine."
+    italiano: "<b>Amuleto del bacino</b> \u2014 pu\xF2 simboleggiare sostegno, vita,
+      postura o origine."
+  - key: REWARD_ACHILLES_BACK_ROW_FEMUR
+    english: "<b>Femur amulet</b> \u2014 can represent strength, travel, or endurance."
+    deutsch: "<b>Femur-Amulett</b> \u2014 kann St\xE4rke, Reise oder Ausdauer darstellen."
+    francais: "<b>Amulette du f\xE9mur</b> \u2014 peut repr\xE9senter la force, le
+      voyage ou l\u2019endurance."
+    italiano: "<b>Amuleto del femore</b> \u2014 pu\xF2 rappresentare forza, viaggio
+      o resistenza."
+  - key: REWARD_ACHILLES_BACK_ROW_ASTRAGALOS
+    english: "<b>Astragalos amulet</b> \u2014 can symbolize balance, movement, luck,
+      or play."
+    deutsch: "<b>Astragalos-Amulett</b> \u2014 kann Gleichgewicht, Bewegung, Gl\xFCck
+      oder Spiel symbolisieren."
+    francais: "<b>Amulette de l\u2019astragale</b> \u2014 peut symboliser l\u2019\xE9quilibre,
+      le mouvement, la chance ou le jeu."
+    italiano: "<b>Amuleto dell\u2019astragalo</b> \u2014 pu\xF2 simboleggiare equilibrio,
+      movimento, fortuna o gioco."
+  - key: INSTRUCTIONS_CHAPTER1_MECHANIC
+    english: 'Drag each bone to its correct place in the skeleton.
+
+
+      Tap on
+      a bone to learn its name and what it does.'
+    deutsch: 'Ziehe jeden Knochen an die richtige Stelle im Skelett.
+
+
+      Tippe
+      auf einen Knochen, um seinen Namen und seine Funktion zu lernen.'
+    francais: "Fais glisser chaque os \xE0 la bonne place dans le squelette.\r\n\r\nAppuie
+      sur un os pour apprendre son nom et sa fonction."
+    italiano: 'Trascina ogni osso nella posizione corretta nello scheletro.
+
+
+      Tocca
+      un osso per scoprire il suo nome e la sua funzione.'
+  - key: INSTRUCTIONS_CHAPTER2_MECHANIC
+    english: "Drag each bone to the correct function. \n\nMatch bones with what they
+      do in the body and complete all matches to finish the level."
+    deutsch: "Ziehe jeden Knochen zur passenden Funktion. \n\nOrdne die Knochen ihrer
+      Aufgabe im K\xF6rper zu und vervollst\xE4ndige alle Zuordnungen, um das Level
+      abzuschlie\xDFen."
+    francais: "Fais glisser chaque os vers la bonne fonction. \n\nAssocie les os
+      \xE0 leur r\xF4le dans le corps et compl\xE8te toutes les associations pour
+      terminer le niveau."
+    italiano: 'Trascina ogni osso nella funzione corretta.
+
+
+      Abbina le ossa
+      al loro ruolo nel corpo e completa tutti gli abbinamenti per finire il livello.'
+  - key: INSTRUCTIONS_CHAPTER3_MECHANIC
+    english: 'Drag each amulet to the correct meaning.
+
+
+      Look at the amulet
+      clues, match them with what they represent, and complete all matches to finish
+      the level.'
+    deutsch: "Ziehe jedes Amulett zur richtigen Bedeutung.\n\nBetrachte die Hinweise
+      der Amulette, ordne sie ihrer Bedeutung zu und vervollst\xE4ndige alle Zuordnungen,
+      um das Level zu beenden."
+    francais: "Fais glisser chaque amulette vers la bonne signification.\n\nObserve
+      les indices des amulettes, associe-les \xE0 ce qu\u2019elles repr\xE9sentent
+      et compl\xE8te toutes les associations pour terminer le niveau."
+    italiano: "Trascina ogni amuleto verso il significato corretto.\n\nOsserva gli
+      indizi degli amuleti, abbinali a ci\xF2 che rappresentano e completa tutti
+      gli abbinamenti per finire il livello."
+  - key: INSTRUCTIONS_STORY
+    english: "You are a young apprentice in Darwin\u2019s lab. With the Chrono Engine,
+      you travel through time to discover how bones connect anatomy, movement, history,
+      and culture."
+    deutsch: Du bist ein junger Lehrling in Darwins Labor. Mit der Chrono Engine
+      reist du durch die Zeit, um zu entdecken, wie Knochen Anatomie, Bewegung, Geschichte
+      und Kultur verbinden.
+    francais: "Tu es un jeune apprenti dans le laboratoire de Darwin. Avec le Chrono
+      Engine, tu voyages dans le temps pour d\xE9couvrir comment les os relient l\u2019anatomie,
+      le mouvement, l\u2019histoire et la culture."
+    italiano: Sei un giovane apprendista nel laboratorio di Darwin. Con il Chrono
+      Engine viaggi nel tempo per scoprire come le ossa collegano anatomia, movimento,
+      storia e cultura.
+  - key: INSTRUCTIONS_REWARDS_TIMER_MISTAKES
+    english: The timer shows how much time is left. The mistake counter shows how
+      many wrong attempts you made.
+    deutsch: "Der Timer zeigt, wie viel Zeit noch bleibt. Der Fehlerz\xE4hler zeigt,
+      wie viele falsche Versuche du gemacht hast."
+    francais: "Le chronom\xE8tre montre le temps restant. Le compteur d\u2019erreurs
+      montre combien de mauvaises tentatives tu as faites."
+    italiano: Il timer mostra quanto tempo resta. Il contatore degli errori mostra
+      quanti tentativi sbagliati hai fatto.
+  - key: INSTRUCTIONS_REWARDS_CARDS_RANKS
+    english: After each mission, you unlock a Discovery Card. Cards help you review
+      what you learned and can be Bronze, Silver, or Gold depending on your performance.
+    deutsch: "Nach jeder Mission schaltest du eine Entdeckungskarte frei. Die Karten
+      helfen dir, das Gelernte zu wiederholen, und k\xF6nnen je nach Leistung Bronze,
+      Silber oder Gold sein."
+    francais: "Apr\xE8s chaque mission, tu d\xE9bloques une carte de d\xE9couverte.
+      Les cartes t\u2019aident \xE0 revoir ce que tu as appris et peuvent \xEAtre
+      bronze, argent ou or selon ta performance."
+    italiano: "Dopo ogni missione sblocchi una Carta Scoperta. Le carte ti aiutano
+      a ripassare ci\xF2 che hai imparato e possono essere Bronzo, Argento o Oro
+      in base alla tua prestazione."
+  - key: INSTRUCTIONS_REWARDS_ASTRAGALOS
+    english: Earn a Gold card with 1 mistake or less to receive the special Golden
+      Astragalos badge.
+    deutsch: "Erreiche eine Goldkarte mit h\xF6chstens 1 Fehler, um das besondere
+      Goldene-Astragalos-Abzeichen zu erhalten."
+    francais: "Obtiens une carte d\u2019or avec 1 erreur ou moins pour recevoir le
+      badge sp\xE9cial Astragale dor\xE9."
+    italiano: "Ottieni una carta Oro con 1 errore o meno per ricevere lo speciale
+      distintivo Astragalo d\u2019Oro."
+  - key: LEVEL_COMPLETED
+    english: Level Completed
+    deutsch: Level abgeschlossen
+    francais: "Niveau termin\xE9"
+    italiano: Livello completato
+  - key: NUMBER_OF_MISTAKES
+    english: Number of mistakes
+    deutsch: Anzahl der Fehler
+    francais: "Nombre d\u2019erreurs"
+    italiano: Numero di errori
+  - key: INSTRUCTIONS_STORY_TITLE
+    english: STORY
+    deutsch: GESCHICHTE
+    francais: HISTOIRE
+    italiano: STORIA
+  - key: INSTRUCTIONS_REWARDS_TITLE
+    english: REWARDS SYSTEM
+    deutsch: BELOHNUNGSSYSTEM
+    francais: "SYST\xC8ME DE R\xC9COMPENSES"
+    italiano: SISTEMA DI RICOMPENSE
+  - key: TOTAL_DISCOVERY_CARDS
+    english: Total Discovery Cards
+    deutsch: Entdeckungskarten gesamt
+    francais: "Cartes de d\xE9couverte au total"
+    italiano: Carte Scoperta totali
+  - key: AVERAGE_MISTAKES_PER_LEVEL
+    english: Average mistakes per level
+    deutsch: Durchschnittliche Fehler pro Level
+    francais: Erreurs moyennes par niveau
+    italiano: Errori medi per livello
+  - key: AVERAGE_COMPLETION_TIME
+    english: Average completion time
+    deutsch: Durchschnittliche Abschlusszeit
+    francais: Temps moyen de completion
+    italiano: Tempo medio di completamento
+  - key: SIDE_CHARACTERS_UNLOCKED
+    english: Side characters unlocked
+    deutsch: Nebencharaktere freigeschaltet
+    francais: "Personnages secondaires d\xE9bloqu\xE9s"
+    italiano: Personaggi secondari sbloccati
+  - key: MIN
+    english: min
+    deutsch: Min.
+    francais: min
+    italiano: min
+  - key: SEC
+    english: sec
+    deutsch: Sek.
+    francais: s
+    italiano: sec
+  - key: BEST_COMPLETION_TIME
+    english: Best completion time
+    deutsch: Beste Abschlusszeit
+    francais: Meilleur temps de completion
+    italiano: Miglior tempo di completamento
+  - key: FEWEST_MISTAKES
+    english: Fewest mistakes
+    deutsch: Wenigste Fehler
+    francais: "Moins d\u2019erreurs"
+    italiano: Meno errori
+  - key: OUTRO_TEXT
+    english: "THANK YOU FOR PLAYING!\\n\\nYou completed the journey through bones,
+      movement, history, and culture.\\n\\nChrono-Scientist: Bones of Meaning\\nMaster
+      Thesis Prototype\\n\\nCreated by:\\nAriton Verush\\n\\nAcademic supervision:\\nProf.
+      Dr. Barbara Car\xE8\\nProf. Dr. Maurizio Rigamonti\\nProf. Dr. Denis Lalanne\\n\\nUniversity
+      of Bern\\n2026"
+    deutsch: "DANKE F\xDCRS SPIELEN!\\n\\nDu hast die Reise durch Knochen, Bewegung,
+      Geschichte und Kultur abgeschlossen.\\n\\nChrono-Scientist: Bones of Meaning\\nMasterarbeits-Prototyp\\n\\nErstellt
+      von:\\nAriton Verush\\n\\nAkademische Betreuung:\\nProf. Dr. Barbara Car\xE8\\nProf.
+      Dr. Maurizio Rigamonti\\nProf. Dr. Denis Lalanne\\n\\nUniversit\xE4t Bern\\n2026"
+    francais: "MERCI D\u2019AVOIR JOU\xC9 !\\n\\nTu as termin\xE9 le voyage \xE0
+      travers les os, le mouvement, l\u2019histoire et la culture.\\n\\nChrono-Scientist:
+      Bones of Meaning\\nPrototype de m\xE9moire de master\\n\\nCr\xE9\xE9 par :\\nAriton
+      Verush\\n\\nEncadrement acad\xE9mique :\\nProf. Dr. Barbara Car\xE8\\nProf.
+      Dr. Maurizio Rigamonti\\nProf. Dr. Denis Lalanne\\n\\nUniversit\xE9 de Berne\\n2026"
+    italiano: "GRAZIE PER AVER GIOCATO!\\n\\nHai completato il viaggio attraverso
+      ossa, movimento, storia e cultura.\\n\\nChrono-Scientist: Bones of Meaning\\nPrototipo
+      di tesi magistrale\\n\\nCreato da:\\nAriton Verush\\n\\nSupervisione accademica:\\nProf.
+      Dr. Barbara Car\xE8\\nProf. Dr. Maurizio Rigamonti\\nProf. Dr. Denis Lalanne\\n\\nUniversit\xE0
+      di Berna\\n2026"

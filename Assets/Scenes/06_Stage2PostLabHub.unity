@@ -223,10 +223,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueTemplate
       objectReference: {fileID: 0}
+    - target: {fileID: 5090237772136454000, guid: 1c199626d0adff942b83174bb01aa5d2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1506107457}
+    - target: {fileID: 5090237772136454000, guid: 1c199626d0adff942b83174bb01aa5d2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseOpenedCard
+      objectReference: {fileID: 0}
     - target: {fileID: 7122330628063656436, guid: 1c199626d0adff942b83174bb01aa5d2, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 231a419f892d7a54380f12f7469f2efc, type: 3}
+      objectReference: {fileID: 21300000, guid: 4226d3eed1469164db91f616947b9f99, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -397,6 +405,9 @@ MonoBehaviour:
     musowlSprite: {fileID: 21300000, guid: b2c599d518578dd42a928f5ea686cca1, type: 3}
     showChronoEngine: 1
   sceneToLoadAfterDialogue: 0
+  nextButtonKey: NEXT
+  finalButtonKey: MAIN_MENU
+  skipButtonKey: SKIP_DIALOGUE
   unlockRewardAfterDialogue: 1
   rewardUnlockKey: Reward_Level5_Yeti
   openPlayPanelAfterDialogue: 1
@@ -1511,6 +1522,198 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1308642994}
   m_CullTransparentMesh: 1
+--- !u!114 &1401011626 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6736092639149155915, guid: 1c199626d0adff942b83174bb01aa5d2, type: 3}
+  m_PrefabInstance: {fileID: 183988563}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe5f7ec48bb148046a7c0833b840fcfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UICardFlipAnimator
+--- !u!114 &1401011627 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6982847370946587310, guid: 1c199626d0adff942b83174bb01aa5d2, type: 3}
+  m_PrefabInstance: {fileID: 183988563}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adf26f2f676d2bc478b1c4ddbe3151b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIPopupCardAnimator
+--- !u!114 &1401011628 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4262687807591849091, guid: 1c199626d0adff942b83174bb01aa5d2, type: 3}
+  m_PrefabInstance: {fileID: 183988563}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &1401011629 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7861751478083266308, guid: 1c199626d0adff942b83174bb01aa5d2, type: 3}
+  m_PrefabInstance: {fileID: 183988563}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &1401011630 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3594325722023778136, guid: 1c199626d0adff942b83174bb01aa5d2, type: 3}
+  m_PrefabInstance: {fileID: 183988563}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!1 &1401011631 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 330842924340616000, guid: 1c199626d0adff942b83174bb01aa5d2, type: 3}
+  m_PrefabInstance: {fileID: 183988563}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1401011632 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1919888507095669741, guid: 1c199626d0adff942b83174bb01aa5d2, type: 3}
+  m_PrefabInstance: {fileID: 183988563}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &1401011633 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 127902304821703335, guid: 1c199626d0adff942b83174bb01aa5d2, type: 3}
+  m_PrefabInstance: {fileID: 183988563}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &1401011634 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8747750663593416898, guid: 1c199626d0adff942b83174bb01aa5d2, type: 3}
+  m_PrefabInstance: {fileID: 183988563}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &1401011635 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7973819697711943768, guid: 1c199626d0adff942b83174bb01aa5d2, type: 3}
+  m_PrefabInstance: {fileID: 183988563}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &1401011636 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 700080610107208260, guid: 1c199626d0adff942b83174bb01aa5d2, type: 3}
+  m_PrefabInstance: {fileID: 183988563}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &1401011637 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6112537134417422692, guid: 1c199626d0adff942b83174bb01aa5d2, type: 3}
+  m_PrefabInstance: {fileID: 183988563}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &1401011638 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6572414831752043079, guid: 1c199626d0adff942b83174bb01aa5d2, type: 3}
+  m_PrefabInstance: {fileID: 183988563}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &1401011639 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4226510653689206865, guid: 1c199626d0adff942b83174bb01aa5d2, type: 3}
+  m_PrefabInstance: {fileID: 183988563}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &1401011640 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2417707038619772980, guid: 1c199626d0adff942b83174bb01aa5d2, type: 3}
+  m_PrefabInstance: {fileID: 183988563}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &1401011641 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1202369188367456906, guid: 1c199626d0adff942b83174bb01aa5d2, type: 3}
+  m_PrefabInstance: {fileID: 183988563}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &1401011642 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4371491259700331198, guid: 1c199626d0adff942b83174bb01aa5d2, type: 3}
+  m_PrefabInstance: {fileID: 183988563}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &1401011643 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6682833111042764152, guid: 1c199626d0adff942b83174bb01aa5d2, type: 3}
+  m_PrefabInstance: {fileID: 183988563}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1 &1403373369
 GameObject:
   m_ObjectHideFlags: 0
@@ -1590,6 +1793,226 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1403373369}
   m_CullTransparentMesh: 1
+--- !u!1 &1506107456
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1506107458}
+  - component: {fileID: 1506107457}
+  m_Layer: 0
+  m_Name: RewardsController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1506107457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506107456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f539cbefc1f50549a587fa0ae0f54fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RewardsPanelController
+  rewardsPanel: {fileID: 0}
+  rewardsTitleButton: {fileID: 0}
+  detailsTitleButton: {fileID: 0}
+  rewardsTitleText: {fileID: 0}
+  slashTitleText: {fileID: 0}
+  detailsTitleText: {fileID: 0}
+  selectedTitleColor: {r: 0, g: 0, b: 0, a: 1}
+  unselectedTitleColor: {r: 0.49019608, g: 0.49019608, b: 0.49019608, a: 1}
+  slashTitleColor: {r: 0, g: 0, b: 0, a: 1}
+  rewardsUnderline: {fileID: 0}
+  detailsUnderline: {fileID: 0}
+  rewardsContent: {fileID: 0}
+  detailsContent: {fileID: 0}
+  discoveryCards:
+  - cardID: Level1_Nibbles
+    unlockPlayerPrefsKey: Reward_Level1_Nibbles
+    cardButton: {fileID: 0}
+    cardImage: {fileID: 0}
+    characterEmoticonImage: {fileID: 0}
+    cardTitleText: {fileID: 0}
+    lockedCardSprite: {fileID: 21300000, guid: cc5526266cd54904185f0361702a0f39, type: 3}
+    unlockedCardSprite: {fileID: 21300000, guid: c1014f79e4863da4ca6c8264a6ac60b9, type: 3}
+    lockedCharacterEmoticonSprite: {fileID: 21300000, guid: 131c67e9b517b174dbbe06c6384008be, type: 3}
+    unlockedCharacterEmoticonSprite: {fileID: 21300000, guid: 80467ffdade282d48943976b9c33b9c6, type: 3}
+    openedCardSprite: {fileID: 21300000, guid: d0c296230777c6346a77c1f8e3b44119, type: 3}
+    openedCardBackSprite: {fileID: 21300000, guid: 828cb9fca7fb6fe45ab36f31aaefde61, type: 3}
+    openedCardTitle: Nibbles
+    openedCardTitleKey: NIBBLES
+    openedCardFrontDescription: "<b>Character:</b> Nibbles\n<b>Represents:</b> Brasilodon
+      Quadrangularis\n<b>Era:</b> Late Triassic\n<b>Time:</b> about 225 million years
+      ago\n<b>Status:</b> Extinct\n<b>Size:</b> roughly 20 cm long\n\n<b>Focus:</b>
+      \nFossil reconstruction, skeleton assembly, and early mammal anatomy."
+    openedCardFrontDescriptionKey: REWARD_NIBBLES_FRONT
+    openedCardBackDescription: "In this mission, you learned the names of important
+      bones and bone structures by rebuilding parts of Nibbles\u2019 skeleton."
+    openedCardBackDescriptionKey: REWARD_NIBBLES_BACK
+    blankAstragalosBadgeSprite: {fileID: 21300000, guid: f408db3e7dbfc8944820254d0731c923, type: 3}
+    earnedAstragalosBadgeSprite: {fileID: 21300000, guid: 2cfe36d530ead2d47af5dc2430f4d480, type: 3}
+    backBoneIconSprites:
+    - {fileID: 21300000, guid: 31f8045211b77d24a9bb2ab8fb24882c, type: 3}
+    - {fileID: 21300000, guid: b44375de91245bf4dba92d20c8f898f8, type: 3}
+    - {fileID: 21300000, guid: 5d9ced098e44bd242becb6ba710dcab7, type: 3}
+    - {fileID: 21300000, guid: e14c2ca104b286f41a507905692c4982, type: 3}
+    - {fileID: 21300000, guid: 2b1245f47fece1340982027fb75bce87, type: 3}
+    - {fileID: 21300000, guid: b0580412f2ed6b14cbeb5c92df97196e, type: 3}
+    backRowTextKeys:
+    - REWARD_NIBBLES_BACK_ROW_CRANIUM
+    - REWARD_NIBBLES_BACK_ROW_SCAPULA
+    - REWARD_NIBBLES_BACK_ROW_HUMERUS
+    - REWARD_NIBBLES_BACK_ROW_PELVIS
+    - REWARD_NIBBLES_BACK_ROW_FEMUR
+    - REWARD_NIBBLES_BACK_ROW_ASTRAGALOS
+    rank: 0
+    unlocksSideCharacter: 1
+  - cardID: Level5_Yeti
+    unlockPlayerPrefsKey: Reward_Level5_Yeti
+    cardButton: {fileID: 0}
+    cardImage: {fileID: 0}
+    characterEmoticonImage: {fileID: 0}
+    cardTitleText: {fileID: 0}
+    lockedCardSprite: {fileID: 21300000, guid: cc5526266cd54904185f0361702a0f39, type: 3}
+    unlockedCardSprite: {fileID: 21300000, guid: c1014f79e4863da4ca6c8264a6ac60b9, type: 3}
+    lockedCharacterEmoticonSprite: {fileID: 21300000, guid: 3f03406fec19aeb4c92887acfb2dce46, type: 3}
+    unlockedCharacterEmoticonSprite: {fileID: 21300000, guid: dac9b53c56f6e0249a861bbd7d5a27c7, type: 3}
+    openedCardSprite: {fileID: 21300000, guid: eb865a870dc366b4fb6a80bc4bb6468e, type: 3}
+    openedCardBackSprite: {fileID: 21300000, guid: 828cb9fca7fb6fe45ab36f31aaefde61, type: 3}
+    openedCardTitle: Yeti
+    openedCardTitleKey: YETI
+    openedCardFrontDescription: "<b>Character:</b> Yeti\n<b>Represents:</b> Australopithecus\n<b>Era:</b>
+      Pliocene to early Pleistocene\n<b>Time:</b> about 4.4 to 1.4 million years
+      ago\n<b>Status:</b> Extinct\n<b>Size:</b> 1 to 1.5 meters tall\n\n<b>Focus:</b>
+      \nBone function, balance, and movement."
+    openedCardFrontDescriptionKey: REWARD_YETI_FRONT
+    openedCardBackDescription: "In this mission, you matched each bone or structure
+      by its function. Bones are not only shapes \u2014 they help bodies move, balance,
+      and stand."
+    openedCardBackDescriptionKey: REWARD_YETI_BACK
+    blankAstragalosBadgeSprite: {fileID: 21300000, guid: f408db3e7dbfc8944820254d0731c923, type: 3}
+    earnedAstragalosBadgeSprite: {fileID: 21300000, guid: 2cfe36d530ead2d47af5dc2430f4d480, type: 3}
+    backBoneIconSprites:
+    - {fileID: 21300000, guid: 768f3d9f9bed36c4196d709cdddcaf02, type: 3}
+    - {fileID: 21300000, guid: efaab72008592fb4cbc88b50b468dcef, type: 3}
+    - {fileID: 21300000, guid: 49a4a0cbfa86d304ba7f82f5cc5e3586, type: 3}
+    - {fileID: 21300000, guid: 557d78a7287c06244ac954225599a3b8, type: 3}
+    - {fileID: 21300000, guid: 39f3814cc9048ee419fddea3c8569921, type: 3}
+    - {fileID: 21300000, guid: e918f68da289b96469db16b9bca481bd, type: 3}
+    backRowTextKeys:
+    - REWARD_YETI_BACK_ROW_CRANIUM
+    - REWARD_YETI_BACK_ROW_SCAPULA
+    - REWARD_YETI_BACK_ROW_HUMERUS
+    - REWARD_YETI_BACK_ROW_PELVIS
+    - REWARD_YETI_BACK_ROW_FEMUR
+    - REWARD_YETI_BACK_ROW_ASTRAGALOS
+    rank: 0
+    unlocksSideCharacter: 1
+  - cardID: Level9_Achilles
+    unlockPlayerPrefsKey: Reward_Level9_Achilles
+    cardButton: {fileID: 0}
+    cardImage: {fileID: 0}
+    characterEmoticonImage: {fileID: 0}
+    cardTitleText: {fileID: 0}
+    lockedCardSprite: {fileID: 21300000, guid: cc5526266cd54904185f0361702a0f39, type: 3}
+    unlockedCardSprite: {fileID: 21300000, guid: c1014f79e4863da4ca6c8264a6ac60b9, type: 3}
+    lockedCharacterEmoticonSprite: {fileID: 21300000, guid: f3a85df3b9ab0a5419b9835194cce05e, type: 3}
+    unlockedCharacterEmoticonSprite: {fileID: 21300000, guid: ef93799e4bc9d584cb3315739c970454, type: 3}
+    openedCardSprite: {fileID: 21300000, guid: d3f8c21dda420e84086a2b29647e4819, type: 3}
+    openedCardBackSprite: {fileID: 21300000, guid: 828cb9fca7fb6fe45ab36f31aaefde61, type: 3}
+    openedCardTitle: ACHILLES
+    openedCardTitleKey: ACHILLES
+    openedCardFrontDescription: "<b>Character:</b> Achilles\n<b>Represents:</b> Homo
+      sapiens\n<b>Era:</b> Ancient Greece / Spartan era\n<b>Time:</b> about 2500
+      years ago\n<b>Status:</b> Living species\n<b>Size:</b> around 1.7 meters tall\n\n<b>Focus:</b>
+      \nHuman bone structures, archaeology, and cultural meaning."
+    openedCardFrontDescriptionKey: REWARD_ACHILLES_FRONT
+    openedCardBackDescription: In this mission, you decoded bone amulets by observing
+      their shape and meaning. In archaeology, bones can become objects of memory,
+      identity, belief, and culture.
+    openedCardBackDescriptionKey: REWARD_ACHILLES_BACK
+    blankAstragalosBadgeSprite: {fileID: 21300000, guid: f408db3e7dbfc8944820254d0731c923, type: 3}
+    earnedAstragalosBadgeSprite: {fileID: 21300000, guid: 2cfe36d530ead2d47af5dc2430f4d480, type: 3}
+    backBoneIconSprites:
+    - {fileID: 21300000, guid: 805ec827e815c3a44a23d1993c6875fa, type: 3}
+    - {fileID: 21300000, guid: ffa7bf7488ec94540b6809111fdd1225, type: 3}
+    - {fileID: 21300000, guid: af717e87c7883b94680db944f4ab951d, type: 3}
+    - {fileID: 21300000, guid: 30b6843e31df29c43819fa9cc09e5a70, type: 3}
+    - {fileID: 21300000, guid: 7a397e7f8fb14d446ad2b8a046c17520, type: 3}
+    - {fileID: 21300000, guid: 30d1942c9d61536428b4d494fd7bf818, type: 3}
+    backRowTextKeys:
+    - REWARD_ACHILLES_BACK_ROW_CRANIUM
+    - REWARD_ACHILLES_BACK_ROW_SCAPULA
+    - REWARD_ACHILLES_BACK_ROW_HUMERUS
+    - REWARD_ACHILLES_BACK_ROW_PELVIS
+    - REWARD_ACHILLES_BACK_ROW_FEMUR
+    - REWARD_ACHILLES_BACK_ROW_ASTRAGALOS
+    rank: 0
+    unlocksSideCharacter: 1
+  openedCardPopup: {fileID: 1743288255}
+  openedCardImage: {fileID: 1743288254}
+  openedCardTitleText: {fileID: 1743288253}
+  openedFrontDescriptionText: {fileID: 1743288252}
+  openedBackDescriptionText: {fileID: 1743288251}
+  flipCardButton: {fileID: 1743288250}
+  flipCardButtonText: {fileID: 1743288249}
+  openedPageSideText: {fileID: 1743288248}
+  backBoneIconsGroup: {fileID: 1743288247}
+  backBoneIconImages:
+  - {fileID: 1401011643}
+  - {fileID: 1401011642}
+  - {fileID: 1401011641}
+  - {fileID: 1401011640}
+  - {fileID: 1401011639}
+  - {fileID: 1401011638}
+  backRowTexts:
+  - {fileID: 1401011637}
+  - {fileID: 1401011636}
+  - {fileID: 1401011635}
+  - {fileID: 1401011634}
+  - {fileID: 1401011633}
+  - {fileID: 1401011632}
+  astragalosBadgeGroup: {fileID: 1401011631}
+  rankTintOverlay: {fileID: 1401011630}
+  openedRankText: {fileID: 1401011629}
+  openedAstragalosBadgeImage: {fileID: 1401011628}
+  goldRankOverlaySprite: {fileID: 21300000, guid: 98d4ceb588ed409448b8d2594ff81ee1, type: 3}
+  silverRankOverlaySprite: {fileID: 21300000, guid: d88763988100b754f8bf4d6a76d8d33f, type: 3}
+  bronzeRankOverlaySprite: {fileID: 21300000, guid: 1fc6fd5ebb38fd8468b0fa43333be16d, type: 3}
+  openedCardAnimator: {fileID: 1401011627}
+  totalDiscoveryCardsText: {fileID: 0}
+  goldCardsText: {fileID: 0}
+  silverCardsText: {fileID: 0}
+  bronzeCardsText: {fileID: 0}
+  averageMistakesText: {fileID: 0}
+  averageCompletionTimeText: {fileID: 0}
+  sideCharactersUnlockedText: {fileID: 0}
+  astragalosBadgesText: {fileID: 0}
+  cardFlipAnimator: {fileID: 1401011626}
+--- !u!4 &1506107458
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506107456}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1572833018 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3293067148186824780, guid: 1c199626d0adff942b83174bb01aa5d2, type: 3}
@@ -1612,6 +2035,93 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1 &1743288247 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8783695014260543859, guid: 1c199626d0adff942b83174bb01aa5d2, type: 3}
+  m_PrefabInstance: {fileID: 183988563}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1743288248 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8490951451976015972, guid: 1c199626d0adff942b83174bb01aa5d2, type: 3}
+  m_PrefabInstance: {fileID: 183988563}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &1743288249 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2623993076860353547, guid: 1c199626d0adff942b83174bb01aa5d2, type: 3}
+  m_PrefabInstance: {fileID: 183988563}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &1743288250 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9079048415930940590, guid: 1c199626d0adff942b83174bb01aa5d2, type: 3}
+  m_PrefabInstance: {fileID: 183988563}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+--- !u!114 &1743288251 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3778998932291590120, guid: 1c199626d0adff942b83174bb01aa5d2, type: 3}
+  m_PrefabInstance: {fileID: 183988563}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &1743288252 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5517891007885844556, guid: 1c199626d0adff942b83174bb01aa5d2, type: 3}
+  m_PrefabInstance: {fileID: 183988563}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &1743288253 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1269151806886603791, guid: 1c199626d0adff942b83174bb01aa5d2, type: 3}
+  m_PrefabInstance: {fileID: 183988563}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &1743288254 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 710137939943345773, guid: 1c199626d0adff942b83174bb01aa5d2, type: 3}
+  m_PrefabInstance: {fileID: 183988563}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!1 &1743288255 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6669775816338454009, guid: 1c199626d0adff942b83174bb01aa5d2, type: 3}
+  m_PrefabInstance: {fileID: 183988563}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1810992568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1744,6 +2254,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1810992568}
   m_CullTransparentMesh: 1
+--- !u!1 &1820967009
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1820967011}
+  - component: {fileID: 1820967010}
+  m_Layer: 0
+  m_Name: PostDialogueRewardCardAutoShow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1820967010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820967009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d64e2b9a4fd9b8f4483cb9bfd2f0461e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PostDialogueRewardCardAutoShow
+  rewardsPanelController: {fileID: 1506107457}
+  rewardUnlockKey: Reward_Level5_Yeti
+  showOnStart: 1
+  showDelay: 1
+  useLatestRunStats: 1
+  forceOpen: 1
+--- !u!4 &1820967011
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820967009}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 867.62805, y: 978.62225, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2020058167
 GameObject:
   m_ObjectHideFlags: 0
@@ -2016,3 +2576,5 @@ SceneRoots:
   - {fileID: 1084242756}
   - {fileID: 1020313078}
   - {fileID: 927786943}
+  - {fileID: 1820967011}
+  - {fileID: 1506107458}

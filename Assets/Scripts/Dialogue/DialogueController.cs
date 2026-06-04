@@ -55,6 +55,11 @@ public class DialogueController : MonoBehaviour
     [Header("After Dialogue")]
     public int sceneToLoadAfterDialogue = 2;
 
+    [Header("Button Localization Keys")]
+    [SerializeField] private string nextButtonKey = "NEXT";
+    [SerializeField] private string finalButtonKey = "READY";
+    [SerializeField] private string skipButtonKey = "SKIP_DIALOGUE";
+
     [Header("Reward Unlock After Dialogue")]
     [SerializeField] private bool unlockRewardAfterDialogue = false;
     [SerializeField] private string rewardUnlockKey;
@@ -301,13 +306,14 @@ public class DialogueController : MonoBehaviour
 
         bool isLastLine = lines != null && lines.Length > 0 && index >= lines.Length - 1;
 
+        string key = isLastLine ? finalButtonKey : nextButtonKey;
+
         if (LanguageManager.Instance == null)
         {
-            nextButtonText.text = isLastLine ? "READY" : "NEXT";
+            nextButtonText.text = key;
             return;
         }
 
-        string key = isLastLine ? "READY" : "NEXT";
         nextButtonText.text = LanguageManager.Instance.GetText(key);
     }
 
@@ -318,11 +324,11 @@ public class DialogueController : MonoBehaviour
 
         if (LanguageManager.Instance == null)
         {
-            skipButtonText.text = "SKIP DIALOGUE";
+            skipButtonText.text = skipButtonKey;
             return;
         }
 
-        skipButtonText.text = LanguageManager.Instance.GetText("SKIP_DIALOGUE");
+        skipButtonText.text = LanguageManager.Instance.GetText(skipButtonKey);
     }
 
     private void UpdateSkipButtonVisibility()

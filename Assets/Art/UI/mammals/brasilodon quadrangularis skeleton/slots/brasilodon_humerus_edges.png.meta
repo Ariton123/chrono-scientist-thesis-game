@@ -129,10 +129,10 @@ TextureImporter:
       name: brasilodon_humerus_edges_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 2
         y: 0
-        width: 400
-        height: 829
+        width: 286
+        height: 749
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

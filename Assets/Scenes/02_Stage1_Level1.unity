@@ -423,7 +423,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -55}
+  m_AnchoredPosition: {x: 0, y: -50}
   m_SizeDelta: {x: 800, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &29881073
@@ -647,6 +647,8 @@ MonoBehaviour:
   duration: 0.25
   startMultiplier: 0.75
   overshootMultiplier: 1.2
+  captureScaleOnEnable: 1
+  startDelay: 0.02
 --- !u!114 &35485908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -664,6 +666,9 @@ MonoBehaviour:
   femaleNormalSprite: {fileID: 21300000, guid: 22c3ff5893646ce499ee7756c72e95e4, type: 3}
   femaleSmilingSprite: {fileID: 21300000, guid: 64f430bda5b9f0c44bc9e49bfd44cb26, type: 3}
   defaultExpression: 0
+  applyGenderScale: 1
+  maleScale: {x: 0.6, y: 0.6, z: 0.6}
+  femaleScale: {x: 0.8, y: 0.8, z: 0.8}
 --- !u!1 &36169782
 GameObject:
   m_ObjectHideFlags: 0
@@ -700,7 +705,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -480}
+  m_AnchoredPosition: {x: 0, y: -490}
   m_SizeDelta: {x: 450, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &36169784
@@ -1701,6 +1706,7 @@ MonoBehaviour:
   warningBlinkSpeed: 6
   maxMistakesForAstragalosBadge: 1
   rewardUnlockKey: Reward_Level1_Nibbles
+  stageId: Stage1_Level1
   assemblyController: {fileID: 338201643}
 --- !u!1 &233178008
 GameObject:
@@ -1866,10 +1872,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1b12d22d6fb02746bb0618d6bf08799, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIBoneDrag
-  boneID: teeth
+  boneID: pelvis
   placedSizeMultiplier: 1
+  preserveStartRotationOnSnap: 0
   placedRotationZ: 0
   placedPositionOffset: {x: 0, y: 0}
+  preserveAspectWhileDragging: 0
+  preserveAspectWhenPlaced: 0
   placedColor: {r: 1, g: 0.2, b: 0.2, a: 1}
   popScale: 1.15
   popDuration: 0.1
@@ -1887,8 +1896,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BoneInfoClickable
   infoPanel: {fileID: 247588784}
   bonePreviewSprite: {fileID: 21300000, guid: 138e055e5f36e0b4ca5207a7337a2dea, type: 3}
-  boneNameKey: BONE_DENTES_NAME
-  boneDescriptionKey: BONE_DENTES_DESC
+  previewRotationZ: 0
+  boneNameKey: BONE_PELVIS_NAME
+  boneDescriptionKey: BONE_PELVIS_DESC
 --- !u!1 &247588782
 GameObject:
   m_ObjectHideFlags: 0
@@ -1944,6 +1954,7 @@ MonoBehaviour:
   boneNameText: {fileID: 720053084}
   boneDescriptionText: {fileID: 623701963}
   defaultSprite: {fileID: 21300000, guid: 236709b430112a64884eb30ae2904c7f, type: 3}
+  preservePreviewAspect: 1
 --- !u!1 &298555410
 GameObject:
   m_ObjectHideFlags: 0
@@ -2092,9 +2103,146 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: 0}
+  m_AnchoredPosition: {x: 206, y: 0}
   m_SizeDelta: {x: 1000, y: 255}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &334425429
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 334425430}
+  - component: {fileID: 334425432}
+  - component: {fileID: 334425433}
+  m_Layer: 5
+  m_Name: AssemblyProgressText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &334425430
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334425429}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 338201640}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 375}
+  m_SizeDelta: {x: 1000, y: 60}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &334425432
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334425429}
+  m_CullTransparentMesh: 1
+--- !u!114 &334425433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334425429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'Correct pieces placed:'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: e44775c20021f30429bbb192e83fa5f1, type: 2}
+  m_sharedMaterial: {fileID: 655518705855749923, guid: e44775c20021f30429bbb192e83fa5f1, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4279180078
+  m_fontColor: {r: 0.18039216, g: 0.105882354, b: 0.05882353, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 2
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &338201639
 GameObject:
   m_ObjectHideFlags: 0
@@ -2129,6 +2277,8 @@ RectTransform:
   m_Children:
   - {fileID: 485853015}
   - {fileID: 1659858123}
+  - {fileID: 334425430}
+  - {fileID: 1889971694}
   - {fileID: 692768173}
   - {fileID: 308493446}
   - {fileID: 139282614}
@@ -2216,7 +2366,10 @@ MonoBehaviour:
   totalPieces: 6
   placedPieces: 0
   completeButton: {fileID: 1565734239}
-  assemblyStatusText: {fileID: 1659858121}
+  assemblyTitleText: {fileID: 1659858121}
+  assemblyProgressText: {fileID: 334425433}
+  assemblyCompleteText: {fileID: 1889971697}
+  bodyLengthText: {fileID: 29881073}
 --- !u!114 &338201644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2409,8 +2562,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -480}
-  m_SizeDelta: {x: 600, y: 100}
+  m_AnchoredPosition: {x: 0, y: -489}
+  m_SizeDelta: {x: 450, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &353085244
 MonoBehaviour:
@@ -2608,9 +2761,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIBoneDrag
   boneID: astragalus
-  placedSizeMultiplier: 1
-  placedRotationZ: 0
+  placedSizeMultiplier: 0.8
+  preserveStartRotationOnSnap: 0
+  placedRotationZ: 180
   placedPositionOffset: {x: 0, y: 0}
+  preserveAspectWhileDragging: 0
+  preserveAspectWhenPlaced: 0
   placedColor: {r: 1, g: 0.2, b: 0.2, a: 1}
   popScale: 1.15
   popDuration: 0.1
@@ -2628,6 +2784,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BoneInfoClickable
   infoPanel: {fileID: 247588784}
   bonePreviewSprite: {fileID: 21300000, guid: b0580412f2ed6b14cbeb5c92df97196e, type: 3}
+  previewRotationZ: 0
   boneNameKey: BONE_ASTRAGALOS_NAME
   boneDescriptionKey: BONE_ASTRAGALOS_DESC
 --- !u!1 &383842122
@@ -2854,17 +3011,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 466376004}
-  m_LocalRotation: {x: 0, y: 0, z: -0.15574479, w: 0.9877973}
+  m_LocalRotation: {x: 0, y: 0, z: -0.10340014, w: 0.9946399}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 692768173}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -17.92}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -11.87}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 153.9, y: 171.9}
-  m_SizeDelta: {x: 103.1772, y: 90}
+  m_AnchoredPosition: {x: 155.00388, y: 172.74393}
+  m_SizeDelta: {x: 104.9905, y: 97.8866}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &466376006
 MonoBehaviour:
@@ -2916,8 +3073,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a0214faeabe5684d9e306a9c7052c00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoneSlotUI
-  requiredBoneID: teeth
+  requiredBoneID: pelvis
   assemblyController: {fileID: 338201643}
+  snapTarget: {fileID: 0}
   placedSlotAlpha: 0.25
   fadeOnCorrect: 0
 --- !u!1 &477196038
@@ -3898,8 +4056,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -32.849266}
-  m_SizeDelta: {x: 1000, y: 151.0759}
+  m_AnchoredPosition: {x: 0, y: -23}
+  m_SizeDelta: {x: 1000, y: 155.0274}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &623701963
 MonoBehaviour:
@@ -4033,6 +4191,7 @@ MonoBehaviour:
   continueButton: {fileID: 353085242}
   hintText: {fileID: 681326502}
   gameManager: {fileID: 217054151}
+  continueButtonCanvasGroup: {fileID: 0}
   hintTypewriter: {fileID: 681326503}
   fadeOutCanvasGroups:
   - {fileID: 1007378483}
@@ -4786,6 +4945,8 @@ MonoBehaviour:
   duration: 0.25
   startMultiplier: 0.75
   overshootMultiplier: 1.2
+  captureScaleOnEnable: 1
+  startDelay: 0.02
 --- !u!1 &811421581
 GameObject:
   m_ObjectHideFlags: 0
@@ -5147,7 +5308,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 179.54004, y: -240}
+  m_AnchoredPosition: {x: 193, y: -281}
   m_SizeDelta: {x: 1000, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &885617504
@@ -5199,7 +5360,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -359.29}
-  m_SizeDelta: {x: 1135.7354, y: 89.44922}
+  m_SizeDelta: {x: 1135.7354, y: 145.71}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &890512705
 MonoBehaviour:
@@ -5424,7 +5585,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 305}
+  m_AnchoredPosition: {x: 0, y: 284}
   m_SizeDelta: {x: 1200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &934916377
@@ -5574,7 +5735,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 179.54, y: -240}
+  m_AnchoredPosition: {x: 193, y: -281}
   m_SizeDelta: {x: 1200, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &965760159
@@ -5984,6 +6145,8 @@ MonoBehaviour:
   duration: 0.25
   startMultiplier: 0.75
   overshootMultiplier: 1.2
+  captureScaleOnEnable: 1
+  startDelay: 0.02
 --- !u!1 &1068620152
 GameObject:
   m_ObjectHideFlags: 0
@@ -6100,7 +6263,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -300}
-  m_SizeDelta: {x: 350, y: 90}
+  m_SizeDelta: {x: 450, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1090459045
 MonoBehaviour:
@@ -6556,6 +6719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BoneSlotUI
   requiredBoneID: skull
   assemblyController: {fileID: 338201643}
+  snapTarget: {fileID: 0}
   placedSlotAlpha: 0.25
   fadeOnCorrect: 0
 --- !u!114 &1246503185
@@ -7158,6 +7322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BoneSlotUI
   requiredBoneID: scapula
   assemblyController: {fileID: 338201643}
+  snapTarget: {fileID: 0}
   placedSlotAlpha: 0.25
   fadeOnCorrect: 0
 --- !u!1 &1372704227
@@ -7563,17 +7728,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1521144270}
-  m_LocalRotation: {x: 0, y: 0, z: 0.07959004, w: 0.9968277}
+  m_LocalRotation: {x: 0, y: 0, z: 0.09810398, w: 0.9951762}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 692768173}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 9.13}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 11.26}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -170.8, y: 107.8}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -166.58969, y: 110.599754}
+  m_SizeDelta: {x: 134.4279, y: 105.4642}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1521144272
 MonoBehaviour:
@@ -7627,6 +7792,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BoneSlotUI
   requiredBoneID: humerus
   assemblyController: {fileID: 338201643}
+  snapTarget: {fileID: 0}
   placedSlotAlpha: 0.25
   fadeOnCorrect: 0
 --- !u!1 &1560865193
@@ -7792,17 +7958,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1562480149}
-  m_LocalRotation: {x: 0, y: 0, z: 0.07236785, w: 0.99737805}
+  m_LocalRotation: {x: 0, y: 0, z: 0.099319756, w: 0.9950556}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 692768173}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 8.3}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 11.4}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 87.9, y: 136}
-  m_SizeDelta: {x: 110, y: 100}
+  m_AnchoredPosition: {x: 85.498634, y: 135.39667}
+  m_SizeDelta: {x: 116.251, y: 92.067}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1562480151
 MonoBehaviour:
@@ -7856,6 +8022,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BoneSlotUI
   requiredBoneID: femur
   assemblyController: {fileID: 338201643}
+  snapTarget: {fileID: 0}
   placedSlotAlpha: 0.25
   fadeOnCorrect: 0
 --- !u!1 &1565569578
@@ -8120,7 +8287,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -480}
+  m_AnchoredPosition: {x: 0, y: -490}
   m_SizeDelta: {x: 450, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1574194222
@@ -8306,17 +8473,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1583725092}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1813440827}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 120, y: 100}
+  m_SizeDelta: {x: 110, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1583725094
 MonoBehaviour:
@@ -8369,9 +8536,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIBoneDrag
   boneID: humerus
-  placedSizeMultiplier: 1
+  placedSizeMultiplier: 1.02
+  preserveStartRotationOnSnap: 0
   placedRotationZ: 0
   placedPositionOffset: {x: 0, y: 0}
+  preserveAspectWhileDragging: 0
+  preserveAspectWhenPlaced: 0
   placedColor: {r: 1, g: 0.2, b: 0.2, a: 1}
   popScale: 1.15
   popDuration: 0.1
@@ -8389,6 +8559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BoneInfoClickable
   infoPanel: {fileID: 247588784}
   bonePreviewSprite: {fileID: 21300000, guid: 5d9ced098e44bd242becb6ba710dcab7, type: 3}
+  previewRotationZ: 0
   boneNameKey: BONE_HUMERUS_NAME
   boneDescriptionKey: BONE_HUMERUS_DESC
 --- !u!1 &1638142071
@@ -8426,8 +8597,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 202.4, y: -10.7}
-  m_SizeDelta: {x: 30, y: 30}
+  m_AnchoredPosition: {x: 205, y: -6.7}
+  m_SizeDelta: {x: 56.7935, y: 65.6607}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1638142073
 MonoBehaviour:
@@ -8442,7 +8613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8481,6 +8652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BoneSlotUI
   requiredBoneID: astragalus
   assemblyController: {fileID: 338201643}
+  snapTarget: {fileID: 0}
   placedSlotAlpha: 0.25
   fadeOnCorrect: 0
 --- !u!1 &1659858120
@@ -8661,17 +8833,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1714633383}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 842556568}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 120, y: 100}
+  m_SizeDelta: {x: 110, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1714633385
 MonoBehaviour:
@@ -8724,9 +8896,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIBoneDrag
   boneID: femur
-  placedSizeMultiplier: 1
+  placedSizeMultiplier: 1.2
+  preserveStartRotationOnSnap: 0
   placedRotationZ: 0
   placedPositionOffset: {x: 0, y: 0}
+  preserveAspectWhileDragging: 0
+  preserveAspectWhenPlaced: 0
   placedColor: {r: 1, g: 0.2, b: 0.2, a: 1}
   popScale: 1.15
   popDuration: 0.1
@@ -8744,6 +8919,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BoneInfoClickable
   infoPanel: {fileID: 247588784}
   bonePreviewSprite: {fileID: 21300000, guid: 2b1245f47fece1340982027fb75bce87, type: 3}
+  previewRotationZ: 0
   boneNameKey: BONE_FEMUR_NAME
   boneDescriptionKey: BONE_FEMUR_DESC
 --- !u!1 &1744373477
@@ -9119,6 +9295,8 @@ MonoBehaviour:
   duration: 0.25
   startMultiplier: 0.75
   overshootMultiplier: 1.2
+  captureScaleOnEnable: 1
+  startDelay: 0.02
 --- !u!1 &1839755124
 GameObject:
   m_ObjectHideFlags: 0
@@ -9194,6 +9372,157 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1839755124}
   m_CullTransparentMesh: 1
+--- !u!1 &1889971693
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1889971694}
+  - component: {fileID: 1889971696}
+  - component: {fileID: 1889971697}
+  - component: {fileID: 1889971695}
+  m_Layer: 5
+  m_Name: AssemblyCompleteText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1889971694
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889971693}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 338201640}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 375}
+  m_SizeDelta: {x: 1000, y: 60}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1889971695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889971693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9debdfb9b527da445beb47db007a23ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  localizationKey: STAGE1_ASSEMBLY_003
+--- !u!222 &1889971696
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889971693}
+  m_CullTransparentMesh: 1
+--- !u!114 &1889971697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889971693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Skeleton complete!
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: e44775c20021f30429bbb192e83fa5f1, type: 2}
+  m_sharedMaterial: {fileID: 655518705855749923, guid: e44775c20021f30429bbb192e83fa5f1, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4279180078
+  m_fontColor: {r: 0.18039216, g: 0.105882354, b: 0.05882353, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 2
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1897764242
 GameObject:
   m_ObjectHideFlags: 0
@@ -9408,8 +9737,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UIBoneDrag
   boneID: skull
   placedSizeMultiplier: 1
+  preserveStartRotationOnSnap: 0
   placedRotationZ: 0
   placedPositionOffset: {x: 0, y: 0}
+  preserveAspectWhileDragging: 0
+  preserveAspectWhenPlaced: 0
   placedColor: {r: 1, g: 0.2, b: 0.2, a: 1}
   popScale: 1.15
   popDuration: 0.1
@@ -9465,6 +9797,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BoneInfoClickable
   infoPanel: {fileID: 247588784}
   bonePreviewSprite: {fileID: 21300000, guid: 31f8045211b77d24a9bb2ab8fb24882c, type: 3}
+  previewRotationZ: 0
   boneNameKey: BONE_CRANIUM_NAME
   boneDescriptionKey: BONE_CRANIUM_DESC
 --- !u!1 &1926818455
@@ -9585,7 +9918,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -620.46, y: -315}
+  m_AnchoredPosition: {x: -643, y: -281}
   m_SizeDelta: {x: 450, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1966657961
@@ -9603,6 +9936,8 @@ MonoBehaviour:
   duration: 0.35
   startMultiplier: 0.75
   overshootMultiplier: 1.25
+  captureScaleOnEnable: 1
+  startDelay: 0.02
 --- !u!1 &1978806960
 GameObject:
   m_ObjectHideFlags: 0
@@ -9637,8 +9972,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -550, y: 0}
-  m_SizeDelta: {x: 370, y: 225}
+  m_AnchoredPosition: {x: -550, y: -2.5}
+  m_SizeDelta: {x: 340, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1978806962
 MonoBehaviour:
@@ -10330,8 +10665,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UIBoneDrag
   boneID: scapula
   placedSizeMultiplier: 1
+  preserveStartRotationOnSnap: 0
   placedRotationZ: 0
   placedPositionOffset: {x: 0, y: 0}
+  preserveAspectWhileDragging: 0
+  preserveAspectWhenPlaced: 0
   placedColor: {r: 1, g: 0.2, b: 0.2, a: 1}
   popScale: 1.15
   popDuration: 0.1
@@ -10349,6 +10687,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BoneInfoClickable
   infoPanel: {fileID: 247588784}
   bonePreviewSprite: {fileID: 21300000, guid: b44375de91245bf4dba92d20c8f898f8, type: 3}
+  previewRotationZ: 0
   boneNameKey: BONE_SCAPULA_NAME
   boneDescriptionKey: BONE_SCAPULA_DESC
 --- !u!1660057539 &9223372036854775807

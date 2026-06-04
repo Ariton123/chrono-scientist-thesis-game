@@ -9,6 +9,9 @@ public class Stage1WorldIntroController : MonoBehaviour
     public TMP_Text hintText;
     public Stage1GameManager gameManager;
 
+    [Header("Continue Button Safety")]
+    [SerializeField] private CanvasGroup continueButtonCanvasGroup;
+
     [Header("Typewriter")]
     [SerializeField] private TypewriterTextUI hintTypewriter;
 
@@ -39,12 +42,23 @@ public class Stage1WorldIntroController : MonoBehaviour
     {
         if (hintTypewriter == null && hintText != null)
             hintTypewriter = hintText.GetComponent<TypewriterTextUI>();
+
+        if (continueButtonCanvasGroup == null && continueButton != null)
+            continueButtonCanvasGroup = continueButton.GetComponent<CanvasGroup>();
+
+        if (continueButtonCanvasGroup == null && continueButton != null)
+            continueButtonCanvasGroup = continueButton.AddComponent<CanvasGroup>();
+
+        SetContinueButtonVisible(false);
     }
 
     private void OnEnable()
     {
         if (LanguageManager.Instance != null)
             LanguageManager.Instance.OnLanguageChanged += HandleLanguageChanged;
+
+        if (!cluePlacedCorrectly && !isTransitioning)
+            SetContinueButtonVisible(false);
     }
 
     private void OnDisable()
@@ -58,16 +72,18 @@ public class Stage1WorldIntroController : MonoBehaviour
 
     private void Start()
     {
-        if (continueButton != null)
-            continueButton.SetActive(false);
+        cluePlacedCorrectly = false;
+        isTransitioning = false;
+
+        SetContinueButtonVisible(false);
 
         if (hintText != null)
             hintText.gameObject.SetActive(true);
 
-        cluePlacedCorrectly = false;
-        isTransitioning = false;
-
         ResetFadeObjects();
+
+        SetContinueButtonVisible(false);
+
         RefreshHintText();
     }
 
@@ -79,8 +95,7 @@ public class Stage1WorldIntroController : MonoBehaviour
         cluePlacedCorrectly = true;
         RefreshHintText();
 
-        if (continueButton != null)
-            continueButton.SetActive(true);
+        SetContinueButtonVisible(true);
     }
 
     public void OnContinueClicked()
@@ -88,6 +103,14 @@ public class Stage1WorldIntroController : MonoBehaviour
         if (isTransitioning)
             return;
 
+        if (!cluePlacedCorrectly)
+        {
+            Debug.Log("[Stage1WorldIntro] Continue clicked before clue was placed. Ignored.");
+            SetContinueButtonVisible(false);
+            return;
+        }
+
+        SetContinueButtonVisible(false);
         StartCoroutine(FadeOutThenOpenMissionPanel());
     }
 
@@ -133,6 +156,19 @@ public class Stage1WorldIntroController : MonoBehaviour
         isTransitioning = false;
     }
 
+    private void SetContinueButtonVisible(bool visible)
+    {
+        if (continueButton != null)
+            continueButton.SetActive(visible);
+
+        if (continueButtonCanvasGroup != null)
+        {
+            continueButtonCanvasGroup.alpha = visible ? 1f : 0f;
+            continueButtonCanvasGroup.interactable = visible;
+            continueButtonCanvasGroup.blocksRaycasts = visible;
+        }
+    }
+
     private void ResetFadeObjects()
     {
         if (disableAfterFade != null)
@@ -169,6 +205,9 @@ public class Stage1WorldIntroController : MonoBehaviour
                 spriteRenderer.color = color;
             }
         }
+
+        if (!cluePlacedCorrectly)
+            SetContinueButtonVisible(false);
     }
 
     private void SetCanvasGroupsAlpha(float alpha)
@@ -182,6 +221,13 @@ public class Stage1WorldIntroController : MonoBehaviour
                 continue;
 
             group.alpha = alpha;
+        }
+
+        if (!cluePlacedCorrectly && continueButtonCanvasGroup != null)
+        {
+            continueButtonCanvasGroup.alpha = 0f;
+            continueButtonCanvasGroup.interactable = false;
+            continueButtonCanvasGroup.blocksRaycasts = false;
         }
     }
 
@@ -234,6 +280,9 @@ public class Stage1WorldIntroController : MonoBehaviour
     {
         if (!isTransitioning)
             RefreshHintText();
+
+        if (!cluePlacedCorrectly)
+            SetContinueButtonVisible(false);
     }
 
     private void RefreshHintText()
