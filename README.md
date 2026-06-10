@@ -23,9 +23,9 @@ The project is inspired by museum-style learning environments and aims to make e
 
 * **Unity** — game engine used for the development of the prototype
 * **C#** — programming language used for gameplay systems, UI logic, scene flow, rewards, localization, logging, and interaction mechanics
-* * **Leonardo AI** — used to develop characters from paper prototype concepts into a 2.5D cartoon-inspired visual style: leonardo.ai
-* **Adobe Express** — used for background removal and preparing transparent sprites: new.express.adobe.com
-* **Pixabay** — used as a source for sound effects and music: pixabay.com/sound-effects/
+* **Leonardo AI** — used to develop characters from paper prototype concepts into a 2.5D cartoon-inspired visual style: https://leonardo.ai
+* **Adobe Express** — used for background removal and preparing transparent sprites: https://new.express.adobe.com
+* **Pixabay** — used as a source for sound effects and music: https://pixabay.com/sound-effects/
 * **PineTools Edge Detection** — used for online edge detection of selected image sprites: https://pinetools.com/image-edge-detection
 * **ScreenToGif** — used to record screen captures and create short video demonstrations of the game mechanics
 * **UI/UX Design** — interface design, interaction flow, menu structure, instruction screens, and child-friendly usability improvements
@@ -33,7 +33,7 @@ The project is inspired by museum-style learning environments and aims to make e
 * **Localization Systems** — multilingual interface and dialogue support in 4 languages (EN,DE,FR,IT)
 * **Windows and WebGL Deployment** — windows deployment, as well as browser-based deployment through itch.io for evaluation and remote testing
 * **User-Centered Evaluation** — observation sheets, questionnaires, CSV data logging
-* * **Git & GitHub** — version control and project documentation
+* **Git & GitHub** — version control and project documentation
 
 ---
 
