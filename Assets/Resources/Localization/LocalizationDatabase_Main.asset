@@ -125,10 +125,14 @@ MonoBehaviour:
     francais: "Pi\xE8ces correctes plac\xE9es : {current}/{total}"
     italiano: 'Pezzi corretti posizionati: {current}/{total}'
   - key: STAGE1_ASSEMBLY_003
-    english: Skeleton complete!
-    deutsch: "Skelett vollst\xE4ndig!"
-    francais: "Squelette termin\xE9 !"
-    italiano: Scheletro completato!
+    english: Skeleton assembled! Click each bone to learn its name and function,
+      then continue.
+    deutsch: Skelett zusammengesetzt! Klicke auf jeden Knochen, um seinen Namen und
+      seine Funktion zu lernen, und fahre dann fort.
+    francais: "Squelette assembl\xE9 ! Clique sur chaque os pour apprendre son nom
+      et sa fonction, puis continue."
+    italiano: Scheletro assemblato! Clicca su ogni osso per imparare il suo nome
+      e la sua funzione, poi continua.
   - key: BONEINFO_DEFAULT_NAME
     english: Select a bone
     deutsch: "W\xE4hle einen Knochen"
@@ -933,20 +937,20 @@ MonoBehaviour:
     francais: "Toutes les fonctions des os sont associ\xE9es !"
     italiano: Tutte le funzioni delle ossa sono abbinate!
   - key: FUNCTION_SCAPULA
-    english: Helps the front limb move
-    deutsch: "Hilft der vorderen Gliedma\xDFe, sich zu bewegen"
-    francais: "Aide le membre avant \xE0 bouger"
-    italiano: "Aiuta l\u2019arto anteriore a muoversi"
+    english: Helps the shoulder move
+    deutsch: Hilft der Schulter beim Bewegen
+    francais: "Aide l\u2019\xE9paule \xE0 bouger"
+    italiano: Aiuta la spalla a muoversi
   - key: FUNCTION_HUMERUS
-    english: Supports the upper front limb
-    deutsch: "St\xFCtzt den oberen Teil der vorderen Gliedma\xDFe"
-    francais: "Soutient la partie sup\xE9rieure du membre avant"
-    italiano: "Sostiene la parte superiore dell\u2019arto anteriore"
+    english: Strengthens the upper front leg
+    deutsch: "St\xE4rkt das obere Vorderbein"
+    francais: Renforce le haut de la patte avant
+    italiano: Rinforza la parte alta della zampa anteriore
   - key: FUNCTION_FEMUR
-    english: Supports the upper back limb
-    deutsch: "St\xFCtzt den oberen Teil der hinteren Gliedma\xDFe"
-    francais: "Soutient la partie sup\xE9rieure du membre arri\xE8re"
-    italiano: "Sostiene la parte superiore dell\u2019arto posteriore"
+    english: Powers the upper back leg
+    deutsch: Gibt dem oberen Hinterbein Kraft
+    francais: "Donne de la force au haut de la patte arri\xE8re"
+    italiano: "D\xE0 forza alla parte alta della zampa posteriore"
   - key: FUNCTION_PELVIS
     english: Connects the spine to the legs
     deutsch: "Verbindet die Wirbels\xE4ule mit den Beinen"
@@ -1042,32 +1046,31 @@ MonoBehaviour:
     francais: "Gardien de la pens\xE9e"
     italiano: Guardiano del pensiero
   - key: STAGE3_AMULET_SCAPULA_DESC
-    english: A hidden shield rests near the shoulder, guarding the path of the moving
-      limb...
-    deutsch: "Ein verborgener Schild ruht nahe der Schulter und bewacht den Weg der
-      bewegten Gliedma\xDFe..."
-    francais: "Un bouclier cach\xE9 repose pr\xE8s de l\u2019\xE9paule et garde le
-      chemin du membre en mouvement..."
-    italiano: "Uno scudo nascosto riposa vicino alla spalla e custodisce il cammino
-      dell\u2019arto in movimento..."
+    english: A flat bone rests on the upper back, guiding the shoulder as it moves...
+    deutsch: "Ein flacher Knochen liegt am oberen R\xFCcken und f\xFChrt die Schulter
+      bei der Bewegung..."
+    francais: "Un os plat repose sur le haut du dos et guide l\u2019\xE9paule dans
+      son mouvement..."
+    italiano: Un osso piatto si trova nella parte alta della schiena e guida la spalla
+      nel movimento...
   - key: STAGE3_AMULET_HUMERUS_DESC
-    english: "Strength travels through the arm, where a Spartan\u2019s power begins
-      to rise..."
-    deutsch: "Kraft flie\xDFt durch den Arm, dort, wo die St\xE4rke eines Spartaners
-      zu wachsen beginnt..."
-    francais: "La force traverse le bras, l\xE0 o\xF9 la puissance d\u2019un Spartiate
-      commence \xE0 s\u2019\xE9lever..."
-    italiano: La forza attraversa il braccio, dove il potere di uno Spartano comincia
-      a crescere...
+    english: A strong upper bone carries force when a Spartan reaches, pushes, or
+      strikes...
+    deutsch: "Ein starker oberer Knochen tr\xE4gt Kraft, wenn ein Spartaner greift,
+      dr\xFCckt oder schl\xE4gt..."
+    francais: "Un os sup\xE9rieur solide porte la force quand un Spartiate atteint,
+      pousse ou frappe..."
+    italiano: Un forte osso superiore porta forza quando uno Spartano raggiunge,
+      spinge o colpisce...
   - key: STAGE3_AMULET_FEMUR_DESC
-    english: A true Spartan stands on a mighty pillar, strong enough to carry the
-      body forward...
-    deutsch: "Ein wahrer Spartaner steht auf einer m\xE4chtigen S\xE4ule, stark genug,
-      den K\xF6rper voranzutragen..."
-    francais: "Un vrai Spartiate se tient sur un puissant pilier, assez fort pour
-      porter le corps vers l\u2019avant..."
-    italiano: Un vero Spartano si regge su un potente pilastro, abbastanza forte
-      da portare il corpo in avanti...
+    english: The mighty upper hind-leg bone holds the Spartan high and drives him
+      forward.
+    deutsch: "Der m\xE4chtige obere Knochen des Hinterbeins h\xE4lt den Spartaner
+      aufrecht und treibt ihn voran."
+    francais: "Le puissant os sup\xE9rieur de la patte arri\xE8re soutient le Spartiate
+      et le pousse en avant."
+    italiano: Il potente osso superiore della zampa posteriore sostiene lo Spartano
+      e lo spinge in avanti.
   - key: STAGE3_AMULET_PELVIS_DESC
     english: Balance begins at the center, where the body is joined and steadied...
     deutsch: "Das Gleichgewicht beginnt in der Mitte, wo der K\xF6rper verbunden
@@ -1085,13 +1088,14 @@ MonoBehaviour:
     italiano: "Sembra che il tallone di Achilles non fosse l\u2019unico punto debole;
       un piccolo osso nascosto portava parte del destino..."
   - key: STAGE3_AMULET_CRANIUM_DESC
-    english: A silent guardian protects the place where thoughts and memories awaken...
-    deutsch: "Ein stiller W\xE4chter sch\xFCtzt den Ort, an dem Gedanken und Erinnerungen
-      erwachen..."
-    francais: "Un gardien silencieux prot\xE8ge le lieu o\xF9 les pens\xE9es et les
-      souvenirs s\u2019\xE9veillent..."
-    italiano: Un guardiano silenzioso protegge il luogo in cui pensieri e ricordi
-      si risvegliano...
+    english: Beneath the Spartan helmet, a hard case protects senses, memory, and
+      command...
+    deutsch: "Unter dem spartanischen Helm sch\xFCtzt eine harte H\xFClle Sinne,
+      Erinnerung und Befehl..."
+    francais: "Sous le casque spartiate, une bo\xEEte dure prot\xE8ge les sens, la
+      m\xE9moire et le commandement..."
+    italiano: "Sotto l\u2019elmo spartano, una custodia dura protegge i sensi, la
+      memoria e il comando..."
   - key: REWARD_NIBBLES_BACK_ROW_CRANIUM
     english: "<b>Cranium / Skull</b> \u2014 protects the brain and shapes the head."
     deutsch: "<b>Cranium / Sch\xE4del</b> \u2014 sch\xFCtzt das Gehirn und formt
@@ -1322,14 +1326,14 @@ MonoBehaviour:
       a ripassare ci\xF2 che hai imparato e possono essere Bronzo, Argento o Oro
       in base alla tua prestazione."
   - key: INSTRUCTIONS_REWARDS_ASTRAGALOS
-    english: Earn a Gold card with 1 mistake or less to receive the special Golden
+    english: Complete a mission with very few mistakes to receive the special Golden
       Astragalos badge.
-    deutsch: "Erreiche eine Goldkarte mit h\xF6chstens 1 Fehler, um das besondere
-      Goldene-Astragalos-Abzeichen zu erhalten."
-    francais: "Obtiens une carte d\u2019or avec 1 erreur ou moins pour recevoir le
-      badge sp\xE9cial Astragale dor\xE9."
-    italiano: "Ottieni una carta Oro con 1 errore o meno per ricevere lo speciale
-      distintivo Astragalo d\u2019Oro."
+    deutsch: "Schlie\xDFe eine Mission mit sehr wenigen Fehlern ab, um das besondere
+      Goldene-Astragalus-Abzeichen zu erhalten."
+    francais: "Termine une mission avec tr\xE8s peu d\u2019erreurs pour recevoir
+      le badge sp\xE9cial Astragale dor\xE9."
+    italiano: "Completa una missione con pochissimi errori per ricevere lo speciale
+      distintivo Astragalo d\u2019oro."
   - key: LEVEL_COMPLETED
     english: Level Completed
     deutsch: Level abgeschlossen
@@ -1410,3 +1414,18 @@ MonoBehaviour:
       di tesi magistrale\\n\\nCreato da:\\nAriton Verush\\n\\nSupervisione accademica:\\nProf.
       Dr. Barbara Car\xE8\\nProf. Dr. Maurizio Rigamonti\\nProf. Dr. Denis Lalanne\\n\\nUniversit\xE0
       di Berna\\n2026"
+  - key: GAME_IS_PAUSED
+    english: Game is paused
+    deutsch: Spiel pausiert
+    francais: Jeu en pause
+    italiano: Gioco in pausa
+  - key: RESUME
+    english: Resume
+    deutsch: Fortsetzen
+    francais: Continuer
+    italiano: Continua
+  - key: WATCH_THE_TIME
+    english: Hurry, watch the time!
+    deutsch: Schnell, achte auf die Zeit!
+    francais: Vite, attention au temps !
+    italiano: Sbrigati, attenzione al tempo!

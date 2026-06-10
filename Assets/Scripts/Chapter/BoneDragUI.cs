@@ -27,6 +27,33 @@ public class UIBoneDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     [Tooltip("Recommended ON for long bones so they do not look smashed after correct placement.")]
     [SerializeField] private bool preserveAspectWhenPlaced = true;
 
+    [Header("Bone Info While Dragging")]
+    [Tooltip("Optional. If empty, the script tries to use BoneInfoClickable on this object.")]
+    [SerializeField] private BoneInfoPanelUI infoPanel;
+
+    [Tooltip("Optional. If empty, the script tries to use BoneInfoClickable on this object.")]
+    [SerializeField] private BoneInfoClickable boneInfoClickable;
+
+    [Tooltip("Optional. If empty, the script uses BoneInfoClickable sprite or this object's Image sprite.")]
+    [SerializeField] private Sprite bonePreviewSprite;
+
+    [Tooltip("Optional. If empty, the script uses BoneInfoClickable boneNameKey.")]
+    [SerializeField] private string boneNameKey;
+
+    [Tooltip("Optional. If empty, the script uses BoneInfoClickable boneDescriptionKey.")]
+    [SerializeField] private string boneDescriptionKey;
+
+    [Tooltip("Optional. If 0, the script uses BoneInfoClickable previewRotationZ.")]
+    [SerializeField] private float previewRotationZ = 0f;
+
+    [SerializeField] private bool showInfoOnBeginDrag = true;
+
+    [Tooltip("Recommended OFF. Keeping info visible after placement helps children read/review.")]
+    [SerializeField] private bool clearInfoAfterCorrectPlacement = false;
+
+    [Tooltip("Recommended OFF. Keeping info visible after a wrong drop helps children learn.")]
+    [SerializeField] private bool clearInfoAfterReset = false;
+
     [Header("Correct Placement Highlight")]
     [SerializeField] private Color placedColor = new Color(1f, 0.2f, 0.2f, 1f);
 
@@ -64,6 +91,9 @@ public class UIBoneDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
         if (canvasGroup == null)
             canvasGroup = gameObject.AddComponent<CanvasGroup>();
+
+        if (boneInfoClickable == null)
+            boneInfoClickable = GetComponent<BoneInfoClickable>();
     }
 
     private void Start()
@@ -102,6 +132,8 @@ public class UIBoneDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             image.preserveAspect = preserveAspectWhileDragging;
 
         transform.SetAsLastSibling();
+
+        ShowBoneInfoWhileDragging();
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -155,6 +187,104 @@ public class UIBoneDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         canvasGroup.blocksRaycasts = true;
 
         PlayPlacementPop();
+
+        if (clearInfoAfterCorrectPlacement)
+            ClearBoneInfoPanel();
+    }
+
+    private void ShowBoneInfoWhileDragging()
+    {
+        if (!showInfoOnBeginDrag)
+            return;
+
+        BoneInfoPanelUI resolvedInfoPanel = ResolveInfoPanel();
+
+        if (resolvedInfoPanel == null)
+            return;
+
+        Sprite resolvedPreviewSprite = ResolvePreviewSprite();
+        string resolvedNameKey = ResolveBoneNameKey();
+        string resolvedDescriptionKey = ResolveBoneDescriptionKey();
+        float resolvedPreviewRotationZ = ResolvePreviewRotationZ();
+
+        if (string.IsNullOrEmpty(resolvedNameKey) && string.IsNullOrEmpty(resolvedDescriptionKey))
+        {
+            Debug.LogWarning($"{name}: No bone info localization keys assigned for drag info.");
+            return;
+        }
+
+        resolvedInfoPanel.ShowBoneInfo(
+            resolvedPreviewSprite,
+            resolvedNameKey,
+            resolvedDescriptionKey,
+            resolvedPreviewRotationZ
+        );
+    }
+
+    private BoneInfoPanelUI ResolveInfoPanel()
+    {
+        if (infoPanel != null)
+            return infoPanel;
+
+        if (boneInfoClickable != null && boneInfoClickable.infoPanel != null)
+            return boneInfoClickable.infoPanel;
+
+        return null;
+    }
+
+    private Sprite ResolvePreviewSprite()
+    {
+        if (bonePreviewSprite != null)
+            return bonePreviewSprite;
+
+        if (boneInfoClickable != null && boneInfoClickable.bonePreviewSprite != null)
+            return boneInfoClickable.bonePreviewSprite;
+
+        if (image != null && image.sprite != null)
+            return image.sprite;
+
+        return null;
+    }
+
+    private string ResolveBoneNameKey()
+    {
+        if (!string.IsNullOrEmpty(boneNameKey))
+            return boneNameKey;
+
+        if (boneInfoClickable != null)
+            return boneInfoClickable.boneNameKey;
+
+        return "";
+    }
+
+    private string ResolveBoneDescriptionKey()
+    {
+        if (!string.IsNullOrEmpty(boneDescriptionKey))
+            return boneDescriptionKey;
+
+        if (boneInfoClickable != null)
+            return boneInfoClickable.boneDescriptionKey;
+
+        return "";
+    }
+
+    private float ResolvePreviewRotationZ()
+    {
+        if (Mathf.Abs(previewRotationZ) > 0.001f)
+            return previewRotationZ;
+
+        if (boneInfoClickable != null)
+            return boneInfoClickable.previewRotationZ;
+
+        return 0f;
+    }
+
+    private void ClearBoneInfoPanel()
+    {
+        BoneInfoPanelUI resolvedInfoPanel = ResolveInfoPanel();
+
+        if (resolvedInfoPanel != null)
+            resolvedInfoPanel.ClearInfo();
     }
 
     private void PlayPlacementPop()
@@ -188,6 +318,9 @@ public class UIBoneDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         if (placedCorrectly) return;
 
         ResetVisualStateToStart();
+
+        if (clearInfoAfterReset)
+            ClearBoneInfoPanel();
     }
 
     public void ForceResetToStart()
@@ -196,6 +329,9 @@ public class UIBoneDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         wasDroppedOnSlot = false;
 
         ResetVisualStateToStart();
+
+        if (clearInfoAfterReset)
+            ClearBoneInfoPanel();
     }
 
     private void ResetVisualStateToStart()

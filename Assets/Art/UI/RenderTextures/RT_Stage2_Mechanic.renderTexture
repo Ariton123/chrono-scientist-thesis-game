@@ -6,7 +6,7 @@ RenderTexture:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: stage2_gamemechanic
+  m_Name: RT_Stage2_Mechanic
   m_ImageContentsHash:
     serializedVersion: 2
     Hash: 00000000000000000000000000000000

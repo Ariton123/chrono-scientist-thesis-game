@@ -129,7 +129,6 @@ public class LevelPerformanceController : MonoBehaviour
         RewardsPanelController.CardRank earnedRank = CalculateRank();
 
         bool earnedAstragalosBadge =
-            earnedRank == RewardsPanelController.CardRank.Gold &&
             mistakes <= maxMistakesForAstragalosBadge;
 
         SavePerformanceResult(earnedRank, earnedAstragalosBadge);

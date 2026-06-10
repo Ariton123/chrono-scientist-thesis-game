@@ -301,6 +301,19 @@ public class RewardsPanelController : MonoBehaviour
             return;
         }
 
+        // Important for post-dialogue scenes:
+        // If the opened card popup is inside the rewards panel,
+        // the parent panel must be active or the popup will not be visible.
+        if (rewardsPanel != null)
+        {
+            rewardsPanel.SetActive(true);
+            rewardsPanel.transform.SetAsLastSibling();
+        }
+
+        transform.SetAsLastSibling();
+
+        RefreshAll();
+
         foreach (DiscoveryCard card in discoveryCards)
         {
             if (card == null)

@@ -24,6 +24,12 @@ public class PostDialogueRewardCardAutoShow : MonoBehaviour
 
     private bool alreadyShown = false;
 
+    private void Awake()
+    {
+        if (rewardsPanelController == null)
+            rewardsPanelController = FindFirstObjectByType<RewardsPanelController>(FindObjectsInactive.Include);
+    }
+
     private void Start()
     {
         if (showOnStart)
@@ -52,7 +58,7 @@ public class PostDialogueRewardCardAutoShow : MonoBehaviour
         alreadyShown = true;
 
         if (showDelay > 0f)
-            yield return new WaitForSeconds(showDelay);
+            yield return new WaitForSecondsRealtime(showDelay);
 
         OpenCard();
     }
@@ -70,6 +76,8 @@ public class PostDialogueRewardCardAutoShow : MonoBehaviour
             Debug.LogWarning("[PostDialogueRewardCardAutoShow] Missing rewardUnlockKey.");
             return;
         }
+
+        Debug.Log($"[PostDialogueRewardCardAutoShow] Opening card: {rewardUnlockKey}. ForceOpen: {forceOpen}, UseLatestRunStats: {useLatestRunStats}");
 
         rewardsPanelController.OpenDiscoveryCardByUnlockKey(
             rewardUnlockKey,
