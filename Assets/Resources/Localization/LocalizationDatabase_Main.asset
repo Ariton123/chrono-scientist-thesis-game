@@ -1429,3 +1429,34 @@ MonoBehaviour:
     deutsch: Schnell, achte auf die Zeit!
     francais: Vite, attention au temps !
     italiano: Sbrigati, attenzione al tempo!
+  - key: RESET_REWARDS
+    english: Reset rewards
+    deutsch: "Belohnungen zur\xFCcksetzen"
+    francais: "R\xE9initialiser les r\xE9compenses"
+    italiano: Reimposta ricompense
+  - key: DOWNLOAD_CSV
+    english: Download CSV
+    deutsch: CSV herunterladen
+    francais: "T\xE9l\xE9charger le CSV"
+    italiano: Scarica CSV
+  - key: YES
+    english: Yes
+    deutsch: Ja
+    francais: Oui
+    italiano: "S\xEC"
+  - key: NO
+    english: No
+    deutsch: Nein
+    francais: Non
+    italiano: No
+  - key: CONFIRM_RESET_REWARDS
+    english: Are you sure you want to reset your rewards and progress?
+    deutsch: "M\xF6chtest du deine Belohnungen und deinen Fortschritt wirklich zur\xFCcksetzen?"
+    francais: "Voulez-vous vraiment r\xE9initialiser vos r\xE9compenses et votre
+      progression ?"
+    italiano: Vuoi davvero reimpostare le ricompense e i progressi?
+  - key: CONFIRM_DOWNLOAD_CSV
+    english: Do you want to download the CSV log file?
+    deutsch: "M\xF6chtest du die CSV-Protokolldatei herunterladen?"
+    francais: "Voulez-vous t\xE9l\xE9charger le fichier journal CSV ?"
+    italiano: Vuoi scaricare il file di log CSV?

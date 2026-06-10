@@ -9,56 +9,22 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(sceneIndex);
     }
 
-    // Load scene by name (optional alternative)
+    // Load scene by name
     public void LoadSceneByName(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
     }
 
-    // Quit the application
+    // Quit the application without resetting rewards/progress
+    // and without creating/exporting CSV logs.
     public void QuitGame()
     {
-        ResetPrototypeProgressOnly();
-
-        Debug.Log("Quit Game");
+        Debug.Log("[SceneLoader] Quit Game. No progress reset. No CSV export.");
 
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
         Application.Quit();
 #endif
-    }
-
-    private void ResetPrototypeProgressOnly()
-    {
-        DeleteRewardKeys("Reward_Level1_Nibbles");
-        DeleteRewardKeys("Reward_Level5_Yeti");
-        DeleteRewardKeys("Reward_Level9_Achilles");
-
-        PlayerPrefs.DeleteKey("CompletedPlayableLevels");
-        PlayerPrefs.DeleteKey("TotalMistakes");
-        PlayerPrefs.DeleteKey("TotalCompletionTime");
-
-        PlayerPrefs.Save();
-
-        Debug.Log("[SceneLoader] Prototype progress reset before quit.");
-    }
-
-    private void DeleteRewardKeys(string rewardKey)
-    {
-        // Discovery card unlock state
-        PlayerPrefs.DeleteKey(rewardKey);
-
-        // Best achievement stats
-        PlayerPrefs.DeleteKey(rewardKey + "_Rank");
-        PlayerPrefs.DeleteKey(rewardKey + "_AstragalosBadge");
-        PlayerPrefs.DeleteKey(rewardKey + "_Mistakes");
-        PlayerPrefs.DeleteKey(rewardKey + "_CompletionTime");
-
-        // Latest run stats
-        PlayerPrefs.DeleteKey(rewardKey + "_LastRank");
-        PlayerPrefs.DeleteKey(rewardKey + "_LastAstragalosBadge");
-        PlayerPrefs.DeleteKey(rewardKey + "_LastMistakes");
-        PlayerPrefs.DeleteKey(rewardKey + "_LastCompletionTime");
     }
 }

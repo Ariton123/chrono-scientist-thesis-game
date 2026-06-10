@@ -4,9 +4,18 @@ using System.IO;
 using System.Text;
 using UnityEngine;
 
+#if UNITY_WEBGL && !UNITY_EDITOR
+using System.Runtime.InteropServices;
+#endif
+
 public static class SessionCSVLogger
 {
     private const string ParticipantCounterPrefsKey = "CSVLogger_ParticipantCounter";
+
+#if UNITY_WEBGL && !UNITY_EDITOR
+    [DllImport("__Internal")]
+    private static extern void WebGLDownloadTextFile(string fileName, string text);
+#endif
 
     private static readonly string SessionId =
         DateTime.Now.ToString("yyyyMMdd_HHmmss", CultureInfo.InvariantCulture) +
@@ -64,6 +73,30 @@ public static class SessionCSVLogger
             $"[SessionCSVLogger] Event #{eventIndex} logged: {eventType}. " +
             $"Participant: {ParticipantId}. Session: {SessionId}. CSV path: {FilePath}"
         );
+    }
+
+    public static void DownloadCsvFile()
+    {
+        LogEvent(
+            "CSV_DOWNLOAD_CONFIRMED",
+            extra: "CSV download confirmed from Rewards panel."
+        );
+
+        EnsureFileExists();
+
+        string csvText = File.ReadAllText(FilePath, Encoding.UTF8);
+        string fileName = $"chrono_scientist_{ParticipantId}_{SessionId}.csv";
+
+#if UNITY_WEBGL && !UNITY_EDITOR
+        WebGLDownloadTextFile(fileName, csvText);
+        Debug.Log($"[SessionCSVLogger] WebGL CSV download triggered: {fileName}");
+#else
+        string exportedPath = Path.Combine(Application.persistentDataPath, fileName);
+        File.WriteAllText(exportedPath, csvText, Encoding.UTF8);
+
+        Debug.Log($"[SessionCSVLogger] CSV exported for desktop/editor at: {exportedPath}");
+        Application.OpenURL(new Uri(exportedPath).AbsoluteUri);
+#endif
     }
 
     public static string GetParticipantId()

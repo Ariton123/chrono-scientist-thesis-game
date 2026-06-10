@@ -9,6 +9,12 @@ public class RewardsPanelController : MonoBehaviour
         Rewards,
         Details
     }
+    private enum ConfirmationAction
+    {
+        None,
+        ResetRewards,
+        DownloadCsv
+    }
 
     public enum CardRank
     {
@@ -105,6 +111,10 @@ public class RewardsPanelController : MonoBehaviour
     [SerializeField] private GameObject rewardsContent;
     [SerializeField] private GameObject detailsContent;
 
+    [Header("Page Navigation")]
+    [SerializeField] private Button nextPageButton;
+    [SerializeField] private Button previousPageButton;
+
     [Header("Discovery Cards")]
     [SerializeField] private DiscoveryCard[] discoveryCards;
 
@@ -163,6 +173,23 @@ public class RewardsPanelController : MonoBehaviour
     [Header("Extra Details Texts")]
     [SerializeField] private TMP_Text astragalosBadgesText;
 
+    [Header("Evaluation Controls")]
+    [SerializeField] private Button resetRewardsButton;
+    [SerializeField] private TMP_Text resetRewardsButtonText;
+
+    [SerializeField] private Button downloadCsvButton;
+    [SerializeField] private TMP_Text downloadCsvButtonText;
+
+    [Header("Confirmation Overlay")]
+    [SerializeField] private GameObject confirmationOverlay;
+    [SerializeField] private TMP_Text confirmationMessageText;
+
+    [SerializeField] private Button confirmationYesButton;
+    [SerializeField] private TMP_Text confirmationYesButtonText;
+
+    [SerializeField] private Button confirmationNoButton;
+    [SerializeField] private TMP_Text confirmationNoButtonText;
+
     [Header("Opened Card Flip Animation")]
     [SerializeField] private UICardFlipAnimator cardFlipAnimator;
 
@@ -171,6 +198,7 @@ public class RewardsPanelController : MonoBehaviour
     private DiscoveryCard currentOpenedCard;
     private bool showingBackSide = false;
     private bool currentOpenedCardUsesLatestRunStats = false;
+    private ConfirmationAction pendingConfirmationAction = ConfirmationAction.None;
 
     private const int TotalPossibleDiscoveryCards = 3;
     private const int TotalPossibleSideCharacters = 3;
@@ -183,6 +211,9 @@ public class RewardsPanelController : MonoBehaviour
 
         if (openedCardPopup != null)
             openedCardPopup.SetActive(false);
+
+        if (confirmationOverlay != null)
+            confirmationOverlay.SetActive(false);
 
         HideBackBoneIcons();
 
@@ -212,6 +243,9 @@ public class RewardsPanelController : MonoBehaviour
 
         if (currentOpenedCard != null)
             RefreshOpenedCardSideUI();
+
+        if (confirmationOverlay != null && confirmationOverlay.activeSelf)
+            RefreshConfirmationMessage();
     }
 
     private void WireButtons()
@@ -228,10 +262,46 @@ public class RewardsPanelController : MonoBehaviour
             detailsTitleButton.onClick.AddListener(ShowDetailsTab);
         }
 
+        if (nextPageButton != null)
+        {
+            nextPageButton.onClick.RemoveListener(ShowDetailsTab);
+            nextPageButton.onClick.AddListener(ShowDetailsTab);
+        }
+
+        if (previousPageButton != null)
+        {
+            previousPageButton.onClick.RemoveListener(ShowRewardsTab);
+            previousPageButton.onClick.AddListener(ShowRewardsTab);
+        }
+
         if (flipCardButton != null)
         {
             flipCardButton.onClick.RemoveListener(ToggleOpenedCardSide);
             flipCardButton.onClick.AddListener(ToggleOpenedCardSide);
+        }
+
+        if (resetRewardsButton != null)
+        {
+            resetRewardsButton.onClick.RemoveListener(RequestResetRewards);
+            resetRewardsButton.onClick.AddListener(RequestResetRewards);
+        }
+
+        if (downloadCsvButton != null)
+        {
+            downloadCsvButton.onClick.RemoveListener(RequestDownloadCsv);
+            downloadCsvButton.onClick.AddListener(RequestDownloadCsv);
+        }
+
+        if (confirmationYesButton != null)
+        {
+            confirmationYesButton.onClick.RemoveListener(ConfirmPendingAction);
+            confirmationYesButton.onClick.AddListener(ConfirmPendingAction);
+        }
+
+        if (confirmationNoButton != null)
+        {
+            confirmationNoButton.onClick.RemoveListener(CloseConfirmationOverlay);
+            confirmationNoButton.onClick.AddListener(CloseConfirmationOverlay);
         }
 
         if (discoveryCards == null)
@@ -262,6 +332,7 @@ public class RewardsPanelController : MonoBehaviour
     public void CloseRewards()
     {
         CloseOpenedCard();
+        CloseConfirmationOverlay();
 
         if (rewardsPanel != null)
             rewardsPanel.SetActive(false);
@@ -284,6 +355,7 @@ public class RewardsPanelController : MonoBehaviour
         else
         {
             CloseOpenedCard();
+            CloseConfirmationOverlay();
         }
     }
 
@@ -374,7 +446,10 @@ public class RewardsPanelController : MonoBehaviour
         RefreshTabs();
         RefreshCards();
         RefreshDetails();
+        RefreshEvaluationControlsLocalization();
     }
+
+
 
     private void RefreshTitleSwitch()
     {
@@ -400,6 +475,12 @@ public class RewardsPanelController : MonoBehaviour
 
         if (detailsContent != null)
             detailsContent.SetActive(!rewardsSelected);
+
+        if (nextPageButton != null)
+            nextPageButton.gameObject.SetActive(rewardsSelected);
+
+        if (previousPageButton != null)
+            previousPageButton.gameObject.SetActive(!rewardsSelected);
 
         ApplyTitleState(rewardsTitleText, rewardsSelected);
         ApplyTitleState(detailsTitleText, !rewardsSelected);
@@ -1058,6 +1139,124 @@ public class RewardsPanelController : MonoBehaviour
         Debug.Log($"[Rewards] Registered stats. Mistakes: {mistakes}, Time: {completionTimeSeconds}");
     }
 
+    public void RequestResetRewards()
+    {
+        ShowConfirmationOverlay(ConfirmationAction.ResetRewards);
+    }
+
+    private void RefreshEvaluationControlsLocalization()
+    {
+        if (resetRewardsButtonText != null)
+            resetRewardsButtonText.text = GetLocalizedText("RESET_REWARDS", "Reset rewards");
+
+        if (downloadCsvButtonText != null)
+            downloadCsvButtonText.text = GetLocalizedText("DOWNLOAD_CSV", "Download CSV");
+
+        if (confirmationYesButtonText != null)
+            confirmationYesButtonText.text = GetLocalizedText("YES", "Yes");
+
+        if (confirmationNoButtonText != null)
+            confirmationNoButtonText.text = GetLocalizedText("NO", "No");
+    }
+
+    public void RequestDownloadCsv()
+    {
+        ShowConfirmationOverlay(ConfirmationAction.DownloadCsv);
+    }
+
+    private void ShowConfirmationOverlay(ConfirmationAction action)
+    {
+        pendingConfirmationAction = action;
+
+        if (confirmationOverlay != null)
+        {
+            confirmationOverlay.SetActive(true);
+            confirmationOverlay.transform.SetAsLastSibling();
+        }
+
+        RefreshEvaluationControlsLocalization();
+        RefreshConfirmationMessage();
+    }
+
+    private void RefreshConfirmationMessage()
+    {
+        if (confirmationMessageText == null)
+            return;
+
+        confirmationMessageText.text = GetConfirmationMessage(pendingConfirmationAction);
+        confirmationMessageText.ForceMeshUpdate();
+    }
+
+    private string GetConfirmationMessage(ConfirmationAction action)
+    {
+        switch (action)
+        {
+            case ConfirmationAction.ResetRewards:
+                return GetLocalizedText(
+                    "CONFIRM_RESET_REWARDS",
+                    "Are you sure you want to reset your rewards and progress?"
+                );
+
+            case ConfirmationAction.DownloadCsv:
+                return GetLocalizedText(
+                    "CONFIRM_DOWNLOAD_CSV",
+                    "Do you want to download the CSV log file?"
+                );
+
+            default:
+                return "";
+        }
+    }
+
+    private void CloseConfirmationOverlay()
+    {
+        pendingConfirmationAction = ConfirmationAction.None;
+
+        if (confirmationOverlay != null)
+            confirmationOverlay.SetActive(false);
+    }
+
+    private void ConfirmPendingAction()
+    {
+        ConfirmationAction actionToRun = pendingConfirmationAction;
+
+        CloseConfirmationOverlay();
+
+        switch (actionToRun)
+        {
+            case ConfirmationAction.ResetRewards:
+                ResetRewardsAndProgressFromPanel();
+                break;
+
+            case ConfirmationAction.DownloadCsv:
+                SessionCSVLogger.DownloadCsvFile();
+                break;
+        }
+    }
+
+    public void ResetRewardsAndProgressFromPanel()
+    {
+        SessionCSVLogger.LogEvent(
+            "REWARDS_RESET_CONFIRMED",
+            extra: "Rewards/progress reset from Rewards panel."
+        );
+
+        DeleteRewardKeys("Reward_Level1_Nibbles");
+        DeleteRewardKeys("Reward_Level5_Yeti");
+        DeleteRewardKeys("Reward_Level9_Achilles");
+
+        PlayerPrefs.DeleteKey("CompletedPlayableLevels");
+        PlayerPrefs.DeleteKey("TotalMistakes");
+        PlayerPrefs.DeleteKey("TotalCompletionTime");
+
+        PlayerPrefs.Save();
+
+        CloseOpenedCard();
+        RefreshAll();
+
+        Debug.Log("[Rewards] Rewards and progress reset from Rewards panel.");
+    }
+
     [ContextMenu("DEBUG Unlock Level 1 Nibbles")]
     private void DebugUnlockLevel1()
     {
@@ -1121,18 +1320,7 @@ public class RewardsPanelController : MonoBehaviour
     [ContextMenu("DEBUG Reset Rewards")]
     private void DebugResetRewards()
     {
-        DeleteRewardKeys("Reward_Level1_Nibbles");
-        DeleteRewardKeys("Reward_Level5_Yeti");
-        DeleteRewardKeys("Reward_Level9_Achilles");
-
-        PlayerPrefs.DeleteKey("CompletedPlayableLevels");
-        PlayerPrefs.DeleteKey("TotalMistakes");
-        PlayerPrefs.DeleteKey("TotalCompletionTime");
-
-        PlayerPrefs.Save();
-        RefreshAll();
-
-        Debug.Log("[Rewards] Reset all rewards.");
+        ResetRewardsAndProgressFromPanel();
     }
 
     private void DeleteRewardKeys(string rewardKey)

@@ -1986,9 +1986,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelPerformanceController
   timerText: {fileID: 193918003}
   mistakesText: {fileID: 167611271}
-  levelDurationSeconds: 120
-  goldRemainingThreshold: 80
-  silverRemainingThreshold: 40
+  levelDurationSeconds: 100
+  goldRemainingThreshold: 65
+  silverRemainingThreshold: 35
   warningTimeThreshold: 20
   normalTimerColor: {r: 1, g: 1, b: 1, a: 1}
   warningTimerColor: {r: 1, g: 0, b: 0, a: 1}
