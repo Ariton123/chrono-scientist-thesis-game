@@ -47,8 +47,7 @@ The current prototype includes:
 * Localized multilingual interface support
 * Educational interaction systems
 * Mission-based progression structure
-* WebGL-compatible instruction videos
-* Synchronized video playback in the instructions screen
+* Compatibility for: Windows, macOS and WebGL(any browser)
 * Evaluation-ready browser deployment through itch.io
 
 ---
