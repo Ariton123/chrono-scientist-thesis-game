@@ -32,7 +32,8 @@ The project is inspired by museum-style learning environments and aims to make e
 * **Educational Game Design** — design of learning-oriented mechanics, rewards, narrative progression, and museum-inspired interaction
 * **Localization Systems** — multilingual interface and dialogue support in 4 languages (EN,DE,FR,IT)
 * **Windows and WebGL Deployment** — windows deployment, as well as browser-based deployment through itch.io for evaluation and remote testing
-* **User-Centered Evaluation** — observation sheets, questionnaires, CSV data logging
+* **User-Centered Evaluation** — observation sheets, questionnaires
+* **System-Centered Evaluation** — CSV data logging for metrics such as completion time, card ranks, mistakes, etc.
 * **Git & GitHub** — version control and project documentation
 
 ---
