@@ -4,7 +4,7 @@
 
 The project brings together game development, Human-Computer Interaction, educational technology, anatomy, archaeology, and museum-based learning into a single interactive learning experience designed for children.
 
-**Play the WebGL prototype:**
+**Play the browser prototype:**
 https://ariton123.itch.io/chrono-scientist-bones-of-meaning
 
 ---
@@ -31,7 +31,7 @@ The project is inspired by museum-style learning environments and aims to make e
 * **UI/UX Design** — interface design, interaction flow, menu structure, instruction screens, and child-friendly usability improvements
 * **Educational Game Design** — design of learning-oriented mechanics, rewards, narrative progression, and museum-inspired interaction
 * **Localization Systems** — multilingual interface and dialogue support in 4 languages (EN,DE,FR,IT)
-* **Windows and WebGL Deployment** — windows deployment, as well as browser-based deployment through itch.io for evaluation and remote testing
+* **Windows and WebGL Deployment** — Windows deployment, as well as browser-based deployment through itch.io for evaluation and remote testing
 * **User-Centered Evaluation** — observation sheets, questionnaires
 * **System-Centered Evaluation** — CSV data logging for metrics such as completion time, card ranks, mistakes, etc.
 * **Git & GitHub** — version control and project documentation
@@ -45,11 +45,10 @@ The current prototype includes:
 * Drag-and-drop bone assembly mechanics
 * Dialogue and narrative progression
 * Reward and discovery card systems
-* Localized multilingual interface support
+* Localized multilingual interface support (EN,DE,FR,IT)
 * Educational interaction systems
 * Mission-based progression structure
-* Compatibility for: Windows, macOS and WebGL(any browser)
-* Evaluation-ready browser deployment through itch.io
+* Browser-based deployment through itch.io using WebGL
 
 ---
 
@@ -88,6 +87,6 @@ The WebGL deployment allows the prototype to be tested remotely and shared more 
 
 The project is currently an **evaluation-ready thesis prototype**.
 
-The first museum testing round has been completed, and the prototype has been updated with usability improvements, WebGL-compatible instruction videos, synchronized video playback, and final polish for the next evaluation rounds.
+The first museum testing round has been completed, and the prototype has been updated with usability improvements and WebGL-oriented polish. Final testing has been done for the next evaluation rounds.
 
 The game is now deployed on itch.io for browser-based testing and portfolio presentation.
