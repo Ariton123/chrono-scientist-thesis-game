@@ -852,7 +852,7 @@ MonoBehaviour:
       <b>Represents:</b> Homo sapiens
 
       <b>Era:</b>
-      Ancient Greece / Spartan era
+      Bronze Age (Ancient Greece)
 
       <b>Time:</b> about 2500 years ago
 
@@ -861,25 +861,15 @@ MonoBehaviour:
 
       <b>Size:</b> around 1.7 meters tall'
     deutsch: "<b>Figur:</b> Achilles\n<b>Repr\xE4sentiert:</b> Homo sapiens\n<b>Zeitalter:</b>
-      Antikes Griechenland / spartanische \xC4ra\n<b>Zeit:</b> vor etwa 2500 Jahren\n<b>Status:</b>
+      Bronzezeit (Antikes Griechenland)\n<b>Zeit:</b> vor etwa 2500 Jahren\n<b>Status:</b>
       Lebende Art\n<b>Gr\xF6\xDFe:</b> ungef\xE4hr 1,7 Meter gro\xDF"
     francais: "<b>Personnage :</b> Achille\n<b>Repr\xE9sente :</b> Homo sapiens\n<b>\xC9poque
-      :</b> Gr\xE8ce antique / \xE9poque spartiate\n<b>Temps :</b> il y a environ
-      2500 ans\n<b>Statut :</b> Esp\xE8ce vivante\n<b>Taille :</b> environ 1,7 m\xE8tre
+      :</b> \xC2ge du bronze (Gr\xE8ce antique)\n<b>Temps :</b> il y a environ 2500
+      ans\n<b>Statut :</b> Esp\xE8ce vivante\n<b>Taille :</b> environ 1,7 m\xE8tre
       de haut"
-    italiano: '<b>Personaggio:</b> Achille
-
-      <b>Rappresenta:</b> Homo sapiens
-
-      <b>Epoca:</b>
-      Antica Grecia / era spartana
-
-      <b>Tempo:</b> circa 2500 anni fa
-
-      <b>Stato:</b>
-      Specie vivente
-
-      <b>Dimensione:</b> circa 1,7 metri di altezza'
+    italiano: "<b>Personaggio:</b> Achille\n<b>Rappresenta:</b> Homo sapiens\n<b>Epoca:</b>
+      Et\xE0 del bronzo (Antica Grecia)\n<b>Tempo:</b> circa 2500 anni fa\n<b>Stato:</b>
+      Specie vivente\n<b>Dimensione:</b> circa 1,7 metri di altezza"
   - key: REWARD_ACHILLES_BACK
     english: In this mission, you decoded bone amulets by observing their shape and
       meaning. In archaeology, bones can become objects of memory, identity, belief,
@@ -979,10 +969,10 @@ MonoBehaviour:
       bouger."
     italiano: Grazie! Ora capisco come ogni osso aiuta il corpo a muoversi.
   - key: STAGE3_MISSION_TITLE
-    english: SPARTAN ERA
-    deutsch: SPARTANISCHE ZEIT
-    francais: "\xC9POQUE SPARTIATE"
-    italiano: EPOCA SPARTANA
+    english: BRONZE AGE
+    deutsch: BRONZEZEIT
+    francais: "\xC2GE DU BRONZE"
+    italiano: "ET\xC0 DEL BRONZO"
   - key: STAGE3_MISSION_DESC
     english: Look at the bone amulets and find out what each one represents.
     deutsch: "Betrachte die Knochenamulette und finde heraus, wof\xFCr jedes steht."

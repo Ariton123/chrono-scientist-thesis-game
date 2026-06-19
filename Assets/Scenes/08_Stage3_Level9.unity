@@ -2493,7 +2493,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelPerformanceController
   timerText: {fileID: 904836097}
   mistakesText: {fileID: 1702511706}
-  levelDurationSeconds: 130
+  levelDurationSeconds: 135
   goldRemainingThreshold: 85
   silverRemainingThreshold: 45
   warningTimeThreshold: 20
@@ -5240,7 +5240,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -10, y: -60}
-  m_SizeDelta: {x: 200, y: 200}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &886410781
 MonoBehaviour:
