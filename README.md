@@ -1,6 +1,6 @@
 # Chrono-Scientist: Bones of Meaning
 
-**Chrono-Scientist: Bones of Meaning** is an educational Unity game prototype developed as part of my Master's thesis in Computer Science at the University of Bern.
+**Chrono-Scientist: Bones of Meaning** is an educational Unity game prototype developed as part of my Master's thesis in Computer Science at the University of Bern, successfully defended in June 2026.
 
 The project brings together game development, Human-Computer Interaction, educational technology, anatomy, archaeology, and museum-based learning into a single interactive learning experience designed for children.
 
@@ -69,7 +69,7 @@ The research combines technical development with user experience and educational
 
 ## Evaluation Context
 
-The prototype is being evaluated through multiple user testing rounds, including museum-based and close-circle testing.
+The prototype was evaluated through multiple user testing rounds, including museum-based and close-circle testing, as part of the completed Master's thesis evaluation.
 
 The evaluation combines:
 
@@ -85,8 +85,8 @@ The WebGL deployment allows the prototype to be tested remotely and shared more 
 
 ## Development Status
 
-The project is currently an **evaluation-ready thesis prototype**.
+The project has been completed as part of the Master's thesis in Computer Science at the University of Bern.
 
-The first museum testing round has been completed, and the prototype has been updated with usability improvements and WebGL-oriented polish. Final testing has been done for the next evaluation rounds.
+The prototype was successfully defended in June 2026 following multiple rounds of user evaluation, including museum-based testing and close-circle evaluation.
 
-The game is now deployed on itch.io for browser-based testing and portfolio presentation.
+The browser-based WebGL version remains available on itch.io for demonstration and portfolio purposes.
